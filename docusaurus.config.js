@@ -60,7 +60,6 @@ const config = {
             `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`,
         },
 
-
         
         blog: {
           showReadingTime: true,
