@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Control Panel": {
+    "message": "Control Panel",
+    "description": "The label for category Control Panel in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Personal Area": {
+    "message": "Personal Area",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.registration": {
+    "message": "registration",
+    "description": "The label for category registration in sidebar tutorialSidebar"
+  }
+}
