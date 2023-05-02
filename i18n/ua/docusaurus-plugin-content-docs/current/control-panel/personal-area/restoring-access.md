@@ -2,45 +2,45 @@
 sidebar_position: 1
 ---
 
-# Restoring Access
+# Відновлення доступу
 
-If you have problems accessing your account, you can restore access:
+Якщо у вас виникли проблеми з доступом до облікового запису, ви можете відновити доступ:
 
-- if you are an Account Owner, you can [change your password](##) or email address, or [turn off 2-Step Verification](##);
-- If you are not the Account Owner, you can only [change the password](##) yourself. In case of problems with email and two-step verification, contact the Account Owner - they should [remove you from the list of users](##) and [add a new user](##) with the correct data.
+- якщо ви є власником облікового запису, ви можете [змінити свій пароль](##) чи адресу електронної пошти або [вимкнути двоетапну перевірку](##);
+- якщо ви не є власником облікового запису, ви можете лише [змінити пароль](##) самостійно. У разі проблем з електронною поштою та двоетапною перевіркою зв’яжіться з власником облікового запису – він має [видалити вас зі списку користувачів](##) і [додати нового користувача](##) з правильними даними.
 
-## Change Password
+## Змінити пароль
 
-A user with any role can change the password.
+Користувач з будь-якою роллю може змінити пароль.
 
-If you have lost access to the email you used to register, please [change your email address](##).
+Якщо ви втратили доступ до електронної адреси, яку використовували для реєстрації, [змініть адресу електронної пошти] (##).
 
-If you encounter any problems during the registration process, write to the technical support service: [support@ocplanet.cloud](mailto:support@ocplanet.cloud).
+Якщо у вас виникнуть проблеми під час реєстрації, напишіть у службу технічної підтримки: [support@ocplanet.cloud](mailto:support@ocplanet.cloud).
 
-1. On the [control panel](##) login page, click **Restore Account Access**.
+1. На сторінці входу [панелі керування](##) натисніть **Відновити доступ до облікового запису**.
 
-2. Enter the email address you used during registration.
+2. Введіть адресу електронної пошти, яку ви використовували під час реєстрації.
 
-3. Click "Request Password Reset".
+3. Натисніть «Запит на скидання пароля».
 
-4. We will send an email to the specified email address. In the email, click the link that leads to resetting your password. Password reset is active for one hour. You can only click on the reset password link once.
+4. Ми надішлемо лист на вказану електронну адресу. В електронному листі натисніть посилання, яке веде до скидання пароля. Скидання пароля активне протягом однієї години. Ви можете натиснути на посилання для скидання пароля лише один раз.
 
-5. On the password reset page, enter a new password and confirm it.
+5. На сторінці скидання пароля введіть новий пароль і підтвердьте його.
 
-6. Click **Change Password**
+Натисніть **Змінити пароль**
 
-7. We will send an email to the email address you used to register to notify you that your password has been changed. The notification does not contain a password.
+7. Ми надішлемо електронний лист на електронну адресу, яку ви використовували для реєстрації, щоб повідомити вас про те, що ваш пароль було змінено. Сповіщення не містить пароля.
 
-8. If you have 2-Step Verification enabled, enter the code.
+8. Якщо у вас увімкнено 2-етапну перевірку, введіть код.
 
-## Change Email Address
+## Змінити адресу електронної пошти
 
-If you are not the Account Owner, contact the Account Owner - they should [remove you from the list of users](##) and [add a new user](##) with the correct data.
+Якщо ви не є власником облікового запису, зв’яжіться з власником облікового запису – він має [видалити вас зі списку користувачів](##) і [додати нового користувача](##) з правильними даними.
 
-If you are an Account Owner, please provide us with the following documents to change your email address:
+Якщо ви є власником облікового запису, надайте нам такі документи, щоб змінити адресу електронної пошти:
 
-1. Go to **Account Settings**
+1. Перейдіть до **Налаштування облікового запису**
 
-2. Change email address.
+2. Змініть адресу електронної пошти.
 
-3. Click **Save**
+3. Натисніть **Зберегти**

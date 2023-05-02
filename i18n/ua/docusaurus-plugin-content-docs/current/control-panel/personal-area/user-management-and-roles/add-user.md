@@ -2,24 +2,40 @@
 sidebar_position: 1
 ---
 
-# Add User
+# Додати користувача
 
-Users can be added by the Account Owner and User Administrator.
+Користувачі можуть додаватися [власником облікового запису](#) та [адміністратором користувачів](#).
 
-1. In the control panel, open the drop-down list in the upper right corner and select Clients.
+1. У панелі управління відкрийте випадаючий список у верхньому правому куті та виберіть **Клієнти**.
 
-2. Follow the link **Your ID**.
+![](./img/add-user/i-add-user-1-ua.svg)
 
-3. Go to the **Users** tab.
+2. Перейдіть за посиланням **Ваш ID**.
 
-4. Click **Invite User**.
+![](./img/add-user/i-add-user-2.svg)
 
-5. Enter the user's email.
+3. Перейдіть на вкладку **Користувачі**.
 
-6. Select [user roles](##), you can select an unlimited number of them.
+![](./img/add-user/i-add-user-3-ua.svg)
 
-7. Optional: check the categories of notifications that will be sent to the user.
+4. Натисніть **Запросити користувача**.
 
-8. Click **Invite User**. The user will be added to the list on the **Users** tab, with the status **No Accepted Invite**.
+![](./img/add-user/i-add-user-4-ua.svg)
 
-9. The link for [registration by invitation](##) will be sent to the user's e-mail. The account is activated after confirmation of the mail and completion of registration.
+5. Введіть адресу електронної пошти користувача.
+
+![](./img/add-user/i-add-user-5-ua.svg)
+
+6. Виберіть [ролі користувача](##), їх можна вибрати необмежену кількість.
+
+![](./img/add-user/i-add-user-6-ua.svg)
+
+7. Додатково: виберіть категорії сповіщень, які будуть надіслані користувачеві.
+
+![](./img/add-user/i-add-user-7-ua.svg)
+
+8. Натисніть **Запросити користувача**. Користувача буде додано до списку на вкладці **Користувачі** зі статусом **Запрошення ще не прийнято**.
+
+![](./img/add-user/i-add-user-8.svg)
+
+9. На електронну пошту користувача буде надіслано посилання для [реєстрація за запрошенням](##). Аккаунт активується після підтвердження пошти та завершення реєстрації.

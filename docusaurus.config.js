@@ -7,23 +7,19 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'OneCloudPlanet\'s Documentation',
-  tagline: 'Dinosaurs are cool',
+  // tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-
   // Set the production url of your site here
   url: 'https://docs.ocplanet.cloud/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'onecloudplanet', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -32,18 +28,14 @@ const config = {
     locales: ['en', 'ua'],
     localeConfigs: {
       en: {
-        // htmlLang: 'en-GB',
         label:'English',
         direction: 'ltr',
         path:'en'
-        // sidebarPath: require.resolve('./sidebars.fr.js'),
       },
       ua:{
-        // htmlLang: 'ua-GB',
         label:'Українська',
         direction: 'ltr',
         path:'ua'
-        // sidebarPath: require.resolve('./sidebars.fr.js'),
       }
     }
   },
@@ -58,7 +50,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: ({versionDocsDirPath, docPath}) =>
-            `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`,
+            `https://github.com/OnePointCollab/onecloudplanet_docs/edit/main/${versionDocsDirPath}/${docPath}`,
         },
 
         
@@ -79,34 +71,30 @@ const config = {
       themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        // algolia: {
-        //   // The application ID provided by Algolia
-        //   appId: 'O02PSVESHZ',
+        algolia: {
+          appId: 'O02PSVESHZ',
+          apiKey: '3f61da548f823e3d2e4b9e90d7a0cfda',
+          indexName: 'docs.ocplanet.cloud',
+          contextualSearch: true,
+          // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+          // externalUrlRegex: 'https://docs.ocplanet.cloud',
+          // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+          // replaceSearchResultPathname: {
+          //   from: '/docs/', // or as RegExp: /\/docs\//
+          //   to: '/',
+          // },
     
-        //   // Public API key: it is safe to commit it
-        //   apiKey: '3f61da548f823e3d2e4b9e90d7a0cfda',
-    
-        //   indexName: 'docs.ocplanet.cloud',
-    
-        //   // Optional: see doc section below
-        //   contextualSearch: true,
-        //   // searchParameters: {
-        //   //   facetFilters: ['language:en', ['filter1', 'filter2'], 'filter3'],
-        //   // },
-        //   // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-        //   externalUrlRegex: 'https://docs.ocplanet.cloud',
-    
-        //   // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-        //   // replaceSearchResultPathname: {
-        //   //   from: '/docs/', // or as RegExp: /\/docs\//
-        //   //   to: '/',
-        //   // },
-    
+        },
 
         //   searchPagePath: false,
     
         // },
         // Replace with your project's social card
+        colorMode: {
+          defaultMode: 'light',
+          disableSwitch: true,
+          respectPrefersColorScheme: false,
+        },
         image: 'img/docusaurus-social-card.jpg',
         navbar: {
           title: 'OneCloudPlanet',
@@ -116,13 +104,13 @@ const config = {
           },
           
           items: [
-            {
-              type: 'docSidebar',
-              to: '/documentation',
-              sidebarId: 'tutorialSidebar',
-              position: 'left',
-              label: 'Documentation',
-            },
+            // {
+            //   type: 'docSidebar',
+            //   to: '/documentation',
+            //   sidebarId: 'tutorialSidebar',
+            //   position: 'left',
+            //   label: 'Documentation',
+            // },
             {
               type: 'search',
               position: 'right',

@@ -4,15 +4,15 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.Control Panel": {
-    "message": "Control Panel",
+    "message": "Панель управління",
     "description": "The label for category Control Panel in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Personal Area": {
-    "message": "Personal Area",
+    "message": "Особистий кабінет",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.registration": {
-    "message": "registration",
+  "sidebar.tutorialSidebar.category.User Management Or Roles": {
+    "message": "Керування користувачами або ролі",
     "description": "The label for category registration in sidebar tutorialSidebar"
   }
 }

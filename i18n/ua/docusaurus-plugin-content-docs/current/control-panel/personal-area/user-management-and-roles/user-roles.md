@@ -2,11 +2,9 @@
 sidebar_position: 3
 ---
 
-# User Management And Roles
+# Ролі користувачів
 
 Only users with the Account Owner or User Administrator role can add or edit users.
-
-# User Roles
 
 A user can be assigned one or more roles.
 
@@ -35,10 +33,18 @@ import TabItem from '@theme/TabItem';
 
   </TabItem>
   <TabItem value="billing" label="Billing">
-    This is an orange 🍊
+
+| Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
+| ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
+|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
+
   </TabItem>
   <TabItem value="services" label="Services">
-    This is a banana 🍌
+
+| Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
+| ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
+|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
+
   </TabItem>
 </Tabs>
 

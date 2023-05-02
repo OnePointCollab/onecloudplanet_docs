@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Registration In The Control Panel
+# Registration in the control panel
 
 The OneCloudPlanet cloud platform is managed through the [console.ocpanel.cloud](https://console.ocpanel.cloud) control panel. You can sign up for the OneCloudPlanet dashboard by:
 
