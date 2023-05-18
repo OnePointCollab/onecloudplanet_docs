@@ -28,7 +28,12 @@ import TabItem from '@theme/TabItem';
 
 | Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
 | ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
-|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
+|   Two-factor authentication   | ✓ | ✓ | ✓ | ✓ | ✓ |
+|   User Management   | ✓ | ✓ | ✗ | ✓ | ✗ |
+|   Receiving notifications   | ✓ | ✓ | ✓ | ✓ | ✓ |
+|   Notification management   | ✓ | ✓ | ✗ | ✓ | ✗ |
+|   Create tickets   | ✓ | ✓ | ✓ | ✓ | ✓ |
+|   View all tickets   | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 
   </TabItem>
@@ -37,26 +42,18 @@ import TabItem from '@theme/TabItem';
 | Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
 | ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
 |   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
+|   Add Credit   | ✓ | ✓ | ✓ | ✗ | ✗ |
+|   Payment for services   | ✓ | ✓ | ✗ | ✗ | ✗ |
+|   View service statuses   | ✓ | ✓ | ✓ | ✗ | ✗ |
+|   View reporting documents   | ✓ | ✓ | ✓ | ✗ | ✓ |
 
   </TabItem>
   <TabItem value="services" label="Services">
 
 | Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
 | ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
-|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
+|   Connecting services / creating cloud resources   | ✓ | ✓ | ✗ | ✗ | ✓ |
+|   View connected services / created resources   | ✓ | ✓ | ✓ | ✗ | ✓ |
 
   </TabItem>
 </Tabs>
-
-
-# Role Combination
-
-If a role has all the permissions of another role, the roles are not combined.
-
-| Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
-| ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
-|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
-| Account Administrator  | User with access to account management, services and billing  |
-| Billing Administrator  | User with access to billing management and without access to service management  |
-| User's Administrator  | A user with access to user management and no access to services and billing. The first User Administrator is created by the Account Owner.  |
-| Account Observer | A user with access to view all services, billing and account data and no management access. The Account Viewer can view everything that the Account Admin manages  |
