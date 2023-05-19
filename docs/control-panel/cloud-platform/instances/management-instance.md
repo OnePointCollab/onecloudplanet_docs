@@ -61,3 +61,10 @@ openstack server list
 
   </TabItem>
 </Tabs>
+
+## Delete Instance
+
+On the OneCloudPlanet platform, the instance is deleted by default along with the main disk (root disk).
+
+> :warning: **The delete operation is irreversible! Save the required data before deleting the instance.**
+

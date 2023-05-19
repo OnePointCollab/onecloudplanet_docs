@@ -1,0 +1,32 @@
+- name: Deployment
+  hosts: all
+  tasks:
+    - name: Change interpreter
+      set_fact:
+        ansible_python_interpreter: /usr/bin/python3
+
+    - include_vars:
+        file: vars.yml
+
+    - name: Log in to docker-hub
+      shell:
+        cmd: "docker login {{ DOCKER_HOST }} -u {{ DOCKER_USERNAME }} -p {{ DOCKER_PASSWORD }}"
+
+    - name: Deploy compose
+      community.docker.docker_compose:
+       project_name: docs-ocplanet-cloud
+       pull: yes
+       state: present
+       recreate: smart
+       definition:
+          version: '3'
+          services:
+            frontend:
+              image: cloud.canister.io:5000/ocpfrontdev/docs-ocplanet-cloud
+              ports:
+                - "127.0.0.1:3004:3004"
+              restart: always
+
+    - name: Docker prune
+      shell:
+        cmd: "docker system prune -f"
