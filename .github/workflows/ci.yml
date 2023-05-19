@@ -30,7 +30,7 @@ jobs:
         run: |
           docker login  $REGISTRY -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker build -t docs-ocplanet-cloud -f ./Dockerfile ./
-          docker tag docs-ocplanet-cloud:latest $REGISTRY/$DOCKER_USERNAME/docs-onevoiplanet-ua:latest
+          docker tag docs-ocplanet-cloud:latest $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:latest
           docker tag $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:latest $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:$RELEASE_NAME
           docker push $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:latest
           docker push $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:$RELEASE_NAME
