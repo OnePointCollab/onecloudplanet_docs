@@ -20,5 +20,7 @@ Once the instance has been created, you can [change the configuration](/control-
 
 ## View list of configurations
 
-A list of all available configurations can be viewed in the control panel when creating a server or through the OpenStack CLI (flavors created by yourself will also be displayed).
+A list of all available configurations can be viewed in the control panel when creating a server.
+
+![](../img/ic-instance-5.svg)
 
