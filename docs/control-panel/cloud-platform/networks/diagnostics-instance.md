@@ -1,6 +1,7 @@
 ---
-sidebar_position: 3
-title: Management Instance
+sidebar_position: 4
+title: Diagnostics Instance
+
 ---
 
 # Management Instance

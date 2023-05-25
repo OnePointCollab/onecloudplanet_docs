@@ -72,9 +72,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
         algolia: {
-          appId: 'O02PSVESHZ',
-          apiKey: '3f61da548f823e3d2e4b9e90d7a0cfda',
-          indexName: 'docs.ocplanet.cloud',
+          appId: 'NQO6IXTPQW',
+          apiKey: 'a96759f341966142e7b893daa53a61a1',
+          indexName: 'onecloudplanet',
           contextualSearch: true,
           // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
           // externalUrlRegex: 'https://docs.ocplanet.cloud',
