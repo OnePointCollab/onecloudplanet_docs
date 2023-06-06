@@ -11,6 +11,26 @@
     "message": "Особистий кабінет",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Cloud Platform": {
+    "message": "Хмарна платформа",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.General information": {
+    "message": "Загальна інформація",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Instances": {
+    "message": "Інстанси",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Networks": {
+    "message": "Мережі",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Management Networks and Subnets": {
+    "message": "Управління мережами та підмережами",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.User Management Or Roles": {
     "message": "Керування користувачами або ролі",
     "description": "The label for category registration in sidebar tutorialSidebar"
