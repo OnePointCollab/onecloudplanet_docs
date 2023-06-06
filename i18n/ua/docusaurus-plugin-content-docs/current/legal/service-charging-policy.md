@@ -7,40 +7,60 @@ title: Політика тарифікації послуг
 
 Щоб розрахувати вартість використання хмарних рішень, ознайомтеся із цінами у [цьому розділі](https://onecloudplanet.com/prices).
 
-## Computing resources of the cloud platform
+## З чого складається вартість використання хмарних рішень
 
-- **vCPU** - Virtual processor cores: enumerate resources that are charged for processing data
-and operations on virtual machines.
+Розрахунок вартості використання хмарних рішень враховує:
 
-- **vRAM** - Virtual random access memory: a resource that provides for saving that access to data
-virtual machines have an hour of work.
+**Обчислювальні ресурси Інстансу:**
+- тип та кількість ядер (vCPU);
+- Об'єм пам'яті (RAM).
 
-- **Boot_HDD** - Boot hard drive: The primary data storage on which it resides
-the operating system and other programs that are loaded when the virtual machine is started. 
+**Операційні системи.**
 
-- **Volume** - The amount of available data storage for the virtual machine specified in the
-gigabytes used to store data, programs and other files.
+**Тип та обсяг сховища:**
+- диски;
+- образи;
+- знімки.
 
-- **Image** - A file containing a ready-to-use virtual machine framework, including the operating system, software, and settings required to creating and running a virtual machine based on this image.
+**Обсяг вихідного трафіку.**
+**Публічна IP-адреса.**
 
-- **Volume backup** - The process of creating a duplicate of data from a volume virtual machine storage for recovery in case of loss or damage primary data.
+Ціни за місяць використання формуються із розрахунку 720 годин на місяць.
 
-- **Volume snapshot** - A snapshot of the state of data on a storage volume virtual machine at a point in time that can be used for recovery data or creating new virtual machines.
+## Використання Інстансів
 
-- **Floating IPs** - static IP addresses that can be assigned or repurposed for non-disruptive virtual machines, providing flexibility and scalability of network access.
+Вартість машини залежить від виділених обчислювальних ресурсів, операційної системи та часу використання. Диски, що підключаються, та використання мережі оплачуються окремо.
 
-## Use Cases
+Вартість розраховується за час використання Інстансу, починаючи з моменту запуску (переходу до статусу 'RUNNING') і до повної зупинки. Час, який інстанс було вимкнено, не тарифікується.
 
-OneCloudPlanet's cloud platform can be used for a wide range of tasks, from simple websites to complex scalable systems.
+Інстанс автоматично запускається після створення.
 
-Hosting internal systems in a private network ensures data and application security. The ability to use resources from different pools and segments of a pool allows for critical systems to be reserved and computational power to be quickly added in response to increasing loads.
+При створенні Інстансу можна вказати публічну IP-адресу для неї.
 
-Examples of systems that can take advantage of the OneCloudPlanet cloud platform include:
+Про тарифи за використання зовнішньої IP-адреси читайте у розділі [Правила тарифікації для Virtual Private Cloud](#).
 
-- Simple websites or blogs. With OneCloudPlanet's high level of reliability and configurable system, creating a quality service is possible without significant financial or time costs.
+### Обчислювальні ресурси
 
-- Complex web applications. OneCloudPlanet's organization of the system structure in the cloud allows for separation of public web servers from applications performing business logic in a closed local subnet. Plus, the ability to allocate additional resources quickly and efficiently enables the creation of effective services with variable loads without overspending on unused capacity.
+При створенні Інстансу вказується кількість ядер процесора (vCPU), базовий рівень продуктивності ядра та обсяг оперативної пам'яті (RAM) у ГБ.
 
-- Moving or expanding an existing system into a private cloud. OneCloudPlanet's platform offers a secure connection to existing infrastructure and efficient task execution for quick expansion of system capacity or creation of reservation mechanisms.
+Ціна вказується за 1 годину використання. Тарифікація погодинна.
 
-- Company information technology systems. With OneCloudPlanet's flexibility of settings, implementing unique server configurations is achievable without having to worry about hardware infrastructure.
+### Операційні системи
+
+Використання операційної системи на інстанс також тарифікується. Вартість залежить від ліцензії на операційну систему та кількості обчислювальних ресурсів. У тому числі впливає те, який тип використання ядра вибрано для інстансу.
+
+Ціна вказується за 1 годину використання. Тарифікація погодинна.
+
+### Використання ліцензій Microsoft
+
+Правила використання ліцензій Microsoft описані у розділі [Ліцензії Microsoft у OneCloudPlanet](#).
+
+### Використання сховища (диски, знімки та образи)
+
+Під час створення диска вказується його розмір - обсяг блокового сховища, яке займає диск. На вартість послуги впливає час між створенням та видаленням диска, обсяг диска та тип диска, який вибирається під час створення.
+
+Диски тарифікуються незалежно від того, запущено інстанс чи ні.
+
+Якщо ви створили образ або знімок, зберігання цього об'єкта оплачується окремо — виходячи з його обсягу.
+
+Ціна вказується за 1 місяць використання.
