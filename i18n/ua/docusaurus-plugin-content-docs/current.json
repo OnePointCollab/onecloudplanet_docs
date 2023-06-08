@@ -31,8 +31,20 @@
     "message": "Управління мережами та підмережами",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.User Management Or Roles": {
+  "sidebar.tutorialSidebar.category.User management or roles": {
     "message": "Керування користувачами або ролі",
     "description": "The label for category registration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Agreements": {
+    "message": "Угоди",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Billing": {
+    "message": "Білінг",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Security": {
+    "message": "Безпека",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
   }
 }

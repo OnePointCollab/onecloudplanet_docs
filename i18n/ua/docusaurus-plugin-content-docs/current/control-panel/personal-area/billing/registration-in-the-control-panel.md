@@ -6,7 +6,8 @@ sidebar_position: 1
 
 The OneCloudPlanet cloud platform is managed through the [console.ocpanel.cloud](https://console.ocpanel.cloud) control panel. You can sign up for the OneCloudPlanet dashboard by:
 
-- [via console.ocpanel.cloud](https://console.ocpanel.cloud/sign-in)
+- [via console.ocpanel.cloud](##)
+- [by invitation](##)
 
 If you encounter any problems during the registration process, write to the technical support service: [support@ocplanet.cloud](mailto:support@ocplanet.cloud).
 
