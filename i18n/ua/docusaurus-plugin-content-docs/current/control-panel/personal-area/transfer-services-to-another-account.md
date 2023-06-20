@@ -4,12 +4,12 @@ sidebar_position: 4
 
 # Перенести послуги на інший обліковий запис
 
-Independent re-registration of the account to another legal or natural person, changing the full name of the Account Owner is impossible.
+Самостійна перереєстрація облікового запису на іншу юридичну або фізичну особу, зміна ПІБ Власника облікового запису неможлива.
 
-To change data and transfer services from one account to another, please contact [techical support](#).
+Щоб змінити дані та перенести послуги з одного облікового запису на інший, зверніться до [технічної підтримки](https://console.ocplanet.cloud/support/create).
 
-3. Contact technical support. When filling out a ticket, in the **Message** field, specify the reason for deleting the account.
+3. Зверніться в службу технічної підтримки. При заповненні тикету в полі **Повідомлення** вкажіть причину видалення облікового запису.
 
-4. Click **Create a Ticket**.
+4. Натисніть **Створити заявку**.
 
-5. After reviewing your request, we will delete your account.
+5. Після розгляду вашого запиту ми видалимо ваш обліковий запис.

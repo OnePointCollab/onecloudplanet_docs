@@ -48,12 +48,3 @@ import TabItem from '@theme/TabItem';
 |   View reporting documents   | ✓ | ✓ | ✓ | ✗ | ✓ |
 
   </TabItem>
-  <TabItem value="services" label="Services">
-
-| Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
-| ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
-|   Connecting services / creating cloud resources   | ✓ | ✓ | ✗ | ✗ | ✓ |
-|   View connected services / created resources   | ✓ | ✓ | ✓ | ✗ | ✓ |
-
-  </TabItem>
-</Tabs>

@@ -4,59 +4,55 @@ sidebar_position: 3
 
 # Ролі користувачів
 
-Only users with the Account Owner or User Administrator role can add or edit users.
+Лише користувачі з роллю власника облікового запису або адміністратора користувача можуть додавати або редагувати користувачів.
 
-A user can be assigned one or more roles.
+Користувачеві можна призначити одну або кілька ролей.
 
 
-| Role | Description |
+| Роль | Опис |
 | ------------- | ------------- |
-| Account Owner  | The user who registered the account. You cannot change the role of an Account Owner or assign that role to another user  |
-| Account Administrator  | User with access to account management, services and billing  |
-| Billing Administrator  | User with access to billing management and without access to service management  |
-| User's Administrator  | A user with access to user management and no access to services and billing. The first User Administrator is created by the Account Owner.  |
-| Account Observer | A user with access to view all services, billing and account data and no management access. The Account Viewer can view everything that the Account Admin manages  |
+| Власник облікового запису  | Користувач, який зареєстрував обліковий запис. Ви не можете змінити роль власника облікового запису або призначити цю роль іншому користувачеві. |
+| Адміністратор облікового запису  | Користувач із доступом до керування обліковим записом, послуг і виставлення рахунків.  |
+| Адміністратор білінгу  | Користувач із доступом до керування білінгом і без доступу до керування послугами.  |
+| Адміністратор користувачів  | Користувач із доступом до керування користувачами та без доступу до послуг і виставлення рахунків. Перший адміністратор користувача створюється власником облікового запису.  |
+| Спостерігач за обліковим записом | Користувач із доступом для перегляду всіх послуг, платіжних даних і даних облікового запису, але без доступу до керування. Спостерігач облікового запису може переглядати все, чим керує адміністратор облікового запису.  |
 
 
-# Role Comparison
+# Порівняння ролей
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="account" label="Account" default>
+  <TabItem value="account" label="Обліковий запис" default>
 
-| Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
+| Доступ  | Власник облікового запису | Адміністратор облікового запису | Адміністратор білінгу | Адміністратор користувачів | Спостерігач за обліковим записом |
 | ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
-|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
+|   Двухфакторная аутентифікація   | ✓ | ✓ | ✓ | ✓ | ✓ |
+|   Керування користувачами   | ✓ | ✓ | ✗ | ✓ | ✗ |
+|   Отримання повідомлень   | ✓ | ✓ | ✓ | ✓ | ✓ |
+|   Управління повідомленнями   | ✓ | ✓ | ✗ | ✓ | ✗ |
+|   Створення тикетів   | ✓ | ✓ | ✓ | ✓ | ✓ |
+|   Перегляд усіх тикетів   | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 
   </TabItem>
-  <TabItem value="billing" label="Billing">
+  <TabItem value="billing" label="Білінг">
 
-| Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
+| Доступ  | Власник облікового запису | Адміністратор облікового запису | Адміністратор білінгу | Адміністратор користувачів | Спостерігач за обліковим записом |
 | ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
-|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
+|   Перегляд стану балансу   | ✓ | ✓ | ✓ | ✗ | ✓ |
+|   Поповнення балансу   | ✓ | ✓ | ✓ | ✗ | ✗ |
+|   Оплата послуг   | ✓ | ✓ | ✗ | ✗ | ✗ |
+|   Перегляд статусів послуг   | ✓ | ✓ | ✓ | ✗ | ✗ |
+|   Переглянути звітні документи   | ✓ | ✓ | ✓ | ✗ | ✓ |
 
   </TabItem>
-  <TabItem value="services" label="Services">
+  <TabItem value="services" label="Послуги">
 
-| Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
+| Доступ  | Власник облікового запису | Адміністратор облікового запису | Адміністратор білінгу | Адміністратор користувачів | Спостерігач за обліковим записом |
 | ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
-|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
+|   Переглянути стан балансу   | ✓ | ✓ | ✓ | ✗ | ✓ |
 
   </TabItem>
 </Tabs>
-
-
-# Role Combination
-
-If a role has all the permissions of another role, the roles are not combined.
-
-| Access  | Account Owner | Account Administrator | Billing Administrator | User's Administrator | Account Observer |
-| ------- | ------------- | --------------------- | --------------------- | -------------------- | ---------------- |
-|   View balance status   | ✓ | ✓ | ✓ | ✗ | ✓ |
-| Account Administrator  | User with access to account management, services and billing  |
-| Billing Administrator  | User with access to billing management and without access to service management  |
-| User's Administrator  | A user with access to user management and no access to services and billing. The first User Administrator is created by the Account Owner.  |
-| Account Observer | A user with access to view all services, billing and account data and no management access. The Account Viewer can view everything that the Account Admin manages  |

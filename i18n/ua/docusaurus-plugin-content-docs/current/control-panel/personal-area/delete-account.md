@@ -4,17 +4,19 @@ sidebar_position: 5
 
 # Видалити аккаунт
 
-Only the Account Owner can send a request to delete an account.
+Лише власник облікового запису може надіслати запит на видалення облікового запису.
 
-1. Before submitting a request:
+1. Перед подачею запиту:
 
-- refuse active services;
-- [repay debt](#).
+- відмовитися від активних послуг;
+- [погасити борг](#).
 
-2. In [control panel](https://console.ocplanet.cloud/), click **Support**.
+2. На [панелі керування](https://console.ocplanet.cloud/) натисніть **Підтримка**.
 
-3. Contact technical support. When filling out a ticket, in the **Message** field, specify the reason for deleting the account.
+![](./img/delete-account/i-da1-ua.svg)
 
-4. Click **Create a Ticket**.
+3. Зверніться в службу технічної підтримки. При заповненні тикету в полі **Повідомлення** вкажіть причину видалення облікового запису.
 
-5. After reviewing your request, we will delete your account.
+4. Натисніть **Створити заявку**.
+
+5. Після розгляду вашого запиту ми видалимо ваш обліковий запис.
