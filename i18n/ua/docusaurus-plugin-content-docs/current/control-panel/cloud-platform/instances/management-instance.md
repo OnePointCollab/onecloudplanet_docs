@@ -1,145 +1,230 @@
 ---
 sidebar_position: 3
-title: Management Instance
+title: Управління інстансу
 ---
 
-# Management Instance
+# Управління інстансу
 
-You can change the settings and status of your OneCloudPlanet platform instance in your account or through the OpenStack CLI.
+Ви можете змінити налаштування та статус екземпляра платформи OneCloudPlanet у своєму обліковому записі або через OpenStack CLI.
 
-## Start, stop, reboot Instance
+## Запуск, зупинка, перезавантаження інстанс
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="personal-area" label="Personal Area" default>
+  <TabItem value="personal-area" label="Особистий кабінет" default>
 
-1. Go to the **Instances**.
+1. Перейдіть до **Інстансів**.
 
-2. Change the state of the instance in one of the following ways.
+![](../img/ic-instance-1-ua.svg)
 
-**Using group operations - for multiple instances:**
+2. Змініть стан інстанса одним із наведених нижче способів.
 
-- From the list, select the instances whose state you want to change.
-- Above the list of instances, click the button with the desired action. The actionwill take place automatically.
+**Використання групових операцій - для кількох інстансів:**
 
-**Through the context menu - for one instance:**
+- Зі списку виберіть інстанси, стан яких потрібно змінити.
 
-- In the list, find the instance whose state you want to change.
-- Expand the context menu of the instance.
-- Select the desired action.
+![](./img/i-m1-ua.svg)
 
-**On the instance page:**
+- Над списком інстансів натисніть кнопку з потрібною дією. Дія відбудеться автоматично.
 
-- In the list, click the name of the instance whose state you want to change.
+**Через контекстне меню - для одного інстансу:**
 
-- On the right above the table with the parameters of the instance, click on the icon of the desired action, to expand the large possible actions, press the **Menu** button.
+- У списку знайдіть інстанс, стан якого потрібно змінити.
 
-**Confirm the action.**   
+- Розгорніть контекстне меню інстансу.
+
+![](./img/i-inst-1-ua.svg)
+
+- Виберіть потрібну дію.
+
+**На сторінці інстансу:**
+
+- У списку клацніть назву інстансу, стан якого потрібно змінити.
+
+- Праворуч над таблицею з параметрами інстансу натисніть на іконку потрібної дії, щоб розгорнути великі можливі дії, натисніть кнопку **Меню**.
+
+![](./img/i-inst-3-ua.svg)  
 
   </TabItem>
 
   <TabItem value="openstack" label="Openstack CLI">
     
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
 
-Make sure the OpenStack client is installed and you can login to use it.
+Виконайте потрібну команду.
 
-Do one of the following.
-
-- If you know the name of the instance, get information about it and find the line with `id`:
-
+- Запустити інстанс
 ```
-openstack server show <Name Instance>
+openstack server start <ID інстансу>
 ```
 
-- If you don't know the exact instance name, display the list of instances and find the one you need:
-
+- Зупинка інстансу
 ```
-openstack server list
+openstack server stop <ID інстансу>
+```
+
+- Перезавантаження інстансу
+```
+openstack server reboot <ID інстансу>
 ```
 
   </TabItem>
 </Tabs>
 
-## Delete Instance
+## Видалити інстанс
 
-On the OneCloudPlanet platform, the instance is deleted by default along with the main disk (root disk).
+<Tabs>
+  <TabItem value="personal-area" label="Особистий кабінет" default>
 
-> :warning: **The delete operation is irreversible! Save the required data before deleting the instance.**
+На платформі OneCloudPlanet інстанс видаляється за замовчуванням разом із основним диском (кореневим диском).
 
-1. Prepare the instance for deletion. Detach additional volumes from the instance that you want to keep.
+> :warning: **Операція видалення незворотна! Збережіть необхідні дані перед видаленням інстансу.**
 
-2. After saving the required data, delete the instance.
+1. Підготуйте інстанс до видалення. Продублюйте диски від інстансу, який потрібно зберегти.
 
-3. Remove the instance using one of the following methods.
+2. Після збереження необхідних даних видаліть інстанс.
 
-To delete an instance through your personal account, you need to:
+3. Видаліть інстанс одним із наведених нижче методів.
 
-1. Go to the **Instances**.
+**Щоб видалити інстанс через особистий кабінет, необхідно:**
 
-2. Delete the instance using one of the following methods.
+1. Перейдіть до **Інстансів**.
 
-**Using group operations - for multiple instances:**
+![](../img/ic-instance-1-ua.svg)
 
-- From the list, select the instances whose state you want to delete.
-- Above the list of instances, click the button **Delete**. The actionwill take place automatically.
+2. Видаліть інстанс одним із наведених нижче методів.
 
-**Through the context menu - for one instance:**
+**Використання групових операцій - для кількох інстансів:**
 
-- In the list, find the instance whose state you want to delete.
-- Expand the context menu of the instance.
-- Click the **Delete**
+- Зі списку виберіть інстанси, стан яких потрібно видалити.
 
-**On the instance page:**
+![](./img/i-m1-ua.svg)
 
-- In the list, click the name of the instance whose state you want to delete.
+- Над списком інстансів натисніть кнопку **Видалити**. Дія відбудеться автоматично.
 
-- On the right above the table with the parameters of the instance, click on the **Delete**, to expand the large possible actions, press the **Menu** button.
+**Через контекстне меню - для одного інстансу:**
 
-**Confirm the action.**
+- У списку інстансів натисніть на ім'я інстансу, яку потрібно видалити.
 
-## Rename Instance
+- Розгорніть контекстне меню інстансу.
 
-On the OneCloudPlanet platform, you can rename an instance.
+![](./img/i-inst-1-ua.svg)
 
-1. Go to the **Instances**.
+- Нажміть на **Видалити**
 
-2. Change the instance name in one of the following ways.
+**На сторінці інстансу:**
 
-**Via context menu:**
+- У списку інстансів натисніть на ім'я інстансу, яку потрібно видалити.
 
-- In the list of instances, find the desired instance.
-- Expand the context menu of the instance.
-- Select the **Rename** action.
-- Fill in the input field and click the **Save** button.
+- Праворуч над таблицею з параметрами інстансу натисніть кнопку **Меню**.
 
-**On the instance page:**
+![](./img/i-inst-2-ua.svg)
 
-- In the list of instances, click on the name of the instance whose state you want to change.
-- Above the table with instance parameters, click the **More** button.
-- Select the **Rename** action.
-- Fill in the input field and click the **Save**.
+- Нажміть на **Видалити**.
 
-## Change Instance type
+</TabItem>
 
-On the OneCloudPlanet platform, you can change the type of instance - the number of processors (vCPU) and the amount of random access memory (RAM).
+<TabItem value="openstack" label="Openstack CLI">
 
-> :warning: **When you change the instance type, the instance will be reloaded.**
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
 
-1. Go to the **Instances**.
+Виконайте потрібну команду.
 
-2. Change the instance type in one of the following ways.
+- Запустити інстанс
+```
+openstack server delete <ID інстансу>
+```
 
-**Via context menu:**
+</TabItem> 
+</Tabs>
 
-- In the list of instances, find the desired instance.
-- Expand the context menu of the instance.
-- Select the **Resize** action.
-- Choose which instance type you want to migrate to and click the **Save**.
+## Перейменувати інстанс
 
-**On the instance page:**
+<Tabs>
+  <TabItem value="personal-area" label="Особистий кабінет" default>
 
-- In the list of instances, click on the name of the instance whose state you want to change.
-- Above the table with instance parameters, click the **Resize** button.
-- Choose which instance type you want to migrate to and click the **Save**.
+На платформі OneCloudPlanet ви можете перейменувати інстанс.
+
+1. Перейдіть до **Інстансів**.
+
+2. Змініть назву інстансу одним із наведених нижче способів.
+
+**Через контекстне меню:**
+
+- У списку інстансів знайдіть потрібний інстанс.
+
+- Розгорніть контекстне меню інстансу.
+
+![](./img/i-inst-1-ua.svg)
+
+- Виберіть дію **Перейменувати**.
+
+- Заповніть поле введення та натисніть кнопку **Перейменувати**.
+
+![](./img/i-inst-4-ua.svg)
+
+**На сторінці інстансу:**
+
+- У списку інстансів клацніть назву інстансу, ім'я якого потрібно змінити.
+
+- Праворуч над таблицею з параметрами інстансу натисніть на іконку потрібної дії, щоб розгорнути великі можливі дії, натисніть кнопку **Меню**.
+
+![](./img/i-inst-3-ua.svg)
+
+- Виберіть дію **Перейменувати**.
+
+- Заповніть поле введення та натисніть **Перейменувати**.
+
+![](./img/i-inst-4-ua.svg)
+
+</TabItem>
+
+<TabItem value="openstack" label="Openstack CLI">
+
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+
+Виконайте потрібну команду.
+
+- Запустити інстанс
+```
+openstack server delete <ID інстансу>
+```
+
+</TabItem> 
+</Tabs>
+
+## Змінити тип інстансу
+
+На платформі OneCloudPlanet ви можете змінити тип інстансу - кількість процесорів (vCPU) і обсяг оперативної пам'яті (RAM).
+
+> :warning: **Коли ви зміните тип інстансу, інстанс буде перезавантажено.**
+
+Перейдіть до **Інстансів**.
+
+![](../img/ic-instance-1-ua.svg)
+
+2. Змініть тип інстансу одним із наведених нижче способів.
+
+**Через контекстне меню:**
+
+- У списку інстансів знайдіть потрібний інстанс.
+
+- Розгорніть контекстне меню інстансу.
+
+- Виберіть дію **Змінити розмір**.
+
+- Виберіть тип інстансу, до якого потрібно перейти, і натисніть **Змінити розмір**.
+
+**На сторінці інстансу:**
+
+- У списку інстансів клацніть назву інстансу, ім'я якого потрібно змінити.
+
+- Праворуч над таблицею з параметрами інстансу натисніть на іконку потрібної дії, щоб розгорнути великі можливі дії, натисніть кнопку **Меню**.
+
+- Виберіть дію **Змінити розмір**.
+
+![](./img/i-inst-5-ua.svg)
+
+- Заповніть поле введення та натисніть **Змінити розмір**.

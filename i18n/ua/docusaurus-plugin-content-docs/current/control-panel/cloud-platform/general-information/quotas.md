@@ -1,20 +1,20 @@
 ---
 sidebar_position: 3
-title: Quotas
+title: Квоти
 ---
 
-# Quotas
+# Квоти
 
 ![](../img/ic-quote-1.svg)
 
-When you create an account, quotas are allocated by default for each resource. To increase the quota limit, please contact technical support.
+Коли ви створюєте обліковий запис, квоти виділяються за замовчуванням для кожного ресурсу. Щоб збільшити ліміт квоти, зверніться до технічної підтримки.
 
-When the amount of the resource reaches the quota value, the resource will stop being created.
+Коли кількість ресурсу досягне значення квоти, створення ресурсу припиниться.
 
-Unused quotas are not paid - you only pay for the resources you use. For example, if the quota limit is ten public IP addresses, but three IP addresses have been created, only three addresses will be paid.
+Невикористані квоти не оплачуються – ви платите лише за використані ресурси. Наприклад, якщо обмеження квоти становить десять загальнодоступних IP-адрес, але було створено три IP-адреси, буде оплачено лише три адреси.
 
-## Change quota limits
+## Змінити обмеження квот
 
-The quota value for each resource can be increased or decreased. To change the quotas in your account, contact technical support.
+Значення квоти для кожного ресурсу можна збільшити або зменшити. Щоб змінити квоти в обліковому записі, зверніться в технічну підтримку.
 
-Create a ticket with the subject **Increase quotas** and specify which cloud resource you need to change.
+Створіть заявку з темою **Збільшення квот** і вкажіть, який хмарний ресурс потрібно змінити.

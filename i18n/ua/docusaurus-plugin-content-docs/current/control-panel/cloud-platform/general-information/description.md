@@ -1,46 +1,43 @@
 ---
 sidebar_position: 1
-title: Description
+title: Опис
 ---
 
-# General information
+# Загальна інформація
 
-An instance is a virtual machine that can be created based on computing resources of the OneCloudPlanet cloud platform.
+Інстанс — це віртуальна машина, яку можна створити на основі обчислювальних ресурсів хмарної платформи OneCloudPlanet.
 
-## Computing resources of the cloud platform
+## Обчислювальні ресурси хмарної платформи
 
-- **vCPU** - Virtual processor cores: enumerate resources that are charged for processing data
-and operations on virtual machines.
+- **vCPU** - ядра віртуального процесора: перерахуйте ресурси, які стягуються за обробку даних і операції на інстансах.
 
-- **vRAM** - Virtual random access memory: a resource that provides for saving that access to data
-virtual machines have an hour of work.
 
-- **Boot_HDD** - Boot hard drive: The primary data storage on which it resides
-the operating system and other programs that are loaded when the virtual machine is started. 
+- **vRAM** - Віртуальна оперативна пам'ять: ресурс, який забезпечує збереження доступу до даних інстансів протягом години роботи.
 
-- **Volume** - The amount of available data storage for the virtual machine specified in the
-gigabytes used to store data, programs and other files.
+- **Boot_HDD** - Завантажувальний жорсткий диск: основне сховище даних, на якому зберігаються операційна система та інші програми, які завантажуються під час запуску інстансу.
 
-- **Image** - A file containing a ready-to-use virtual machine framework, including the operating system, software, and settings required to creating and running a virtual machine based on this image.
+- **Volume (диск)** - Обсяг доступного сховища даних для інстансу, указаний у гігабайти, які використовуються для зберігання даних, програм та інших файлів.
 
-- **Volume backup** - The process of creating a duplicate of data from a volume virtual machine storage for recovery in case of loss or damage primary data.
+- **Image (образ)** - Файл, що містить готову до використання структуру інстанса, включаючи операційну систему, програмне забезпечення та налаштування, необхідні для створення та запуску інстансу на основі цього образу.
 
-- **Volume snapshot** - A snapshot of the state of data on a storage volume virtual machine at a point in time that can be used for recovery data or creating new virtual machines.
+- **Volume backup (бекап диску)** - Процес створення дубліката даних із сховища томової віртуальної машини для відновлення у разі втрати або пошкодження первинних даних.
 
-- **Floating IPs** - static IP addresses that can be assigned or repurposed for non-disruptive virtual machines, providing flexibility and scalability of network access.
+- **Volume snapshot** - Знімок стану даних на інстансу, обсягу зберігання в певний момент часу, який можна використовувати для відновлення даних або створення нових інстансів.
 
-## Use Cases
+- **Floating IPs** - статичні IP-адреси, які можна призначати або перепрофілювати для інстансів без збоїв, забезпечуючи гнучкість і масштабованість доступу до мережі.
 
-OneCloudPlanet's cloud platform can be used for a wide range of tasks, from simple websites to complex scalable systems.
+## Випадки використання
 
-Hosting internal systems in a private network ensures data and application security. The ability to use resources from different pools and segments of a pool allows for critical systems to be reserved and computational power to be quickly added in response to increasing loads.
+Хмарну платформу OneCloudPlanet можна використовувати для широкого кола завдань, від простих веб-сайтів до складних масштабованих систем.
 
-Examples of systems that can take advantage of the OneCloudPlanet cloud platform include:
+Розміщення внутрішніх систем у приватній мережі забезпечує безпеку даних і програм. Можливість використовувати ресурси з різних пулів і сегментів пулу дозволяє резервувати критичні системи та швидко додавати обчислювальну потужність у відповідь на збільшення навантаження.
 
-- Simple websites or blogs. With OneCloudPlanet's high level of reliability and configurable system, creating a quality service is possible without significant financial or time costs.
+Приклади систем, які можуть скористатися перевагами хмарної платформи OneCloudPlanet, включають:
 
-- Complex web applications. OneCloudPlanet's organization of the system structure in the cloud allows for separation of public web servers from applications performing business logic in a closed local subnet. Plus, the ability to allocate additional resources quickly and efficiently enables the creation of effective services with variable loads without overspending on unused capacity.
+- Прості веб-сайти або блоги. Завдяки високому рівню надійності та настроюваній системі OneCloudPlanet створення якісного сервісу можливо без значних фінансових чи часових витрат.
 
-- Moving or expanding an existing system into a private cloud. OneCloudPlanet's platform offers a secure connection to existing infrastructure and efficient task execution for quick expansion of system capacity or creation of reservation mechanisms.
+- Складні веб-додатки. Організація OneCloudPlanet структури системи в хмарі дозволяє відокремити загальнодоступні веб-сервери від програм, що виконують бізнес-логіку в закритій локальній підмережі. Крім того, можливість швидкого та ефективного розподілу додаткових ресурсів дозволяє створювати ефективні сервіси зі змінним навантаженням без перевитрати невикористаної ємності.
 
-- Company information technology systems. With OneCloudPlanet's flexibility of settings, implementing unique server configurations is achievable without having to worry about hardware infrastructure.
+- Перенесення або розширення існуючої системи в приватну хмару. Платформа OneCloudPlanet пропонує безпечне підключення до існуючої інфраструктури та ефективне виконання завдань для швидкого розширення потужності системи або створення механізмів резервування.
+
+- Системи інформаційних технологій компанії. Завдяки гнучкості налаштувань OneCloudPlanet можна реалізувати унікальні конфігурації сервера, не турбуючись про апаратну інфраструктуру.

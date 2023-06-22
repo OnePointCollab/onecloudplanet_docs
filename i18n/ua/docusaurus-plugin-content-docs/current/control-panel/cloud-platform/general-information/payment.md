@@ -1,40 +1,36 @@
 ---
 sidebar_position: 1
-title: Payment
+title: Оплата
 ---
 
-# Cloud Instance Payment
+# Оплата
 
-## Payment Model
+Хмарна платформа OneCloudPlanet використовує платіжну модель оплати за використання: ви платите за створені вами [ресурси](#), навіть якщо вони вимкнені. Кошти списуються з [балансу](/ua/control-panel/cloud-platform/general-information/payment#баланс) за кожен період часу - за попередній час оренди ресурсів. Зовнішній трафік теж платний.
 
-The OneCloudPlanet cloud platform uses a pay-as-you-go payment model - you pay for the [compute resources](#) you create, even if they are turned off. Funds are debited from the [balance](#) for each period of time - for the previous time of renting resources. External traffic is also paid.
+Ціни на ресурси можна знайти на [веб-сайті](https://onecloudplanet.com/).
 
-Prices for resources can be found on the [website](#).
+## Баланс
 
-More details in the [Terms of Service](#).
+Баланс хмарної платформи використовується для оплати ресурсів хмарної платформи.
 
-## Balance
+Якщо протягом 14 днів баланс буде нульовим, усі об’єкти хмарної платформи будуть автоматично видалені.
 
-The cloud platform balance is used to pay for cloud platform resources.
+Якщо баланс стає негативним, усі послуги автоматично відключаються. Працездатність буде заморожена до погашення заборгованості, а витрати на ресурси будуть накопичуватися до тих пір, поки ви не відключите послуги. Для відновлення роботи необхідно [поповнити баланс](#) на суму боргу.
 
-If the balance is zero within 14 days, all objects of the cloud platform will be automatically deleted.
+Ви можете [налаштувати сповіщення про баланс](#).
 
-If the balance becomes negative, all services will be automatically disabled. The ability to work will be frozen until the debt is paid off, and resource charges will accrue until you turn off the services. To restore work, you need to [replenish the balance](#) by the amount of the debt.
+## Переглянути споживання
 
-You can [set up balance notifications](#).
+На панелі керування перейдіть до **Платежі ⟶ Історія платежів**.
 
-## View consumption
+![](../img/ic-bill1-ua.svg)
 
-In the control panel, go to **Billing ⟶ Billing History**.
+Ви можете побачити вартість конкретного хмарного ресурсу та загальну вартість за місяць, а також орієнтовну вартість циклу.
 
-![](../img/ic-bill-1.svg)
+![](../img/ic-bill2-ua.svg)
 
-You can see the cost of a specific cloud resource and the total cost per month, as well as the estimated cost of the cycle.
+Дані про витрати оновлюються щогодини.
 
-![](../img/ic-bill-2.svg)
-
-Cost data is updated every hour.
-
-To find out the cost of a specific cloud resource, open the resource tab - display resource consumption and cost for this period.
+Щоб дізнатися вартість конкретного хмарного ресурсу, відкрийте вкладку ресурс - відобразіть споживання ресурсу та вартість за цей період.
 
 ![](../img/ic-bill-3.svg)

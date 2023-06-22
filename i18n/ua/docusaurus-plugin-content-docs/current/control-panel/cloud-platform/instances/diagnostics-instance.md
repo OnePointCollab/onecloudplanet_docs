@@ -1,34 +1,37 @@
 ---
 sidebar_position: 4
-title: Diagnostics Instance
+title: Діагностіка інстансу
 
 ---
 
-# Diagnostics Instance
+# Діагностіка інстансу
 
-In emergency situations and when there is no network connection to the instance, use the [VNC console](#).
+У надзвичайних ситуаціях і коли немає мережевого підключення до інстансу, використовуйте [консоль VNC](/ua/control-panel/cloud-platform/instances/diagnostics-instance#vnc-консоль).
 
-## VNC console
+## VNC консоль
 
-VNC Console is a tool for diagnosing and managing instances that runs in a browser. Use the VNC console if:
+VNC Консоль — це інструмент для діагностики та керування інстансу, який працює у браузері. 
+Використовуйте консоль VNC, якщо:
 
-- the instance does not have an external IP address or is not connected to the Internet;
-- The recommended ways to connect to the instance (via SSH or RDP) do not work.
-- setting a root password for an instance on Windows OS.
+- інстанс не має зовнішньої IP-адреси або не підключений до Інтернету;
+- Рекомендовані способи підключення до інстансу (через SSH або RDP) не працюють.
+- встановлення пароля root для екземпляра в ОС Windows.
 
-Access to the VNC console appears immediately after the instance is launched. This allows you to detect failures during the boot of the operating system.
+Доступ до консолі VNC з'являється відразу після запуску інстансу. Це дозволяє виявляти збої під час завантаження операційної системи.
 
-Features of working with the VNC console:
+Особливості роботи з консоллю VNC:
 
-- for text input, you can use only the Latin alphabet;
-- the clipboard in the VNC console is not available, you cannot copy and paste text.
+- для введення тексту можна використовувати тільки латинський алфавіт;
+- буфер обміну в консолі VNC недоступний, ви не можете копіювати та вставляти текст.
 
-1. Go to the **Instances**.
+1. Перейдіть до **Інстансів**.
 
-![](../img/ic-instance-1.svg)
+![](../img/ic-instance-1-ua.svg)
 
-2. In the list of instances, click on the name of the desired instance.
+2. У списку інстансів клацніть на імені потрібного інстансу.
 
-3. On the instance page, go to the **Console** tab.
+![](./img/ic-instance-2-ua.svg)
 
-5. Above the table with instance parameters, click the **Start** button.
+3. На сторінці інстансу перейдіть на вкладку **Консоль**.
+
+![](./img/ic-instance-3-ua.svg)

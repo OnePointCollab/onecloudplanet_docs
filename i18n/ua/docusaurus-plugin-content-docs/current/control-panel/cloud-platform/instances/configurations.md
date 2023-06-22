@@ -11,20 +11,15 @@ title: Конфігурації
 
 Після створення інстансу ви можете [змінити конфігурацію](/control-panel/cloud-platform/instances/management-instance).
 
-## Performance and Availability
+## Продуктивність і доступність
 
-| Location       | Availability zone | Processor (vCPU)                             | Memory (RAM)           |
+| Локація       | Зона доступності   | Процесор (vCPU)                              | Пам'ять (RAM)          |
 |----------------|-------------------|----------------------------------------------|------------------------|
-| Ukraine        | UA1               | Intel® Xeon® Processor E5-2680 v4 @ 2.40 ГГц | DDR4 REG 2133–2933 МГц |
-| Poland         | PL1               | Intel® Xeon® Gold 6154 @ 3.00 ГГц            | DDR4 REG 3200 МГц      |
+| Україна        | UA1               | Intel® Xeon® Processor E5-2680 v4 @ 2.40 ГГц | DDR4 REG 2133–2933 МГц |
+| Польща         | PL1               | Intel® Xeon® Gold 6154 @ 3.00 ГГц            | DDR4 REG 3200 МГц      |
 
-## View list of configurations
+## Переглянути список конфігурацій
 
-A list of all available configurations can be viewed in the control panel when creating a server.
+Список усіх доступних конфігурацій можна переглянути в панелі керування під час створення інстансу.
 
-![](../img/ic-instance-5.svg)
-
-| Location       | Availability zone | Processor (vCPU)                             | Memory (RAM)           |
-|----------------|-------------------|----------------------------------------------|------------------------|
-| Ukraine        | UA1               | Intel® Xeon® Processor E5-2680 v4 @ 2.40 ГГц | DDR4 REG 2133–2933 МГц |
-| Poland         | PL1               | Intel® Xeon® Gold 6154 @ 3.00 ГГц            | DDR4 REG 3200 МГц      |
+![](../img/ic-instance-5-ua.svg)
