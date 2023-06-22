@@ -48,3 +48,4 @@ import TabItem from '@theme/TabItem';
 |   View reporting documents   | ✓ | ✓ | ✓ | ✗ | ✓ |
 
   </TabItem>
+  </Tabs>
