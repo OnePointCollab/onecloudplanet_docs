@@ -21,24 +21,9 @@ Before connecting, make sure the following conditions are met:
 
 > :bulb: If SSH connection to the instance is not possible or available, use the VNC console.
 
-## 2. Choose a login name
+## 2. Login name
 
-Determine the username (login) of the operating system that is deployed on the target instance.
-
-In OneCloudPlanet images, the root account has been locked out for security reasons and a default account has been added:
-
-| Operating System  | User name |
-| ------- | ------- |
-| AlmaLinux | almalinux |
-|   ALT Linux   | altlinux |
-|   Astra Linux   | astra |
-|   CentOS   | centos |
-|   Debian   | debian |
-|   Fedora   | fedora |
-|   FreeBSD   | freebsd |
-|   openSUSE   | opensuse |
-|   Ubuntu   | ubuntu |
-|   RedOS   | redos |
+For each operating system, the user name (login) `root` is defined.
 
 ## 3. Check for key pair
 

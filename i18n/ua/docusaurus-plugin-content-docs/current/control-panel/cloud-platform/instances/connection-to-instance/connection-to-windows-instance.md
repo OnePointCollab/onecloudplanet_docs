@@ -1,19 +1,19 @@
 ---
 sidebar_position: 1
-title: Connecting to Windows instance
+title: Підключення до Windows інстансу
 ---
 
-# Connecting to Windows Instance
+# Підключення до інстансу Windows
 
-The recommended way to connect to a Windows virtual machine is via RDP (Remote Desktop Protocol).
+Рекомендований спосіб підключення до інстансу Windows — через RDP (протокол віддаленого робочого стола).
 
-## 1. Check the ability to connect via SSH
+## 1. Перевірте можливість підключення через SSH
 
-Check RDP connectivity
-Make sure the following conditions are met:
+Перевірте підключення RDP
+Переконайтеся, що виконано такі умови:
 
-- the instance is started and the OS boot process is completed;
+- інстанс запущено і процес завантаження ОС завершено;
 
-- after launching the instance, go to the VNC console and set a password on the OS. This will be your root password.
+- після запуску інстансу зайдіть в консоль VNC і встановіть пароль на ОС. Це буде ваш пароль `root`.
 
-- the instance has an external ("floating") IP address available for connection.
+- інстанс має зовнішню ("плаваючу") IP-адресу, доступну для підключення.

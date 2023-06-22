@@ -187,15 +187,18 @@ openstack server delete <ID інстансу>
 
 Виконайте потрібну команду.
 
-- Запустити інстанс
+- Перейменувати інстанс
 ```
-openstack server delete <ID інстансу>
+openstack server set --name <нове ім'я><ID інстансу>
 ```
 
 </TabItem> 
 </Tabs>
 
 ## Змінити тип інстансу
+
+<Tabs>
+  <TabItem value="personal-area" label="Особистий кабінет" default>
 
 На платформі OneCloudPlanet ви можете змінити тип інстансу - кількість процесорів (vCPU) і обсяг оперативної пам'яті (RAM).
 
@@ -228,3 +231,26 @@ openstack server delete <ID інстансу>
 ![](./img/i-inst-5-ua.svg)
 
 - Заповніть поле введення та натисніть **Змінити розмір**.
+
+</TabItem>
+
+<TabItem value="openstack" label="Openstack CLI">
+
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+
+Виконайте потрібну команду.
+
+- Змінити тип інстансу
+
+Отримайте список доступних типів та скопіюйте ID типу:
+```
+openstack flavor list --all
+```
+
+Запустіть зміну типу інстансу та дочекайтеся закінчення процесу:
+```
+openstack server resize --flavor <ID типу><ID інстансу>
+```
+
+</TabItem> 
+</Tabs>

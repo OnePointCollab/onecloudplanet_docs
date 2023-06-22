@@ -35,7 +35,6 @@ import TabItem from '@theme/TabItem';
 |   Create tickets   | ✓ | ✓ | ✓ | ✓ | ✓ |
 |   View all tickets   | ✓ | ✓ | ✓ | ✓ | ✓ |
 
-
   </TabItem>
   <TabItem value="billing" label="Billing">
 

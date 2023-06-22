@@ -1,74 +1,62 @@
 ---
 sidebar_position: 1
-title: Connecting to Linux instance
+title: Підключення до Linux інстансу
 ---
 
-# Connecting to Linux Instance
+# Підключення до Linux інстансу
 
-The recommended way to connect to a Linux virtual machine is via SSH using a key pair.
+Рекомендований спосіб підключення до віртуальної машини Linux – протокол SSH з використанням ключової пари.
 
-## 1. Check the ability to connect via SSH
+## 1. Перевірте можливість підключення через SSH
 
-To connect via SSH, you must have an SSH server running on the virtual machine. Linux instances created on OneCloudPlanet have the OpenSSH server installed and running by default.
+Для підключення SSH необхідно, щоб на віртуальній машині був запущений сервер SSH. На інстансах Linux, створених у OneCloudPlanet, за замовчуванням встановлюється та запускається OpenSSH-сервер.
 
-Before connecting, make sure the following conditions are met:
+Перед підключенням переконайтеся, що виконуються такі умови:
 
-- the virtual machine is running and the OS boot process has ended;
+- інстанс запущен та процес завантаження ОС завершився;
 
-- remote access via SSH protocol (TCP port 22) is allowed in the instance network settings; (Security groups)
+- у інстансу є зовнішня («плаваюча») IP-адреса, доступна для підключення.
 
-- the instance has an external ("floating") IP address available for connection.
+> :bulb: Якщо підключення SSH до інстансу неможливе або недоступне, використовуйте консоль VNC.
 
-> :bulb: If SSH connection to the instance is not possible or available, use the VNC console.
+## 2. Ім'я користувача
 
-## 2. Choose a login name
+Для кожної операційної системи визначено ім'я користувача(логін) `root`.
 
-Determine the username (login) of the operating system that is deployed on the target instance.
+## 3. Перевірте наявність ключової пари
 
-In OneCloudPlanet images, the root account has been locked out for security reasons and a default account has been added:
+Для підключення до інстансу SSH з використанням ключової пари необхідно, щоб публічний ключ був збережений на віртуальній машині у файлі `~/.ssh/authorized_keys`, а файл з приватним ключем знаходився на комп'ютері, з якого виконується підключення.
 
-| Operating System  | User name |
-| ------- | ------- |
-| AlmaLinux | almalinux |
-|   ALT Linux   | altlinux |
-|   Astra Linux   | astra |
-|   CentOS   | centos |
-|   Debian   | debian |
-|   Fedora   | fedora |
-|   FreeBSD   | freebsd |
-|   openSUSE   | opensuse |
-|   Ubuntu   | ubuntu |
-|   RedOS   | redos |
+Якщо інстанс створювався на платформі OneCloudPlanet:
 
-## 3. Check for key pair
+- публічний ключ було збережено на віртуальній машині автоматично;
+- при виборі опції **Створити новий ключ** приватний ключ у файлі з розширенням `.pem` був завантажений на комп'ютер, з якого створювався інстанс.
 
-To connect to an instance via SSH using a key pair, the public key must be stored on the instance in the `~/.ssh/authorized_keys` file, and the private key file must be located on the computer from which you are connecting.
+Якщо один або обидва ключі з пари втрачені, дотримуйтесь [інструкцій з відновлення](#).
 
-If one or both of the keys in a pair are lost, follow the [recovery instructions](#).
+## 5. Підключення до інстансу 
 
-## 5. Connect to Linux instance 
-
-1. (Optional) Set the access rights to the key file:
+1. (Необов’язково) Установіть права доступу до файлу ключа:
 
 ```
 chmod 400 <path to key>
 ```
 
-2. Run the command in a terminal.
+2. Виконайте команду в терміналі.
 
-- To connect by IP address:
-
-```
-ssh -i <path to key> <username>@<external IP address of instance>
-```
-
-- To connect using a fully qualified domain name:
+- Для підключення за IP-адресою:
 
 ```
-ssh -i <path to key> <username>@<fully qualified domain name of the instance>
+ssh -i <path to key> <ім'я користувача>@<зовнішній IP-адрес інстансу>
 ```
 
-3. If this is the first connection to instance, a confirmation message will appear:
+Щоб підключитися за допомогою повного доменного імені:
+
+```
+ssh -i <path to key> <ім'я користувача>@<повне доменне ім'я інстансу>
+```
+
+3. Якщо це перше підключення до інстансу, з’явиться повідомлення про підтвердження:
 
 ```
 1. The authenticity of host '213.219.212.130 (213.219.212.130)' can't be established. 
@@ -76,4 +64,4 @@ ssh -i <path to key> <username>@<fully qualified domain name of the instance>
 3. Are you sure you want to continue connecting (yes/no)?
 ```
 
-Type `yes` in the terminal and press **Enter**.
+Введіть `yes` у терміналі та натисніть  **Enter**.
