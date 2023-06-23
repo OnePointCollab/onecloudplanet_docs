@@ -96,9 +96,9 @@ const config = {
           respectPrefersColorScheme: false,
         },
         metadata:[
-          {name:'og:image', content:'img/img-documentation.png'},
+          {name:'og:image', content:'https://imgur.com/uoDPdKD'},
         ],
-        image: 'img/img-documentation.png',
+        image: 'https://imgur.com/uoDPdKD',
         navbar: {
           title: 'OneCloudPlanet',
 
