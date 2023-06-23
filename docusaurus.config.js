@@ -95,6 +95,7 @@ const config = {
           disableSwitch: true,
           respectPrefersColorScheme: false,
         },
+        metadata:[{name:'image', content:'img/docusaurus-social-card.jpg'}],
         image: 'img/docusaurus-social-card.jpg',
         navbar: {
           title: 'OneCloudPlanet',
