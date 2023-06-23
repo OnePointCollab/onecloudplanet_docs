@@ -3,11 +3,9 @@ slug: /
 sidebar_position: 1
 title: Welcome
 sidebar_label: Welcome
+image: ../static/img/docusaurus-social-card.jpg
 ---
 
-<head>
-    <meta property="og:image" content="../static/img/docusaurus-social-card.jpg" />
-</head>
 # Welcome to the OneCloudPlanet User Guide!
 
 This user guide contains functional documentation for all features available in the OneCloudPlanet cloud platform control panel.
