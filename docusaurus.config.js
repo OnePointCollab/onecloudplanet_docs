@@ -96,9 +96,9 @@ const config = {
           respectPrefersColorScheme: false,
         },
         metadata:[
-          {name:'og:image', content:'img/docusaurus-social-card.jpg'},
+          {name:'og:image', content:require.resolve('./static/img/img-documentation.png')},
         ],
-        image: 'img/docusaurus-social-card.jpg',
+        image: require.resolve('./static/img/img-documentation.png'),
         navbar: {
           title: 'OneCloudPlanet',
 
