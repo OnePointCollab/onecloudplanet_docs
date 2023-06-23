@@ -9,6 +9,6 @@ sidebar_label: Welcome
 
 This user guide contains functional documentation for all features available in the OneCloudPlanet cloud platform control panel.
 
-![](./img/i-welcome-en.jpg)
+![Docusaurus banner](./img/i-welcome-en.jpg)
 
 Before delving into this user guide, we recommend that you familiarize yourself with the basic concepts below. They will help you understand how OneCloudPlanet works.
