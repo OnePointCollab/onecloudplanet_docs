@@ -102,7 +102,7 @@ const config = {
         //   {name:'image', content:'./static/img/docusaurus-social-card.jpg'},
           
         // ],
-        image: 'img/docusaurus-social-card.jpg',
+        image: 'docusaurus-social-card.jpg',
         navbar: {
           title: 'OneCloudPlanet',
           logo: {

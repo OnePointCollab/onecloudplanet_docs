@@ -3,7 +3,6 @@ slug: /
 sidebar_position: 1
 title: Welcome
 sidebar_label: Welcome
-image: img/docusaurus-social-card.jpg
 ---
 
 # Welcome to the OneCloudPlanet User Guide!
