@@ -95,14 +95,10 @@ const config = {
           disableSwitch: true,
           respectPrefersColorScheme: false,
         },
-        // metadata:[
-        //   {name:'image', content:'img/docusaurus-social-card.jpg'},
-        //   {name:'og:image', content:'img/docusaurus-social-card.jpg'},
-        //   {name:'og:image', content:'./static/img/docusaurus-social-card.jpg'},
-        //   {name:'image', content:'./static/img/docusaurus-social-card.jpg'},
-          
-        // ],
-        image: 'docusaurus-social-card.jpg',
+        metadata:[
+          {name:'og:image', content:'img/docusaurus-social-card.jpg'},
+        ],
+        // image: 'docusaurus-social-card.jpg',
         navbar: {
           title: 'OneCloudPlanet',
           logo: {
