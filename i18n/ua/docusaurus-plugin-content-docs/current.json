@@ -47,6 +47,10 @@
     "message": "Безпека",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Volumes": {
+    "message": "Диски",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Connection to Instance": {
     "message": "Підключення до інстансу",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
