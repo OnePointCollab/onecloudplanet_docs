@@ -9,7 +9,7 @@ When [creating an instance](/control-panel/cloud-platform/instances/create-an-in
 
 A fixed configuration is available from several lines at different locations, which differ in the ratio of resources and technical characteristics.
 
-Once the instance has been created, you can [change the configuration](/control-panel/cloud-platform/instances/management-instance).
+Once the instance has been created, you can [change the configuration](/control-panel/cloud-platform/instances/type-instance).
 
 ## Performance and Availability
 
