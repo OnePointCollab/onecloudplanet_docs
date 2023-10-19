@@ -25,15 +25,14 @@ jobs:
         env:
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-          REGISTRY: ${{secrets.DOCKER_HOST}}
           RELEASE_NAME: release-${{ steps.date.outputs.date }}
         run: |
-          docker login  $REGISTRY -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker build -t docs-ocplanet-cloud -f ./Dockerfile ./
-          docker tag docs-ocplanet-cloud:latest $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:latest
-          docker tag $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:latest $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:$RELEASE_NAME
-          docker push $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:latest
-          docker push $REGISTRY/$DOCKER_USERNAME/docs-ocplanet-cloud:$RELEASE_NAME
+          docker tag docs-ocplanet-cloud:latest $DOCKER_USERNAME/docs-ocplanet-cloud:latest
+          docker tag $DOCKER_USERNAME/docs-ocplanet-cloud:latest $DOCKER_USERNAME/docs-ocplanet-cloud:$RELEASE_NAME
+          docker push $DOCKER_USERNAME/docs-ocplanet-cloud:latest
+          docker push $DOCKER_USERNAME/docs-ocplanet-cloud:$RELEASE_NAME
       
 
 

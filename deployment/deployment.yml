@@ -10,7 +10,7 @@
 
     - name: Log in to docker-hub
       shell:
-        cmd: "docker login {{ DOCKER_HOST }} -u {{ DOCKER_USERNAME }} -p {{ DOCKER_PASSWORD }}"
+        cmd: "docker login -u {{ DOCKER_USERNAME }} -p {{ DOCKER_PASSWORD }}"
 
     - name: Deploy compose
       community.docker.docker_compose:
@@ -22,7 +22,7 @@
           version: '3'
           services:
             frontend:
-              image: cloud.canister.io:5000/ocpfrontdev/docs-ocplanet-cloud
+              image: nlapenkov/docs-ocplanet-cloud:latest
               ports:
                 - "127.0.0.1:3004:3004"
               restart: always
