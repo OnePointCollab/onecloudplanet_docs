@@ -1,67 +1,67 @@
 ---
 sidebar_position: 4
-title: Створити диск
+title: Create a disk.
 ---
 
-# Створити диск
+# Create a Disk
 
-Мережевий диск можна створити разом з інстансом або створити окремо, а потім підключити до інстансу.
+You can create a network disk together with an instance or create it separately and then attach it to an instance.
 
-Локальний диск створюється лише разом із інстансом.
+A local disk is created only when an instance is created.
 
-Мережевий диск можна створити з різних джерел:
+A network disk can be created from different sources:
 
-- Порожній - спочатку такий диск не містить даних. Ви можете використовувати його для масштабування дискового простору в інстансі;
-- з образу – підготовленого OneCloudPlanet або вашого власного завантаженого образу. Можна використовувати для заміни завантажувального диска під час відновлення інстансу або для клонування інстансу;
-- з іншого диска, снапшота чи бекапу – створити копію диска.
+- **Empty**: Initially, this type of disk does not contain any data. You can use it to scale the storage space in an instance.
+- **From an image**: Prepared by OneCloudPlanet or your own uploaded image. You can use this for replacing the boot disk during instance recovery or for cloning instances.
+- **From another disk, snapshot, or backup**: To create a copy of an existing disk.
 
-Вартість мережного диска залежить від [типу диска](#). Розрахувати вартість можна під час створення інстансу.
+The cost of a network disk depends on the [disk type](#). You can calculate the cost during instance creation.
 
 <Tabs>
- <TabItem value="personal-area" label="Особистий кабінет" default>
+ <TabItem value="personal-area" label="Personal Area" default>
 
-На платформі OneCloudPlanet ви можете змінити тип інстансу - кількість процесорів (vCPU) і обсяг оперативної пам'яті (RAM).
+On the OneCloudPlanet platform, you can change the instance type, which includes the number of processors (vCPU) and the amount of RAM.
 
-1. Перейдіть до **Інстансів**.
+1. Go to **Instances**.
 
-Змініть тип інстансу одним із наведених нижче способів.
+Change the instance type using one of the methods below.
 
-**Через контекстне меню:**
+**Using the context menu:**
 
-У списку інстансів знайдіть потрібний інстанс.
+Find the instance you want to modify in the list of instances.
 
-Розгорніть контекстне меню інстансу.
+Expand the context menu for the instance.
 
-Виберіть дію **Змінити розмір**.
+Select the **Resize action**.
 
-Виберіть тип інстансу, до якого потрібно перейти, і натисніть **Змінити розмір**.
+Choose the instance type to which you want to switch and click **Resize**.
 
-**На сторінці інстансу:**
+**On the instance page:**
 
-У списку інстансів клацніть назву інстансу, ім'я якого потрібно змінити.
+In the list of instances, click on the name of the instance you want to modify.
 
-Праворуч над таблицею з параметрами інстансу натисніть на іконку потрібної дії, щоб розгорнути великі можливі дії, натисніть кнопку **Меню**.
+To the right, above the instance parameter table, click the icon for the action you want to perform to expand the larger possible actions, and click the **Menu** button.
 
-Виберіть дію **Змінити розмір**.
+Select the **Resize** action.
 
-Заповніть поле введення та натисніть **Змінити розмір**.
+Fill in the input field and click **Resize**.
 
 </TabItem>
 
 <TabItem value="openstack" label="Openstack CLI">
 
-Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+Ensure that the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
 
-Виконайте потрібну команду.
+Execute the required command.
 
-- Змінити тип інстансу
+- To change the instance type
 
-Отримайте список доступних типів та скопіюйте ID типу:
+Get the list of available flavors and copy the flavor ID:
 ```
 openstack flavor list --all
 ```
 
-Запустіть зміну типу інстансу та дочекайтеся закінчення процесу:
+Initiate the instance type change and wait for the process to complete:
 ```
 openstack server resize --flavor <ID типу><ID інстансу>
 ```

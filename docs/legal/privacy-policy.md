@@ -1,79 +1,79 @@
 ---
 sidebar_position: 1
-title: Політика конфіденційності
+title: Privacy policy.
 ---
 
-# Політика конфіденційності
+# Privacy policy
 
-## Розділ І. Загальні положення 
-1. Web-сайт https://onecloudplanet.com та його складові вебсторінки (далі разом – Сайт) належить Товариству з обмеженою відповідальністю "Кіпаріс-Безпека", код ЄДРПОУ 44197258 (далі – «Компанія», або «Володілець персональних даних», або «ми» і под.). 
-2. Дана Політика конфіденційності та захисту персональних даних (далі – Політика конфіденційності) є чинною виключно в рамках користування Сайтом та не поширюється на web – сайти третіх осіб. 
-3. Компанія з повагою відноситься до особистої (персональної) інформації всіх без винятку фізичних осіб, які використовують та(або) відвідують Сайт, а також тих осіб, які в будь-якій формі користуються сервісами Сайту (надалі разом – «користувачі», «користувачі Сайту», «суб’єкт персональних даних»). Зважаючи на це, ми прагнемо захищати конфіденційність персональних даних (відомостей та сукупностей відомостей про фізичну особу, за допомогою яких користувач ідентифікований або може бути конкретно ідентифікований), тим самим створивши і забезпечивши максимально комфортні умови використання Сайту та сервісів Сайту для кожного користувача.
-4. В умовах реалізації вищевикладеного, Компанія діє в рамках даної Політики конфіденційності та захисту персональних даних, текст якої викладено нижче. Зокрема, Політика встановлює порядок обробки персональних даних, види зібраних персональних даних та мету їх використання, порядок взаємодії Компанії з третіми особами, заходи безпеки, що застосовуються для захисту персональних даних, умови доступу до персональних даних, а також контактну інформацію для суб’єкта персональних даних щодо одержання доступу, внесення змін, блокування або видалення своїх персональних даних та робота з будь-якими питаннями, які можуть виникнути у суб’єкта персональних даних щодо практики захисту персональних даних.
-5. Метою впровадження Політики конфіденційності та захисту персональних даних є недопущення публічного доступу та розголошення інформації, наданої суб’єктом персональних даних. 
+## Section I. General Provisions
+1. The website https://onecloudplanet.com and its components web pages (hereinafter collectively referred to as the "Site") are owned by the Limited Liability Company "Cypress-Security," with EDRPOU code 44197258 (hereinafter referred to as the "Company," or "Personal Data Controller," or "we," and the like).
+2. This Privacy Policy and Personal Data Protection (hereinafter referred to as the "Privacy Policy") is in effect exclusively within the scope of using the Site and does not apply to third-party websites.
+3. The Company respects the personal (personal) information of all individuals who use and/or visit the Site, as well as those individuals who, in any form, use the Site's services (hereinafter collectively referred to as "users," "Site users," "personal data subjects"). In light of this, we aim to protect the confidentiality of personal data (information and sets of information about an individual by which the user is identified or can be specifically identified), thereby creating and providing the most comfortable conditions for using the Site and its services for each user.
+4. In the implementation of the above, the Company operates within the framework of this Privacy Policy and the protection of personal data, the text of which is set out below. In particular, this Policy establishes the procedure for processing personal data, the types of collected personal data and the purpose of their use, the procedure for the Company's interaction with third parties, security measures applied to protect personal data, conditions for accessing personal data, as well as contact information for personal data subjects to access, make changes, block, or delete their personal data and address any questions that may arise for personal data subjects regarding the practice of personal data protection.
+5. The purpose of implementing the Privacy Policy and protecting personal data is to prevent public access and disclosure of information provided by personal data subjects. 
 
-## Розділ ІІ. Види оброблюваних персональних даних 
-1. Володільцем та розпорядником персональних даних користувачів Сайту є Товариство з обмеженою відповідальністю "Кіпаріс-Безпека".
-2. При використанні користувачем сервісів Сайту Володілець персональних даних здійснює обробку таких даних суб’єкта персональних даних:
-- дані, які суб’єкт персональних даних надає при заповненні реєстраційних форм і в процесі користування сервісами, (створенні облікового запису), такі як ім'я, прізвище, номер телефону, електрона пошта;
-- файлів cookie;
-- інша інформація про суб’єкта персональних даних, необхідна для обробки відповідно до умов, які регулюють використання Сайту або сервісів Сайту;
-3. Зокрема, Компанія збирає лише ті персональні дані, які свідомо надані користувачем як суб'єктом персональних даних в цілях використання сервісів Сайту (наприклад, ім'я і прізвище, логін та пароль, адресу електронної пошти, номер контактного телефону, тощо), що відповідно до вимог законодавства є згодою суб'єкта персональних даних на обробку своїх персональних даних відповідно до мети їх обробки, зазначеної в цій Політиці.
-4. Звертаємо Вашу увагу, що Компанія збирає мінімальний обсяг інформації, необхідний виключно для виконання запиту суб'єкта персональних даних.
-5. Компанія не збирає інформацію, щодо обробки якої законодавством встановлені певні вимоги, наприклад, інформацію про расове або етнічне походження, політичні, релігійні або світоглядні переконання, членство в політичних партіях та професійних спілках або засудження до кримінального покарання, а також дані, що стосуються здоров'я, статевого життя, біометричних або генетичних даних (відповідно до статті 7 Закону України «Про захист персональних даних»).
+## Section II. Types of processed personal data
+1. The owner and processor of personal data of Site users is the Limited Liability Company "Cypress-Security."
+2. When using the Site's services, the Personal Data Controller processes the following data of the personal data subject:
+- data provided by the personal data subject when filling out registration forms and using the services (creating an account), such as name, surname, phone number, email address;
+- cookie files;
+- other information about the personal data subject required for processing in accordance with the terms regulating the use of the Site or Site services.
+3. In particular, the Company collects only those personal data that are knowingly provided by the user as a personal data subject for the purpose of using the Site's services (e.g., name and surname, login and password, email address, contact phone number, etc.), which, in accordance with the requirements of the law, constitutes the consent of the personal data subject to the processing of their personal data in accordance with the purpose of their processing specified in this Policy.
+4. Please note that the Company collects a minimal amount of information necessary solely to fulfill the personal data subject's request.
+5. The Company does not collect information for which specific requirements are established by law, such as information about racial or ethnic origin, political, religious, or philosophical beliefs, membership in political parties and professional associations, or convictions, as well as data related to health, sexual life, biometric or genetic data (in accordance with Article 7 of the Law of Ukraine "On the Protection of Personal Data").
 
-## Розділ ІІІ. Обробка персональних даних 
-1. Обробка та зберігання наданих користувачем персональних даних здійснюється в дата-центрах, де розміщується обладнання, що забезпечує функціонування сервісів Сайту. Надані персональні дані обробляються і можуть зберігатися у базі персональних даних або в окремій таблиці бази даних Сайту. Обробка персональних даних здійснюється здебільш автоматично за допомогою наших систем Сайту.
+## Section III. Processing of personal data
+1. The processing and storage of personal data provided by the user are carried out in data centers where the equipment that ensures the operation of the Site's services is located. The provided personal data is processed and may be stored in the personal data database or in a separate table of the Site's database. The processing of personal data is largely automated using our Site's systems.
 
-## Розділ IV. Цілі обробки/використання персональних даних
-1. Володілець персональних даних може обробляти персональні дані користувача як суб’єкта персональних даних для наступних цілей, при цьому одночасно можуть застосовуватися одна або кілька цілей:
-1.1. Надання Послуг. Володілець персональних даних може використовувати Ваші персональні дані для надання Послуг, які Ви замовили, для обробки Ваших запитів, або для інших цілей, які можуть існувати для досягнення кінцевої мети – задовольнити Ваші інтереси, а також для запобігання та розслідування випадків шахрайства та інших зловживань. Для забезпечення Вас постійною клієнтською допомогою та технічною підтримкою; реєстрації та адміністрування облікового запису; управління відносинами з Вами.
-1.2. Спілкування з Вами. Володілець персональних даних може використовувати Ваші персональні дані для зв’язку з Вами, наприклад повідомити Вас про зміну у Послугах або надіслати Вам важливі повідомлення та інші подібні повідомлення, що стосуються надання Послуг, та зв’язатися з Вами в цілях, пов’язаних з обслуговуванням, для відправлення комерційних (маркетингових) повідомлень, що містять додаткову інформацію про продукти та послуги, актуальні акції та спеціальні пропозиції.
-1.3. Виконання договірних та інших зобов'язань перед Вами за угодами, укладеними між Володільцем  персональних даних та Вами або третіми особами в Ваших інтересах.
+## Section IV. Purposes of processing/use of personal data
+1. The Personal Data Controller may process the user's personal data as a personal data subject for the following purposes, and one or more purposes may be applied simultaneously:
+1.1. Provision of Services. The Personal Data Controller may use your personal data to provide the services you have ordered, process your requests, or for other purposes that may exist to achieve the ultimate goal of satisfying your interests, as well as to prevent and investigate cases of fraud and other abuses. This includes providing you with continuous customer support and technical assistance; registration and administration of your account; managing your relationship with you.
+1.2. Communication with You. The Personal Data Controller may use your personal data to communicate with you, such as informing you of changes in the services or sending you important messages and other similar messages related to the provision of services and contacting you for service-related purposes, sending commercial (marketing) messages containing additional information about products and services, current promotions, and special offers.
+1.3. Fulfillment of contractual and other obligations to you under agreements concluded between the Personal Data Controller and you or third parties on your behalf.
 
-## Розділ V. Термін зберігання персональних даних
-1. Персональні дані зберігаються протягом терміну не більше, ніж це необхідно з метою їх обробки. 
-2. Після того, як суб'єкт персональних даних перестає бути користувачем Сайту шляхом видалення облікового запису на Сайті, його персональні дані, автоматично видаляються. Для видалення облікового запису користувач подає відповідний запис у довільній формі на електронну адресу Компанії - support@onecloudplanet.com.
+## Section V. Personal Data Retention Period
+1. Personal data is stored for a period no longer than necessary for its processing.
+2. After the personal data subject ceases to be a user of the Site by deleting the account on the Site, their personal data is automatically deleted. To delete the user's account, the user submits a corresponding request in any form to the Company's email address - support@onecloudplanet.com.
 
-## Розділ VI. Взаємодія Компанії з третіми особами стосовно персональних даних
-1. Компанія не здійснює передачу персональних даних третім особам, крім випадків, коли така передача є вимогою законодавства, на прохання суб’єкта персональних даних або в інших випадках, викладених в цій Політиці. Компанія розуміє, що особиста інформація є цінністю і невід’ємним змістом, в тому числі, особистих немайнових прав будь-якої фізичної особи, тому вживає всіх можливих заходів для захисту особистої інформації користувачів, добровільно і усвідомлено переданої останніми Компанії.
-2. На Сайті можуть бути посилання на інші веб-сайти (виключно в інформаційних цілях). При переході за посиланням на інші веб-сайти дія цієї Політики на такі сайти поширюватися не буде. У зв’язку з чим, Компанія рекомендує переглядати політику в сфері конфіденційності і персональних даних кожного веб- сайту перед тим, як передавати будь-які персональні дані, за якими Вас можуть ідентифікувати.
+## Section VI. Interaction of the Company with Third Parties Regarding Personal Data
+1. The Company does not transfer personal data to third parties unless required by law, at the request of the personal data subject, or in other cases as stated in this Policy. The Company understands that personal information is valuable and an integral component of the non-property rights of any individual. Therefore, the Company takes all possible measures to protect the personal information of users that has been voluntarily and consciously provided to the Company.
+2. The Site may contain links to other websites (solely for informational purposes). When following a link to other websites, this Policy does not apply to those sites. Therefore, the Company recommends reviewing the privacy and personal data policies of each website before providing any personal data that may identify you.
 
-## Розділ VII. Захист персональних даних
-1. Компанія використовує загальноприйняті стандарти технологічного та операційного захисту інформації та персональних даних від втрати, неправильного використання, зміни або знищення. Однак, не дивлячись на всі зусилля, Компанія не може гарантувати абсолютну захищеність від будь-яких загроз, що виникають поза межами регулювання Компанії.
-2. Компанія забезпечує застосування всіх відповідних зобов’язань щодо дотримання конфіденційності, а також технічних і організаційних заходів безпеки для запобігання несанкціонованого або незаконного розголошення або обробки такої інформації та даних, їх випадкової втрати, знищення або пошкодження.
-3. Компанія надає доступ до інформації і персональних даних тільки уповноваженим працівникам, які дали згоду на забезпечення конфіденційності такої інформації та даних відповідно до вимог Компанії.
-4. Поширення персональних даних без згоди суб’єкта персональних даних або уповноваженої ним особи дозволяється у випадках, визначених законом, і лише (якщо це необхідно) в інтересах національної безпеки, економічного добробуту та прав людини.
+## Section VII. Protection of personal data
+1. The Company employs generally accepted standards of technological and operational information security and personal data protection against loss, improper use, alteration, or destruction. However, despite all efforts, the Company cannot guarantee absolute protection from any threats beyond the Company's control.
+2. The Company ensures the application of all appropriate confidentiality obligations, as well as technical and organizational security measures to prevent unauthorized or unlawful disclosure or processing of such information and data, their accidental loss, destruction, or damage.
+3. The Company provides access to information and personal data only to authorized employees who have agreed to ensure the confidentiality of such information and data in accordance with the Company's requirements.
+4. The disclosure of personal data without the consent of the personal data subject or a person authorized by them is allowed only in cases specified by law and, if necessary, in the interests of national security, economic well-being, and human rights.
 
-## Розділ VIII. Умови доступу до персональних даних
-1. Порядок доступу до персональних даних третіх осіб визначається умовами згоди суб’єкта персональних даних на обробку цих даних, наданої володільцю персональних даних, або відповідно до вимог Закону України від 01.06.2010 № 2297-VI (далі – Закон).
-2. Суб'єкт персональних даних має право на одержання будь-яких відомостей про себе у будь-якого суб’єкта відносин, пов’язаних з персональними даними, за умови зазначення прізвища, ім’я та по батькові, місця проживання (місця перебування) і реквізитів документа, що посвідчує фізичну особу, яка подає запит, крім випадків, установлених законом.
-3. Доступ суб'єкта персональних даних до даних про себе здійснюється безоплатно.
-4. Відстрочка доступу суб'єкта персональних даних до своїх персональних даних не допускається.
-5. Відстрочка доступу до персональних даних третіх осіб допускається у разі, якщо необхідні дані не можуть бути надані протягом тридцяти календарних днів з дня надходження запиту. При цьому загальний термін вирішення питань, порушених у запиті, не може перевищувати сорока п’яти календарних днів.
-6. Повідомлення про відстрочку доводиться до відома третьої особи, яка подала запит, у письмовій формі з роз’ясненням порядку оскарження такого рішення.
-7. Рішення про відстрочення або відмову у доступі до персональних даних може бути оскаржено до Уповноваженого Верховної Ради України з прав людини або суду.
+## Section VIII. Conditions for access to personal data
+1. The procedure for access to personal data of third parties is determined by the terms of the personal data subject's consent to the processing of such data, provided to the Personal Data Controller, or in accordance with the requirements of the Law of Ukraine dated June 1, 2010, No. 2297-VI (hereinafter - the Law).
+2. The personal data subject has the right to obtain any information about themselves from any subject of relations related to personal data, provided that they specify their last name, first name, patronymic, place of residence (stay), and the details of the document identifying the individual making the request, except as provided by law.
+3. Access to personal data by the personal data subject is provided free of charge.
+4. A deferral of access to personal data of the personal data subject is not allowed.
+5. A deferral of access to personal data of third parties is allowed when the required data cannot be provided within thirty calendar days from the date of the request. In this case, the total resolution period for the issues raised in the request cannot exceed forty-five calendar days.
+6. Notification of a deferral is provided to the third party who submitted the request in writing, with an explanation of the procedure for appealing such a decision.
+7. The decision to defer or deny access to personal data may be appealed to the Authorized Human Rights Representative of the Verkhovna Rada of Ukraine or to the court.
 
-## Розділ IX. Права суб’єкта персональних даних
-1. Компанія доводить до Вашого відома про Ваші права, як суб’єкта персональних даних, які врегульовані Законом України «Про захист персональних даних», а саме:
-1.1. знати про джерела збирання, місцезнаходження своїх персональних даних, мету їх обробки, місцезнаходження або місце проживання (перебування) володільця чи розпорядника персональних даних або дати відповідне доручення щодо отримання цієї інформації уповноваженим ним особам;
-1.2. отримувати інформацію про умови надання доступу до персональних даних, зокрема інформацію про третіх осіб, яким передаються Ваші персональні дані;
-1.3. на доступ до своїх персональних даних;
-1.4. отримувати не пізніш як за тридцять календарних днів з дня надходження запиту, крім випадків, передбачених Законом, відповідь про те, чи обробляються Ваші персональні дані, а також отримувати зміст таких персональних даних;
-1.5. пред’являти вмотивовану вимогу володільцю персональних даних із запереченням проти обробки своїх персональних даних;
-1.6. пред’являти вмотивовану вимогу щодо зміни або знищення своїх персональних даних до володільця та розпорядника персональних даних, якщо ці дані обробляються незаконно чи є недостовірними;
-1.7. на захист своїх персональних даних від незаконної обробки та випадкової втрати, знищення, пошкодження у зв’язку з умисним приховуванням, ненаданням чи несвоєчасним їх наданням, а також на захист від надання відомостей, що є недостовірними чи ганьблять честь, гідність та ділову репутацію;
-1.8. звертатися із скаргами на обробку своїх персональних даних до Уповноваженого Верховної Ради України з прав людини або до суду;
-1.9. застосовувати засоби правового захисту в разі порушення законодавства про захист персональних даних;
-1.10. вносити застереження стосовно обмеження права на обробку своїх персональних даних під час надання згоди;
-1.11. відкликати згоду на обробку персональних даних;
-1.12. знати механізм автоматичної обробки персональних даних;
-1.13. на захист від автоматизованого рішення, яке має для Вас правові наслідки.
-2. Для оновлення, отримання доступу, внесення змін, блокування або видалення свої персональних даних, відкликання згоди на обробку персональних даних, яка були Вами надана Компанії відповідно до цієї Політики, або в разі наявності будь-яких зауважень, побажань або претензій щодо Ваших персональних даних, які обробляються Компанією, будь ласка, звертайтеся до Компанії: по електронній пошті на email або напишіть листа на адресу: 49044, Дніпропетровська обл., м. Дніпро, пр. Яворницького Дмитра, буд.41-В, офіс 7. Обов'язково вказуйте у всій кореспонденції своє ім'я, прізвище, адресу електронної пошти, а також детальні питання, зауваження, скарги чи вимоги.
+## Section IX. Rights of the Personal Data Subject
+1. The Company informs you about your rights as a personal data subject, regulated by the Law of Ukraine "On Personal Data Protection," namely:
+1.1. To know about the sources of data collection, the location of your personal data, the purpose of their processing, the location or place of residence (stay) of the data controller or processor, or to provide the appropriate authorization to obtain this information to authorized persons;
+1.2. To receive information about the terms of granting access to personal data, including information about third parties to whom your personal data are transferred;
+1.3. The right to access your personal data;
+1.4. To receive a response, no later than thirty calendar days from the date of the request, except as provided by law, regarding whether your personal data is processed and to receive the content of such personal data;
+1.5. To present a reasoned demand to the data controller to object to the processing of your personal data;
+1.6. To present a reasoned demand for the alteration or destruction of your personal data to the data controller and processor if such data is processed unlawfully or is inaccurate;
+1.7. The right to protect your personal data from unlawful processing and accidental loss, destruction, damage due to intentional concealment, non-provision, or untimely provision, as well as protection from providing data that is inaccurate or discredits honor, dignity, and business reputation;
+1.8. To file complaints about the processing of your personal data with the Authorized Person of the Verkhovna Rada of Ukraine for Human Rights or the court;
+1.9. To use means of legal protection in case of violation of the legislation on personal data protection;
+1.10. To make reservations regarding the restriction of the right to process your personal data when giving consent;
+1.11. To withdraw consent for the processing of personal data;
+1.12. To know the mechanism of automated personal data processing;
+1.13. Protection against automated decisions that have legal consequences for you.
+2. To update, obtain access, make changes, block or delete your personal data, withdraw your consent for the processing of personal data that you provided to the Company in accordance with this Policy, or in case of any comments, wishes, or claims regarding your personal data processed by the Company, please contact the Company: by email at [email] or write a letter to the address: 49044, Dnipropetrovsk region, Dnipro, Yavornytskoho Dmytra Avenue, building 41-B, office 7. Be sure to include your name, surname, email address, and detailed questions, comments, complaints, or requests in all correspondence.
 
-## Розділ X. Розкриття конфіденційної інформації та Персональних даних
-1. Компанія звільняється від обов’язку дотримання Політики конфіденційності стосовно Персональних даних користувача у випадку, якщо користувач самостійно публічно розголошує персональні дані.
-2. Компанія не несе відповідальності за використання Користувачем стороннього ПЗ та бібліотек, за шкоду або збитки, яких зазнав Користувач або треті особи в результаті невірного розуміння або нерозуміння умов цієї Політики конфіденційності, інструкцій або вказівок про порядок використання Сервісу, порядок розміщення даних та інших технічних питань. 
+## Section X. Disclosure of confidential information and personal data
+1. The Company is released from the obligation to comply with the Privacy Policy regarding the User's Personal Data in cases where the User publicly discloses their personal data.
+2. The Company is not responsible for the User's use of third-party software and libraries, or for any harm or losses suffered by the User or third parties as a result of a misunderstanding or misinterpretation of the terms of this Privacy Policy, instructions, or guidance on the use of the Service, data placement, and other technical matters. 
 
-## Розділ XI. Зміна Політики
-Справжня Політика конфіденційності може бути змінена або припинена Компанією в односторонньому порядку без попереднього повідомлення користувачів, в тому числі якщо цього вимагає чинне законодавство. Нова редакція Політики конфіденційності набирає чинності з моменту її розміщення на сайті https://onecloudplanet.com/, якщо інше не передбачено новою редакцією Політики конфіденційності. Тому Компанія рекомендує Вам відвідувати веб-сайт https://onecloudplanet.com/, щоб переконатися в тому, що Ви володієте актуальною інформацією.
+## Section XI. Policy Changes
+This Privacy Policy may be changed or terminated by the Company unilaterally without prior notice to users, including when this is required by applicable legislation. The new version of the Privacy Policy takes effect from the moment it is posted on the website https://onecloudplanet.com/, unless otherwise provided by the new version of the Privacy Policy. Therefore, the Company recommends that you visit the website https://onecloudplanet.com/ to ensure that you have the most up-to-date information.

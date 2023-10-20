@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title: Створення плаваючих IP
+title: Creating floating IP
 ---
 
 
@@ -9,37 +9,36 @@ title: Створення плаваючих IP
 
 <br />
 
-## Створення плаваючих IP у розділі **Плаваючі IP**.
+## Creating **Floating IPs**.
 
-1. Користуючись боковою панелью перейдіть до розділу **Плаваючі IP**.
+1. Creating Floating IPs in the **floating IPs** section.
 
 ![](../img/i-float-ip-1.png)
 
-2. Натисніть кнопку **Створити плаваючу IP-адресу**.
+2. Click the **Create floating IP address** button.
 
 ![](../img/i-float-ip-2.png)
 
-3. Підтвердіть створення плаваючої IP-адреси, після ознайомлення з ціновою політикою.
+3. Confirm the creation of the floating IP address after reviewing the pricing policy.
 
 ![](../img/i-float-ip-3.png)
 
 
 <br />
 
-## Створення плаваючих IP у розділі **Інстанси**.
-1. Користуючись боковою панелью перейдіть до розділу **Інстанси**.
+## Creating Floating IPs in the **Instances** section.
+1. Using the sidebar, navigate to the **Instances** section.
 
 ![](../img/i-float-ip-4.png)
 
-2. Використайте трьохкрапку, у полі інстанса, для розвертання контекстного меню, для взаімодії з інстансом.
-У контекстному меню оберіть розділ **Призначити плавуючу IP-адресу**.
+2. Use the ellipsis (...) in the instance field to expand the context menu for interacting with the instance. In the context menu, select the **assign floating IP address** section.
 
 ![](../img/i-float-ip-5.png)
 
-4. Користучись сиволом "+" біля випадаючого поля, під назвою **Плаваючі IP**, створити нову плавуючу IP-адресу.
+4. By using the "+" symbol next to the dropdown field labeled **floating IPs**, create a new floating IP address.
 
 ![](../img/i-float-ip-11.png)
 
-5. Дочекатися оповіщення про вдале створення плаваючої IP-адреси.
+5. Wait for a notification of the successful creation of the floating IP address.
 
 ![](../img/i-float-ip-7.png)

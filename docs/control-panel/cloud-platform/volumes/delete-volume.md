@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
-title: Видалення диску
+title: Delete a disk.
 ---
 
-# Видалення диску
+# Deleting a Disk
 
-[Локальный диск](#) можно удалить только вместе с сервером, к которому он подключен.
+You can only delete a [local disk](#) together with the server to which it is attached.
 
-[Сетевые диски](#) можно удалить вместе с сервером или отключить от сервера и удалить отдельно.
+[Network disks](#) can be deleted either along with the server or detached from the server and deleted separately.
 
->:warning Если вы удалите диск, данные нельзя будет восстановить. Мы рекомендуем сделать копию данных перед удалением диска — создайте образ диска или создайте другой диск из этого диска. Снапшоты диска удалятся вместе с диском.
+>:warning If you delete a disk, the data cannot be recovered. We recommend making a backup of your data before deleting a disk – create a disk image or create another disk from the data on this disk. Disk snapshots will be deleted along with the disk.

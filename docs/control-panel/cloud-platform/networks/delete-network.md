@@ -1,72 +1,71 @@
 ---
 sidebar_position: 4
-title: Видалення мережі
+title: Deleting a network
 ---
 
-# Видалення мережі
+# Deleting a Network
 
-Для того, щоб видалити мережу, потрібно спочатку видалити прихильність до інтерфейсів в маршутизаторах, маршутизатори, порти в мережах і тільки потім мережу.
-
-1. Перейдіть до **Мережі**.
+To delete a network, you should first remove the associations with interfaces in routers, the routers themselves, the ports within the networks, and only then delete the network.
+1. Go to **Networks**.
 
 ![](../img/i-net1-ua.svg)
 
-Буде відображено список мереж. Запам'ятайте назву мережі, яку потрібно видалити.
+You will see a list of networks. Remember the name of the network you want to delete.
 
 ![](../img/i-net14-ua.svg)
 
-## Видалення інтерфейсів у маршутизаторі
+## Removing interfaces in Routers
 
-2. Перейдіть до **Маршутизатори**.
+2. Go to **Routers**.
 
 ![](../img/i-net15-ua.svg)
 
-У списку натисніть назву маршутизатора, який прикріплений до мережі.
+In the list, click on the name of the router that is attached to the network.
 
-Відкриється сторінка з детальною інформацією про маршутизатор. У тому числі буде відображена мережа до якого прикріплений маршутизатор. 
+A page with detailed information about the router will open, including the network to which the router is attached.
 
 ![](../img/i-net16-ua.svg)
 
-3. Перейдіть на вкладку **Інтерфейси**.
+3. Go to the **Interfaces** tab.
 
-4. Виберіть усі інтерфейси в цьому маршутизаторі та натисніть кнопку **Видалити**.
+4. Select all interfaces in this router and click the **Delete** button.
 
 ![](../img/i-net17-ua.svg)
 
-5. У модальному вікні натисніть кнопку **Видалити**.
+5. In the confirmation window, click the **Видалити** button.
 
 ![](../img/i-net18-ua.svg)
 
-## Видалення маршутизатора
+## Deleting the Router
 
-6. Повертаємося до списку маршутизаторів та в контекстному меню потрібного маршутизатора вибираємо дію **Видалити**.
+6. Go back to the list of routers and in the context menu of the router you want to delete, select the **Delete** action.
 
 ![](../img/i-net19-ua.svg)
 
-7. У модальному вікні натисніть кнопку **Видалити**.
+7. In the confirmation window, click the **Delete** button.
 
 ![](../img/i-net20-ua.svg)
 
-## Видалення портів в мережі
+## Deleting ports in the Network
 
-8. Повертаємося до списку мереж та натисніть назву мережі, яку потрібно видалити.
+1. Return to the list of networks and click on the name of the network you want to delete.
 
-9. Перейдіть на вкладку **Порти**. 
+2. Go to the **Ports** tab. 
 
-10. Виберіть усі порти в цій мережі та натисніть кнопку **Видалити**.
+3. Select all ports in this network and click the **Delete** button.
 
 ![](../img/i-net21-ua.svg)
 
-11. У модальному вікні натисніть кнопку **Видалити**.
+4. In the confirmation window, click the **Delete** button.
 
 ![](../img/i-net22-ua.svg)
 
-## Видалення мережі
+## Deleting the Network
 
-12. Повертаємося до списку мереж та в контекстному меню потрібною мережи вибираємо дію **Видалити**.
+5. Go back to the list of networks and in the context menu of the network you want to delete, select the **Delete** action.
 
 ![](../img/i-net23-ua.svg)
 
-13. У модальному вікні натисніть кнопку **Видалити**.
+6. In the confirmation window, click the **Delete** button.
 
 ![](../img/i-net24-ua.svg)

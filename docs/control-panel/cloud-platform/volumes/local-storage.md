@@ -1,24 +1,24 @@
 ---
 sidebar_position: 1
-title: Управління дисками
+title: Managing local disks.
 ---
 
-# Управління дисками
+# Managing Disks
 
-Локальний диск підключається безпосередньо до сервера обчислень через інтерфейс PCIe NVMe-протоколу. Тому локальний диск можна створити лише з хмарним інстансом та використовувати як завантажувальний (системний) диск.
+A local disk is directly connected to the compute server through the PCIe NVMe protocol interface. Therefore, a local disk can only be created with a cloud instance and used as a boot (system) disk.
 
-У локального диска відсутні мережні затримки, тому він підходить для завдань, чутливих до показників швидкості читання та запису.
+Local disks have no network-related delays, making them suitable for tasks that are sensitive to read and write speed.
 
-## Особливості локального диска
+## Features of a Local Disk
 
-- SSD NVMe диск.
-- Продуктивність – читання 12800 IOPS, запис 6400 IOPS.
-- Пропускна спроможність - 300 МБ/с.
-- Максимальний об'єм диска, що рекомендується, — 2 TБ.
-- Дискова підсистема налаштована на RAID 10.
-- Може бути тільки завантажувальний диск хмарного сервера, не використовується як додатковий. Як додаткові можна підключати лише мережні диски.
-- Хмарний інстанс може мати лише один локальний диск.
-- Не можна відключити від сервера хмари та підключити до іншого сервера.
-- Не можна збільшити напряму, можна лише змінити конфігурацію сервера хмар.
-- З локального диска не можна створити інший диск, снапшот або бекап. Ви можете створити образ диска (наприклад, для швидкого клонування сервера).
-- Видаляється з усіма даними при видаленні сервера хмари.
+- SSD NVMe disk.
+- Performance – 12,800 IOPS for reading and 6,400 IOPS for writing.
+- Throughput - 300 MB/s.
+- The recommended maximum disk size is 2 TB.
+- The disk subsystem is configured in RAID 10.
+- It can only be a boot disk for a cloud server and cannot be used as an additional disk. Only network disks can be attached as additional disks.
+- A cloud instance can have only one local disk.
+- It cannot be detached from the cloud server and attached to another server.
+- It cannot be directly resized; you can only change the configuration of the cloud server.
+- You cannot create another disk, snapshot, or backup from the local disk. However, you can create a disk image (for example, for quick server cloning).
+- It will be deleted along with all data when the cloud server is deleted.

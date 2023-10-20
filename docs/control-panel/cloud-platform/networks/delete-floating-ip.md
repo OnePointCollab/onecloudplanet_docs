@@ -1,38 +1,38 @@
 ---
 sidebar_position: 9
-title: Видалення плаваючих IP
+title: Deletion of floating IPs.
 ---
 
 
-# Видалення плаваючих IP
+# Deleting floating IPs
 
 
 <br />
 
-## Перший спосіб видалення плаваючих IP.
-1. Користуючись боковою панелью перейдіть до розділу **Плаваючі IP**.
+## The first method to delete floating IPs.
+1. Using the sidebar, navigate to the **Floating IPs** section.
 
 ![](../img/i-float-ip-1.png)
 
-2. У полі плавуючої IP-адреси натисніть на трьокрапку. У контекстному меню оберіть розділ **Видалити**.
+2. In the floating IP address field, click on the ellipsis (...). In the context menu, select the **Delete** section.
 
 ![](../img/i-float-ip-8.png)
 
-4. У окні підтвердження натисність кнопку **Видалити**.
+4. In the confirmation window, click the **Delete** button.
 
 ![](../img/i-float-ip-9.png)
 
 <br />
 
-##  Другий, масовий, спосіб видалення плаваючих IP.
-1. Користуючись боковою панелью перейдіть до розділу **Плаваючі IP**.
+##  The second, bulk, method to delete floating IPs.
+1. Using the sidebar, navigate to the **Floating IPs** section.
 
 ![](../img/i-float-ip-1.png)
 
-2. У полі плавуючої IP-адреси натисніть на чекбокс(перший натискаємий об'єкт у полі IP-адреси).
+2. In the floating IP address field, click on the checkbox (the first clickable object in the IP address field).
 
 ![](../img/i-float-ip-10.png)
 
-4. Використайте кпопку з зображення смітєвого баку поряд з кнопкою Створити плаваючу IP-адресу.
+4. Use the button with the trash can icon next to the **Create floating IP address** button.
 
 ![](../img/i-float-ip-12.png)
