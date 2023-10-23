@@ -2,79 +2,79 @@
 sidebar_position: 1
 ---
 
-# Registration in the control panel
+# Реєстрація в панелі керування
 
-The OneCloudPlanet cloud platform is managed through the [console.ocpanel.cloud](https://console.ocpanel.cloud) control panel. You can sign up for the OneCloudPlanet dashboard by:
+Хмарна платформа OneCloudPlanet управляється через панель керування  [console.ocpanel.cloud](https://console.ocpanel.cloud). Ви можете зареєструватися в панелі керування OneCloudPlanet за допомогою таких способів:
 
-- [via console.ocpanel.cloud](##)
-- [by invitation](##)
+- [через console.ocpanel.cloud](##)
+- [за запрошенням](##)
 
-If you encounter any problems during the registration process, write to the technical support service: [support@ocplanet.cloud](mailto:support@ocplanet.cloud).
+Якщо у вас виникнуть проблеми під час процесу реєстрації, напишіть на службу технічної підтримки за адресою: [support@ocplanet.cloud](mailto:support@ocplanet.cloud).
 
-## Register through ocplanet.cloud
+## Реєстрація через ocplanet.cloud
 
-Upon registration, the user will be assigned the [Account Owner](##) role.
+Після реєстрації користувачу буде надано роль [Власника облікового запису](##).
 
-1. On the site [ocplanet.cloud](https://ocplanet.cloud/) in the upper right corner, click **Register**.
+1. На сайті [ocplanet.cloud](https://ocplanet.cloud/) в правому верхньому куті натисніть **Реєстрація**.
 
-2. Fill out the registration form.
+2. Заповніть форму реєстрації.
 
-3. Click **Register**.
+3. Натисніть **Реєстрація**.
 
-4. Fill in the additional information, including the country and your phone number. Also in the "Additional Settings" block, you can specify the name of the company and its TIN.
+4. Заповніть додаткову інформацію, включаючи країну та номер телефону. Також у розділі "Додаткові налаштування" можна вказати назву компанії та її ІПН.
 
-- personal account - an account for personal use with registration for an individual;
-- business account - an account for use by an organization registered as a legal entity, individual entrepreneur or government agency.
+- особистий обліковий запис - обліковий запис для особистого користування з реєстрацією на фізичну особу;
+- корпоративний обліковий запис - обліковий запис для використання організацією, зареєстрованою як юридична особа, індивідуальний підприємець або державне установа.
 
-5. For a business account, enter the TIN and enter the company name. Fields with all the data of the organization.
+5. Для корпоративного облікового запису введіть ІПН і назву компанії. Заповніть поля з усією інформацією про організацію.
 
-6. Click **Continue**
+6. Натисніть **Продовжити**
 
-7. We will send an email with a verification code to the email address provided. The letter will contain a code, according to the AAA-AAA template. If the letter did not arrive, click the **Resend Code** button, recheck the Spam folder.
+7. Ми надішлемо електронний лист із кодом підтвердження на вказану адресу електронної пошти. Лист міститиме код згідно з шаблоном AAA-AAA. Якщо лист не надійшов, натисніть кнопку **Відправити код повторно**, перевірте папку "Спам".
 
-8. Enter the received code.
+8. Введіть отриманий код.
 
-9. Optional: [configure 2-Step Verification](##).
+9. Опціонально: [налаштуйте двоетапну верифікацію.](##).
 
-## Register by invitation
+## Реєстрація за запрошенням
 
-The [Account Owner](##) or [User Administrator](##) can [invite a new user](##) to an account. After the invitation, the user will receive an email with an account number and a confirmation link. The [role of the user](##) is determined by the user who sends the invitation.
+[Власник облікового запису](##) або [Адміністратор користувачів](##) можуть [запросити нового користувача](##) до облікового запису. Після запрошення користувач отримає лист із номером облікового запису та посиланням на підтвердження. [Роль користувача](##) визначається користувачем, який відправив запрошення.
 
-1. Follow the link in the email to confirm the invitation.
+1. Перейдіть за посиланням у листі, щоб підтвердити запрошення.
 
-2. Fill out the registration form.
+2. Заповніть форму реєстрації.
 
-3. Click **Register**.
+3. Натисніть **Реєстрація**.
 
-4. Fill in the additional information, including the country and your phone number. Also in the "Additional Settings" block, you can specify the name of the company and its TIN.
+4. Заповніть додаткову інформацію, включаючи країну та номер телефону. Також у розділі "Додаткові налаштування" можна вказати назву компанії та її ІПН.
 
-- personal account - an account for personal use with registration for an individual;
-- business account - an account for use by an organization registered as a legal entity, individual entrepreneur or government agency.
+- особистий обліковий запис - обліковий запис для особистого користування з реєстрацією на фізичну особу;
+- корпоративний обліковий запис - обліковий запис для використання організацією, зареєстрованою як юридична особа, індивідуальний підприємець або державне установа.
 
-5. For a business account, enter the TIN and enter the company name. Fields with all the data of the organization.
+5. Для корпоративного облікового запису введіть ІПН і назву компанії. Заповніть поля з усією інформацією про організацію.
 
-6. Click **Continue**
+6. Натисніть **Продовжити**
 
-7. We will send an email with a verification code to the email address provided. The letter will contain a code, according to the AAA-AAA template. If the letter did not arrive, click the **Resend Code** button, recheck the Spam folder.
+7. Ми надішлемо листа із кодом підтвердження на вказану адресу електронної пошти. Лист міститиме код, згідно з шаблоном AAA-AAA. Якщо лист не надійшов, натисніть кнопку **Відправити код ще раз**, перевірте папку "Спам".
 
-8. Enter the received code.
+8. Введіть отриманий код.
 
-9. Optional: [configure 2-Step Verification](##).
+9. Опціонально: [налаштуйте двоетапну перевірку.](##).
 
-## Edit profile information
+## Редагування інформації про профіль
 
-### You have the option to change: ###
-- Name
-- Surname
-- E-mail
-- Phone number
-- Password
-- 2FA authentication
+### У вас є можливість змінити: ###
+- Ім'я
+- Прізвище
+- Електронну адресу
+- Номер телефону
+- Пароль
+- Двоетапну перевірку
 
-### To change this information: ###
+### Щоб змінити цю інформацію: ###
 
-1. In the control panel, open the menu and go to **Account settings**.
+1. В панелі керування відкрийте меню і перейдіть в Налаштування облікового запису **Налаштування облікового запису**.
 
-2. Make changes.
+2. Внесіть зміни.
 
-3. Make changes to the data and click **Save**.
+3. Збережіть зміни в даних, натиснувши **Зберегти**.
