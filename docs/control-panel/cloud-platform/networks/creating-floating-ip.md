@@ -4,14 +4,14 @@ title: Creating floating IP
 ---
 
 
-# Створення плаваючих IP
+# Creating floating IP
 
 
 <br />
 
 ## Creating **Floating IPs**.
 
-1. Creating Floating IPs in the **floating IPs** section.
+1. Creating Floating IPs in the **Floating IPs** section.
 
 ![](../img/i-float-ip-1.png)
 

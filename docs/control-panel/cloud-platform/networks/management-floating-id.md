@@ -91,7 +91,7 @@ In the floating IP address field, click on the ellipsis (...). In the context me
 
 5. Set the domain name in the appropriate field.
 6. Add additional information in the field labeled **description**.
-7. Choose the time to live in the TTL field.
+7. Choose the time to live in the **TTL** field.
 8. Press the **Save** button.
 
 ![](../img/i-float-ip-17.png)

@@ -18,7 +18,7 @@ title: Deletion of floating IPs.
 
 ![](../img/i-float-ip-8.png)
 
-4. In the confirmation window, click the **Delete** button.
+3. In the confirmation window, click the **Delete** button.
 
 ![](../img/i-float-ip-9.png)
 

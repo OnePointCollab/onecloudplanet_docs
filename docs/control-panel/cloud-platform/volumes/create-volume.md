@@ -1,21 +1,24 @@
 ---
 sidebar_position: 4
-title: Create a disk.
+title: Creating a Volume
 ---
 
-# Create a Disk
+# Creating a Volume
 
-You can create a network disk together with an instance or create it separately and then attach it to an instance.
+You can create a network volume together with an instance or create it separately and then attach it to an instance.
 
-A local disk is created only when an instance is created.
+A local volume is created only when an instance is created.
 
-A network disk can be created from different sources:
+A network volume can be created from different sources:
 
-- **Empty**: Initially, this type of disk does not contain any data. You can use it to scale the storage space in an instance.
-- **From an image**: Prepared by OneCloudPlanet or your own uploaded image. You can use this for replacing the boot disk during instance recovery or for cloning instances.
-- **From another disk, snapshot, or backup**: To create a copy of an existing disk.
+- **Empty**: Initially, this type of volume does not contain any data. You can use it to scale the storage space in an instance.
+- **From an image**: Prepared by OneCloudPlanet or your own uploaded image. You can use this for replacing the boot volume during instance recovery or for cloning instances.
+- **From another volume, snapshot, or backup**: To create a copy of an existing volume.
 
-The cost of a network disk depends on the [disk type](#). You can calculate the cost during instance creation.
+The cost of a network volume depends on its [type](#). You can calculate the cost during instance creation.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
  <TabItem value="personal-area" label="Personal Area" default>
@@ -24,47 +27,57 @@ On the OneCloudPlanet platform, you can change the instance type, which includes
 
 1. Go to **Instances**.
 
-Change the instance type using one of the methods below.
+![](../img/volumes/i-vol1-ua.svg)
 
-**Using the context menu:**
+2. Click Create Volume.
 
-Find the instance you want to modify in the list of instances.
+![](../img/volumes/i-vol2-ua.svg)
 
-Expand the context menu for the instance.
+3. Enter the volume name.
 
-Select the **Resize action**.
+![](../img/volumes/i-vol3-ua.svg)
 
-Choose the instance type to which you want to switch and click **Resize**.
+4. Select the volume source (ready-made image, your image, a volume, snapshot, or backup). If you need to create an empty volume, skip this step.
 
-**On the instance page:**
+![](../img/volumes/i-vol4-ua.svg)
 
-In the list of instances, click on the name of the instance you want to modify.
+5. Choose the volume type. Volume differ in read/write speed and throughput values.
 
-To the right, above the instance parameter table, click the icon for the action you want to perform to expand the larger possible actions, and click the **Menu** button.
+![](../img/volumes/i-vol5-ua.svg)
 
-Select the **Resize** action.
+6. Specify the volume size in GB. The size of a volume created from a source should be equal to or greater than the source size. We recommend not exceeding the maximum volume size limits. After creating a volume, you won't be able to decrease its size directly.
 
-Fill in the input field and click **Resize**.
+![](../img/volumes/i-vol6-ua.svg)
+
+7. Click Create.
+
+![](../img/volumes/i-vol7-ua.svg)
 
 </TabItem>
-
 <TabItem value="openstack" label="Openstack CLI">
 
-Ensure that the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
+Make sure the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
+Execute the required command:
+Create a network volume:
 
-Execute the required command.
+```
+    openstack volume create
+    [--image <image> | --snapshot <snapshot> | --source <volume>] \
+    --size <size> \
+    --type <volume_type> \
+    [--availability-zone <new_zone>] \
+    <volume_name>
+```
 
-- To change the instance type
+Specify the source type:
 
-Get the list of available flavors and copy the flavor ID:
-```
-openstack flavor list --all
-```
+- `--image <image>` - to create a volume from an image. The `<image>` - parameter is the name or ID of the image, which you can view using `openstack image list`
+- `--snapshot <snapshot>` - to create a volume from a snapshot. The `<snapshot>` - parameter is the name or ID of the snapshot, which you can view using `openstack volume snapshot list`
+- `--source <volume>` - to create a volume from another volume. The `<volume>` - parameter is the name or ID of the volume, which you can view using `openstack volume snapshot list`
 
-Initiate the instance type change and wait for the process to complete:
-```
-openstack server resize --flavor <ID типу><ID інстансу>
-```
+- `--size <size>` - volume size in GB. For volumes created from a source, the minimum size should be equal to the source size. Consider the [volume limits](/ua/control-panel/cloud-platform/volumes/volume-type#ліміти) for the maximum volume size;
+- `--type <volume_type>` - volume type. volume types differ in throughput values and read/write speeds. You can view the available types using `openstack volume type list`
+- `--<volume_type>` - volume name.
 
 </TabItem> 
 </Tabs>

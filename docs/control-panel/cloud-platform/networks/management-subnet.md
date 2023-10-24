@@ -27,7 +27,7 @@ title: Subnet Management
 
 - Specify the DHCP IP address pool.
 
-- Click the **Create ** button.
+- Click the **Create** button.
 
 ![](../img/i-net28-ua.svg)
 

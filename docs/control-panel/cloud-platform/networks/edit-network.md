@@ -3,7 +3,7 @@ sidebar_position: 3
 title: Editing a network
 ---
 
-# Editing a network
+# Editing a Network
 
 1. Go to **Networks**.
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Deleting a network
+title: Deleting a Network
 ---
 
 # Deleting a Network

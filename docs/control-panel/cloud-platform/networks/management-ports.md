@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: Port management.
+title: Port Management.
 ---
 
 # Port management.
@@ -152,7 +152,7 @@ A page with detailed information about the instance will open.
 
 ![](../img/i-inst-3-ua.svg)
 
-3. Go to the **Мережа** tab.
+3. Go to the **Network** tab.
 
 ![](../img/i-inst-2-ua.svg)
 

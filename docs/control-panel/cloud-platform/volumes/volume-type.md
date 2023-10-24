@@ -1,140 +1,50 @@
 ---
-sidebar_position: 1
-title: Managing disks.
+sidebar_position: 2
+title: Network volumes
 ---
 
-# Disk Management
+# Network volumes
 
-Data storage on the OneCloudPlanet platform is organized using network disks. The configuration of the main disk is determined during the virtual machine's creation, and additional disks can be created later and connected to the required virtual machines. For created disks, you can perform operations like changing the size and type. Disks can be moved between projects and virtual machines, detached from virtual machines, made bootable or non-bootable, and deleted when they are no longer needed.
+These are scalable block devices that can be easily moved between cloud servers. They are suitable for expanding server volume space without changing the bootable volume. Triple replication of volumes ensures high data security.
 
-## Viewing the List of Networks and Subnets and Their Information
+You can either [create a network volume together with an instance](/ua/control-panel/cloud-platform/instances/create-an-instance) or [create one separately](/ua/control-panel/cloud-platform/volumes/create-volume), then create a server from it or attach it as an additional volume.
 
-1. Go to **Network**.
+## volume Types
 
-![](../img/i-net1-ua.svg)
+- **Basic HDD (Ukraine)** — HDD volume based on enterprise-class SATA drives. Suitable for storing large volumes of data that are frequently read or written.
 
-You will see a list of networks.
+- **Universal SSD (Ukraine/Poland)** — An SSD volume suitable for use as the boot volume of a cloud server.
 
-2. Click on the name of the network you want to view.
+- **Fast SSD (Poland)** — NVMe SSD volume with faster response times and higher read and write speeds compared to other types. Suitable for workloads that require high read and write speeds.
 
-![](../img/i-net2-ua.svg)
+## Features of Network volumes
 
-A page with detailed information about the network will open, including a list of subnets in this network.
+There are three types of network volumes available, each with different throughput capacities, IOPS limits, and recommended size limitations.
 
-![](../img/i-net3-ua.svg)
+Network volumes can be used as bootable (system) volumes for instances or attached as additional volumes.
 
-## Creating a Network
+You can attach up to 255 network volumes to a single instance when using a standard volume with the virtio-scsi property (4 when using IDE, and 26 when using virtio-blk).
 
-1. Go to **Network**
+Network volumes can be detached from instances.
 
-![](../img/i-net1-ua.svg)
+You can increase the size of a network volume.
 
-2. Click on **Create Network**.
+You can create an image, snapshot, or another volume from a network volume and configure backups.
 
-![](../img/i-net4-ua.svg)
+## Limits
 
-3. Enter the name of the network.
+> :warning: **The limits of bootable and additional network volume size, IOPS for read/write, and throughput values depend on the volume type.**
 
-![](../img/i-net5-ua.svg)
+| Volume Type   | Availability Zone | Max Size | Read/Write Limits |
+|---------------|-------------------|---------|-------------------------|
+| Basic HDD     | UA1               | 10TB    | 200 IOPS / 100 IOPS     |
+| Universal SSD | UA1, PL1       | 10TB    | 2000 IOPS / 1000 IOPS   |
+| Fast SSD      | PL1                 | 10TB    | 20000 IOPS / 10000 IOPS |
 
-4. (optional) Allow internet access. This is required if you plan to use VPN or SNAT services.
+## Factors Affecting Performance
 
-![](../img/i-net6-ua.svg)
+Different volume types have different IOPS values, which represent the number of read and write operations per second. Creating and verifying a file system are procedures that require a certain number of read and write operations to the volume. The more performant the volume, the faster these data operations will complete.
 
-5. Choose from the provided list of routers.
+When you initially launch a cloud server, the file system on the system volume "extends" according to the volume size. The larger the volume size and the lower the IOPS limits, the longer this process will take, resulting in a longer time to start the cloud instance.
 
-![](../img/i-net7-ua.svg)
-
-6. By default, a subnet is already created, but you can add more if needed. If you need to add subnets later, you can skip this step.
-
-![](../img/i-net8-ua.svg)
-
-7. Click **Create**.
-
-![](../img/i-net9-ua.svg)
-
-After creating the network, it will appear in the list of networks.
-
-## Editing a Network
-
-1. Go to **Network**.
-
-![](../img/i-net1-ua.svg)
-
-**Using the Context Menu:**
-
-- In the list of networks, find the network you want to edit.
-
-- Expand the context menu for that network.
-
-![](../img/i-net10-ua.svg)
-
-- Select **Edit**.
-
-![](../img/i-net11-ua.svg)
-
-You can change the network's name and state.
-
-## Deleting a Network
-
-To delete a network, you first need to remove the interfaces in routers, routers, and ports associated with the network.
-
-[Detailed Guide on Deleting a Network](/control-panel/cloud-platform/networks/delete-network)
-
-## Creating a Subnet
-
-1. Go to **Network**.
-
-![](../img/i-net1-ua.svg)
-
-2. In the list of networks, find the network where you want to create a subnet and click the name of that network.
-
-![](../img/i-net27-ua.svg)
-
-3. Click the **Create Subnet** button.
-
-![](../img/i-net26-ua.svg)
-
-- Provide a name for the subnet.
-
-- Enter the IP address, IP version, and subnet gateway.
-
-- In additional settings, you can configure DHCP. (Optional) DHCP is enabled by default. Addresses issued by the DHCP server will remain permanent. If you need to, you can disable it.
-
-- Specify the DHCP IP address pool.
-
-- Click **Create**.
-
-![](../img/i-net28-ua.svg)
-
-## Editing a Subnet
-
-1. Go to **Network**.
-
-![](../img/i-net1-ua.svg)
-
-2. In the list of networks, find the network where you want to edit a subnet and click the name of that network.
-
-![](../img/i-net27-ua.svg)
-
-3. Click the name of the subnet you want to edit.
-
-![](../img/i-net25-ua.svg)
-
-## Deleting a Subnet
-
-1. Go to **Network**.
-
-![](../img/i-net1-ua.svg)
-
-2. In the list of networks, find the network where you want to delete a subnet and click the name of that network.
-
-![](../img/i-net27-ua.svg)
-
-4. Expand the context menu for the subnet you want to delete.
-
-![](../img/i-net29-ua.svg)
-
-5. Select **Delete**.
-
-![](../img/i-net30-ua.svg)
+The file system size affects the time it takes to check the server's status in the event of an emergency shutdown. Checking the status is enabled by default for bootable (system) volumes of all servers created from ready-made images.
