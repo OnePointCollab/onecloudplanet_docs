@@ -7,7 +7,7 @@ title: Network volumes
 
 These are scalable block devices that can be easily moved between cloud servers. They are suitable for expanding server volume space without changing the bootable volume. Triple replication of volumes ensures high data security.
 
-You can either [create a network volume together with an instance](/ua/control-panel/cloud-platform/instances/create-an-instance) or [create one separately](/ua/control-panel/cloud-platform/volumes/create-volume), then create a server from it or attach it as an additional volume.
+You can either [create a network volume together with an instance](/control-panel/cloud-platform/instances/create-an-instance) or [create one separately](/control-panel/cloud-platform/volumes/create-volume), then create a server from it or attach it as an additional volume.
 
 ## volume Types
 
