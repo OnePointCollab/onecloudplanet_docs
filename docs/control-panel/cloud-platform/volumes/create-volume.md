@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Creating a Volume
+title: Create volume
 ---
 
 # Creating a Volume

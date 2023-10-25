@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Delete a volume.
+title: Delete volume
 ---
 
 # Deleting a Volume

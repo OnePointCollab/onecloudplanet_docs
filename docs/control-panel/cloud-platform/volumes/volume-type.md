@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Network volumes
+title: Network volume
 ---
 
 # Network volumes

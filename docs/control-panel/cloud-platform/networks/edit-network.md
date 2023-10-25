@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Editing a network
+title: Edit network
 ---
 
 # Editing a Network

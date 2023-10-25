@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Privacy policy.
+title: Privacy policy
 ---
 
 # Privacy policy

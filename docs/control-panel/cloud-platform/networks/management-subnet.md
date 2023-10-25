@@ -1,9 +1,9 @@
 ---
 sidebar_position: 5
-title: Subnet Management
+title: Manage subnet
 ---
 
-# Subnet Management
+# Manage subnet
 
 ## Creating a Subnet
 
