@@ -1,10 +1,10 @@
 ---
 sidebar_position: 9
-title: Deletion of floating IPs.
+title: Delete floating IP
 ---
 
 
-# Deleting floating IPs
+# Delete floating IPs
 
 
 <br />

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Creating a network.
+title: Create network
 ---
 
 # Creating a Network

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title: Creating floating IP
+title: Create floating IP
 ---
 
 

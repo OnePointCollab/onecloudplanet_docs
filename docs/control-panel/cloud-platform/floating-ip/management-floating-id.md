@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title: Floating IP Management
+title: Manage floating IP
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Managing local Volumes.
+title: Manage local volume
 ---
 
 # Managing volumes
