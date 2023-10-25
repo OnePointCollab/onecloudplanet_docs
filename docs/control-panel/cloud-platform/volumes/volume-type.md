@@ -1,140 +1,50 @@
 ---
-sidebar_position: 1
-title: Управління дисками
+sidebar_position: 2
+title: Network volumes
 ---
 
-# Управління дисками
+# Network volumes
 
-Система зберігання даних на платформі OneCloudPlanet організована за допомогою мережевих дисків. Конфігурація основного диска визначається на етапі створення віртуальної машини, додаткові диски можна створити пізніше і підключити до потрібних ВМ. Для створених дисків доступні операції зміни розміру та типу. Диски можна переміщати між проектами та віртуальними машинами, відключати від ВМ, робити завантажувальними та не завантажувальними. Можна видалити диски, які більше не використовуються.
+These are scalable block devices that can be easily moved between cloud servers. They are suitable for expanding server volume space without changing the bootable volume. Triple replication of volumes ensures high data security.
 
-## Перегляд списку мереж і підмереж і інформації про них
+You can either [create a network volume together with an instance](/ua/control-panel/cloud-platform/instances/create-an-instance) or [create one separately](/ua/control-panel/cloud-platform/volumes/create-volume), then create a server from it or attach it as an additional volume.
 
-1. Перейдіть до **Мережі**.
+## volume Types
 
-![](../img/i-net1-ua.svg)
+- **Basic HDD (Ukraine)** — HDD volume based on enterprise-class SATA drives. Suitable for storing large volumes of data that are frequently read or written.
 
-Буде відображено список мереж.
+- **Universal SSD (Ukraine/Poland)** — An SSD volume suitable for use as the boot volume of a cloud server.
 
-2. Натисніть на назву потрібної мережі.
+- **Fast SSD (Poland)** — NVMe SSD volume with faster response times and higher read and write speeds compared to other types. Suitable for workloads that require high read and write speeds.
 
-![](../img/i-net2-ua.svg)
+## Features of Network volumes
 
-Відкриється сторінка з детальною інформацією про неї. У тому числі буде відображено список підмереж у цій мережі.
+There are three types of network volumes available, each with different throughput capacities, IOPS limits, and recommended size limitations.
 
-![](../img/i-net3-ua.svg)
+Network volumes can be used as bootable (system) volumes for instances or attached as additional volumes.
 
-## Створення мережі
+You can attach up to 255 network volumes to a single instance when using a standard volume with the virtio-scsi property (4 when using IDE, and 26 when using virtio-blk).
 
-1. Перейдіть до **Мережі**.
+Network volumes can be detached from instances.
 
-![](../img/i-net1-ua.svg)
+You can increase the size of a network volume.
 
-2. Нажміть **Створити мережу**.
+You can create an image, snapshot, or another volume from a network volume and configure backups.
 
-![](../img/i-net4-ua.svg)
+## Limits
 
-3. Введіть ім'я мережі.
+> :warning: **The limits of bootable and additional network volume size, IOPS for read/write, and throughput values depend on the volume type.**
 
-![](../img/i-net5-ua.svg)
+| Volume Type   | Availability Zone | Max Size | Read/Write Limits |
+|---------------|-------------------|---------|-------------------------|
+| Basic HDD     | UA1               | 10TB    | 200 IOPS / 100 IOPS     |
+| Universal SSD | UA1, PL1       | 10TB    | 2000 IOPS / 1000 IOPS   |
+| Fast SSD      | PL1                 | 10TB    | 20000 IOPS / 10000 IOPS |
 
-4. (опціонально) Дайте доступ до Інтернету. Це необхідно, якщо ви плануєте скористатися сервісами VPN, SNAT.
+## Factors Affecting Performance
 
-![](../img/i-net6-ua.svg)
+Different volume types have different IOPS values, which represent the number of read and write operations per second. Creating and verifying a file system are procedures that require a certain number of read and write operations to the volume. The more performant the volume, the faster these data operations will complete.
 
-5. Виберіть із запропонованого списку маршрутизатор.
+When you initially launch a cloud server, the file system on the system volume "extends" according to the volume size. The larger the volume size and the lower the IOPS limits, the longer this process will take, resulting in a longer time to start the cloud instance.
 
-![](../img/i-net7-ua.svg)
-
-6. За замовчуванням підмережа вже створена, але ви можете додати її ще. Якщо потрібно додати підмережі пізніше, пропустіть цей крок.
-
-![](../img/i-net8-ua.svg)
-
-7. Натисніть **Створити**.
-
-![](../img/i-net9-ua.svg)
-
-Після створення мережі вона з'явиться у загальному списку мереж.
-
-## Редагування мережі
-
-1. Перейдіть до **Мережі**.
-
-![](../img/i-net1-ua.svg)
-
-**Через контекстне меню:**
-
-- У списку мереж знайдіть потрібну мережу.
-
-- Розгорніть контекстне меню мережи.
-
-![](../img/i-net10-ua.svg)
-
-- Виберіть дію **Редагувати**.
-
-![](../img/i-net11-ua.svg)
-
-Ви можете змінити ім'я та стан мережі.
-
-## Видалення мережі
-
-Для того, щоб видалити мережу, потрібно спочатку видалити прихильність до інтерфейсів в маршутизаторах, маршутизатори, порти в мережах і тільки потім мережу.
-
-[Детальний гайд видалення мережі](/control-panel/cloud-platform/networks/delete-network)
-
-## Створення підмережі
-
-1. Перейдіть до **Мережі**.
-
-![](../img/i-net1-ua.svg)
-
-2. У списку мереж знайдіть потрібну мережу та натисніть назву мережі, в якій потрібно створити підмережу.
-
-![](../img/i-net27-ua.svg)
-
-3. Натисніть кнопку **Створити підмережу**.
-
-![](../img/i-net26-ua.svg)
-
-- Вкажіть назву підмережі.
-
-- Введіть IP-адресу, IP версію та шлюз підмережі.
-
-- У додаткових налаштуваннях, ви зможете налаштувати DHCP. (опційно) За замовчуванням DHCP увімкнено. Адреси, видані DHCP-сервером, залишатимуться постійними. Вимкнення DHCP призведе до того, що IP-адреси, видані DHCP-сервісом, перестануть обслуговуватися. Це може призвести до відсутності віртуальних машин. Якщо потрібно, вимкніть його.
-
-- Вкажіть пул DHCP IP-адрес.
-
-- Натисніть кнопку **Створити**.
-
-![](../img/i-net28-ua.svg)
-
-## Редагування підмережі
-
-1. Перейдіть до **Мережі**.
-
-![](../img/i-net1-ua.svg)
-
-2. У списку мереж знайдіть потрібну мережу та натисніть назву мережі, в якій потрібно відредагувати підмережу.
-
-![](../img/i-net27-ua.svg)
-
-3. Натисніть на назву підмережі яку ви хочете відредагувати.
-
-![](../img/i-net25-ua.svg)
-
-## Видалення підмережі
-
-1. Перейдіть до **Мережі**.
-
-![](../img/i-net1-ua.svg)
-
-2. У списку мереж знайдіть потрібну мережу та натисніть назву мережі, в якій потрібно видалити підмережу.
-
-![](../img/i-net27-ua.svg)
-
-4. Розгорніть контекстне меню підмережі яку потрібно видалити.
-
-![](../img/i-net29-ua.svg)
-
-5. Виберіть дію **Видалити**.
-
-![](../img/i-net30-ua.svg)
+The file system size affects the time it takes to check the server's status in the event of an emergency shutdown. Checking the status is enabled by default for bootable (system) volumes of all servers created from ready-made images.

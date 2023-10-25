@@ -1,70 +1,83 @@
 ---
 sidebar_position: 4
-title: Створити диск
+title: Creating a Volume
 ---
 
-# Створити диск
+# Creating a Volume
 
-Мережевий диск можна створити разом з інстансом або створити окремо, а потім підключити до інстансу.
+You can create a network volume together with an instance or create it separately and then attach it to an instance.
 
-Локальний диск створюється лише разом із інстансом.
+A local volume is created only when an instance is created.
 
-Мережевий диск можна створити з різних джерел:
+A network volume can be created from different sources:
 
-- Порожній - спочатку такий диск не містить даних. Ви можете використовувати його для масштабування дискового простору в інстансі;
-- з образу – підготовленого OneCloudPlanet або вашого власного завантаженого образу. Можна використовувати для заміни завантажувального диска під час відновлення інстансу або для клонування інстансу;
-- з іншого диска, снапшота чи бекапу – створити копію диска.
+- **Empty**: Initially, this type of volume does not contain any data. You can use it to scale the storage space in an instance.
+- **From an image**: Prepared by OneCloudPlanet or your own uploaded image. You can use this for replacing the boot volume during instance recovery or for cloning instances.
+- **From another volume, snapshot, or backup**: To create a copy of an existing volume.
 
-Вартість мережного диска залежить від [типу диска](#). Розрахувати вартість можна під час створення інстансу.
+The cost of a network volume depends on its [type](#). You can calculate the cost during instance creation.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
- <TabItem value="personal-area" label="Особистий кабінет" default>
+ <TabItem value="personal-area" label="Personal Area" default>
 
-На платформі OneCloudPlanet ви можете змінити тип інстансу - кількість процесорів (vCPU) і обсяг оперативної пам'яті (RAM).
+On the OneCloudPlanet platform, you can change the instance type, which includes the number of processors (vCPU) and the amount of RAM.
 
-1. Перейдіть до **Інстансів**.
+1. Go to **Instances**.
 
-Змініть тип інстансу одним із наведених нижче способів.
+![](../img/volumes/i-vol1-ua.svg)
 
-**Через контекстне меню:**
+2. Click Create Volume.
 
-У списку інстансів знайдіть потрібний інстанс.
+![](../img/volumes/i-vol2-ua.svg)
 
-Розгорніть контекстне меню інстансу.
+3. Enter the volume name.
 
-Виберіть дію **Змінити розмір**.
+![](../img/volumes/i-vol3-ua.svg)
 
-Виберіть тип інстансу, до якого потрібно перейти, і натисніть **Змінити розмір**.
+4. Select the volume source (ready-made image, your image, a volume, snapshot, or backup). If you need to create an empty volume, skip this step.
 
-**На сторінці інстансу:**
+![](../img/volumes/i-vol4-ua.svg)
 
-У списку інстансів клацніть назву інстансу, ім'я якого потрібно змінити.
+5. Choose the volume type. Volume differ in read/write speed and throughput values.
 
-Праворуч над таблицею з параметрами інстансу натисніть на іконку потрібної дії, щоб розгорнути великі можливі дії, натисніть кнопку **Меню**.
+![](../img/volumes/i-vol5-ua.svg)
 
-Виберіть дію **Змінити розмір**.
+6. Specify the volume size in GB. The size of a volume created from a source should be equal to or greater than the source size. We recommend not exceeding the maximum volume size limits. After creating a volume, you won't be able to decrease its size directly.
 
-Заповніть поле введення та натисніть **Змінити розмір**.
+![](../img/volumes/i-vol6-ua.svg)
+
+7. Click Create.
+
+![](../img/volumes/i-vol7-ua.svg)
 
 </TabItem>
-
 <TabItem value="openstack" label="Openstack CLI">
 
-Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+Make sure the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
+Execute the required command:
+Create a network volume:
 
-Виконайте потрібну команду.
+```
+    openstack volume create
+    [--image <image> | --snapshot <snapshot> | --source <volume>] \
+    --size <size> \
+    --type <volume_type> \
+    [--availability-zone <new_zone>] \
+    <volume_name>
+```
 
-- Змінити тип інстансу
+Specify the source type:
 
-Отримайте список доступних типів та скопіюйте ID типу:
-```
-openstack flavor list --all
-```
+- `--image <image>` - to create a volume from an image. The `<image>` - parameter is the name or ID of the image, which you can view using `openstack image list`
+- `--snapshot <snapshot>` - to create a volume from a snapshot. The `<snapshot>` - parameter is the name or ID of the snapshot, which you can view using `openstack volume snapshot list`
+- `--source <volume>` - to create a volume from another volume. The `<volume>` - parameter is the name or ID of the volume, which you can view using `openstack volume snapshot list`
 
-Запустіть зміну типу інстансу та дочекайтеся закінчення процесу:
-```
-openstack server resize --flavor <ID типу><ID інстансу>
-```
+- `--size <size>` - volume size in GB. For volumes created from a source, the minimum size should be equal to the source size. Consider the [volume limits](/ua/control-panel/cloud-platform/volumes/volume-type#ліміти) for the maximum volume size;
+- `--type <volume_type>` - volume type. volume types differ in throughput values and read/write speeds. You can view the available types using `openstack volume type list`
+- `--<volume_type>` - volume name.
 
 </TabItem> 
 </Tabs>

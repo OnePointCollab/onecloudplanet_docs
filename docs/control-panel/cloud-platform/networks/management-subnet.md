@@ -1,64 +1,64 @@
 ---
 sidebar_position: 5
-title: Управління підмережою
+title: Subnet Management
 ---
 
-# Управління підмережою
+# Subnet Management
 
-## Створення підмережі
+## Creating a Subnet
 
-1. Перейдіть до **Мережі**.
+1. Go to **Network**.
 
 ![](../img/i-net1-ua.svg)
 
-2. У списку мереж знайдіть потрібну мережу та натисніть назву мережі, в якій потрібно створити підмережу.
+2. In the list of networks, find the network you need and click on the name of the network in which you want to create a subnet.
 
 ![](../img/i-net27-ua.svg)
 
-3. Натисніть кнопку **Створити підмережу**.
+3. Click the **Create Subnet** button.
 
 ![](../img/i-net26-ua.svg)
 
-- Вкажіть назву підмережі.
+- Specify the name of the subnet.
 
-- Введіть IP-адресу, IP версію та шлюз підмережі.
+- Enter the IP address, IP version, and subnet gateway.
 
-- У додаткових налаштуваннях, ви зможете налаштувати DHCP. (опційно) За замовчуванням DHCP увімкнено. Адреси, видані DHCP-сервером, залишатимуться постійними. Вимкнення DHCP призведе до того, що IP-адреси, видані DHCP-сервісом, перестануть обслуговуватися. Це може призвести до відсутності віртуальних машин. Якщо потрібно, вимкніть його.
+- In additional settings, you can configure DHCP (optional). By default, DHCP is enabled. Addresses issued by the DHCP server will remain static. Disabling DHCP will cause the IP addresses issued by the DHCP service to no longer be serviced. This can result in virtual machines going offline. If necessary, you can turn it off.
 
-- Вкажіть пул DHCP IP-адрес.
+- Specify the DHCP IP address pool.
 
-- Натисніть кнопку **Створити**.
+- Click the **Create** button.
 
 ![](../img/i-net28-ua.svg)
 
-## Редагування підмережі
+## Editing a subnet.
 
-1. Перейдіть до **Мережі**.
+1. Go to **Network**.
 
 ![](../img/i-net1-ua.svg)
 
-2. У списку мереж знайдіть потрібну мережу та натисніть назву мережі, в якій потрібно відредагувати підмережу.
+2. Find the necessary network in the list and click on the network's name in which you need to edit a subnet.
 
 ![](../img/i-net27-ua.svg)
 
-3. Натисніть на назву підмережі яку ви хочете відредагувати.
+3. Click on the name of the subnet you want to edit.
 
 ![](../img/i-net25-ua.svg)
 
-## Видалення підмережі
+## Subnet Deletion
 
-1. Перейдіть до **Мережі**.
+1. Go to **Network**.
 
 ![](../img/i-net1-ua.svg)
 
-2. У списку мереж знайдіть потрібну мережу та натисніть назву мережі, в якій потрібно видалити підмережу.
+2. In the list of networks, find the network you need and click on the network's name in which you want to delete a subnet.
 
 ![](../img/i-net27-ua.svg)
 
-4. Розгорніть контекстне меню підмережі яку потрібно видалити.
+4. Expand the context menu of the subnet you want to delete.
 
 ![](../img/i-net29-ua.svg)
 
-5. Виберіть дію **Видалити**.
+5. Select the **Delete** action.
 
 ![](../img/i-net30-ua.svg)

@@ -1,36 +1,36 @@
 ---
 sidebar_position: 2
-title: Створення мережі
+title: Creating a network.
 ---
 
-# Створення мережі
+# Creating a Network
 
-1. Перейдіть до **Мережі**.
+1.Go to **Networks**.
 
 ![](../img/i-net1-ua.svg)
 
-2. Нажміть **Створити мережу**.
+2. Click **Create Network**.
 
 ![](../img/i-net4-ua.svg)
 
-3. Введіть ім'я мережі.
+3. Enter the network name.
 
 ![](../img/i-net5-ua.svg)
 
-4. (опціонально) Дайте доступ до Інтернету. Це необхідно, якщо ви плануєте скористатися сервісами VPN, SNAT.
+4. (Optional) Provide internet access. This is necessary if you plan to use VPN or SNAT services.
 
 ![](../img/i-net6-ua.svg)
 
-5. Виберіть із запропонованого списку маршрутизатор.
+5. Choose from the provided list of routers.
 
 ![](../img/i-net7-ua.svg)
 
-6. За замовчуванням підмережа вже створена, але ви можете додати її ще. Якщо потрібно додати підмережі пізніше, пропустіть цей крок.
+6. By default, a subnet is already created, but you can add more if needed. If you want to add subnets later, you can skip this step.
 
 ![](../img/i-net8-ua.svg)
 
-7. Натисніть **Створити**.
+7. Click **Create**.
 
 ![](../img/i-net9-ua.svg)
 
-Після створення мережі вона з'явиться у загальному списку мереж.
+After creating the network, it will appear in the general list of networks.

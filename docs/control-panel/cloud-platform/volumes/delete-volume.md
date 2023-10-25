@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
-title: Видалення диску
+title: Delete a volume.
 ---
 
-# Видалення диску
+# Deleting a Volume
 
-[Локальный диск](#) можно удалить только вместе с сервером, к которому он подключен.
+You can only delete a [local volume](#) together with the server to which it is attached.
 
-[Сетевые диски](#) можно удалить вместе с сервером или отключить от сервера и удалить отдельно.
+[Network volumes](#) can be deleted either along with the server or detached from the server and deleted separately.
 
->:warning Если вы удалите диск, данные нельзя будет восстановить. Мы рекомендуем сделать копию данных перед удалением диска — создайте образ диска или создайте другой диск из этого диска. Снапшоты диска удалятся вместе с диском.
+>:warning If you delete a volume, the data cannot be recovered. We recommend making a backup of your data before deleting a volume – create a volume image or create another volume from the data on this volume. Volume snapshots will be deleted along with the volume.

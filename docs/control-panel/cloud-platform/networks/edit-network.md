@@ -1,24 +1,24 @@
 ---
 sidebar_position: 3
-title: Редагування мережі
+title: Editing a network
 ---
 
-# Редагування мережі
+# Editing a Network
 
-1. Перейдіть до **Мережі**.
+1. Go to **Networks**.
 
 ![](../img/i-net1-ua.svg)
 
-**Через контекстне меню:**
+**Using the context menu:**
 
-- У списку мереж знайдіть потрібну мережу.
+- In the list of networks, find the network you want to edit.
 
-- Розгорніть контекстне меню мережи.
+- Expand the context menu of the network.
 
 ![](../img/i-net10-ua.svg)
 
-- Виберіть дію **Редагувати**.
+- Select the **Edit** action.
 
 ![](../img/i-net11-ua.svg)
 
-Ви можете змінити ім'я та стан мережі.
+You can change the name and status of the network.

@@ -1,20 +1,20 @@
 ---
 sidebar_position: 1
-title: Перегляд списку мереж і підмереж
+title: Viewing the list of networks and subnetworks.
 ---
 
-# Перегляд списку мереж і підмереж
+# Viewing the list of networks and subnetworks.
 
-1. Перейдіть до **Мережі**.
+1. Go to **Network**.
 
 ![](../img/i-net1-ua.svg)
 
-Буде відображено список мереж.
+A list of networks will be displayed.
 
-2. Натисніть на назву потрібної мережі.
+2. Click on the name of the network you need.
 
 ![](../img/i-net2-ua.svg)
 
-Відкриється сторінка з детальною інформацією про неї. У тому числі буде відображено список підмереж у цій мережі.
+A page with detailed information about it will open, including a list of subnets in this network.
 
 ![](../img/i-net3-ua.svg)
