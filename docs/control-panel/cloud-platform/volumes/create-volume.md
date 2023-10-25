@@ -75,7 +75,7 @@ Specify the source type:
 - `--snapshot <snapshot>` - to create a volume from a snapshot. The `<snapshot>` - parameter is the name or ID of the snapshot, which you can view using `openstack volume snapshot list`
 - `--source <volume>` - to create a volume from another volume. The `<volume>` - parameter is the name or ID of the volume, which you can view using `openstack volume snapshot list`
 
-- `--size <size>` - volume size in GB. For volumes created from a source, the minimum size should be equal to the source size. Consider the [volume limits](/ua/control-panel/cloud-platform/volumes/volume-type#ліміти) for the maximum volume size;
+- `--size <size>` - volume size in GB. For volumes created from a source, the minimum size should be equal to the source size. Consider the [volume limits](/control-panel/cloud-platform/volumes/volume-type#limits) for the maximum volume size;
 - `--type <volume_type>` - volume type. volume types differ in throughput values and read/write speeds. You can view the available types using `openstack volume type list`
 - `--<volume_type>` - volume name.
 
