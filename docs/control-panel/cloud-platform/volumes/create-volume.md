@@ -27,31 +27,31 @@ On the OneCloudPlanet platform, you can change the instance type, which includes
 
 1. Go to **Instances**.
 
-![](../img/volumes/i-vol1-ua.svg)
+![](../img/volumes/i-vol1.png)
 
 2. Click Create Volume.
 
-![](../img/volumes/i-vol2-ua.svg)
+![](../img/volumes/i-vol2.png)
 
 3. Enter the volume name.
 
-![](../img/volumes/i-vol3-ua.svg)
+![](../img/volumes/i-vol3.png)
 
 4. Select the volume source (ready-made image, your image, a volume, snapshot, or backup). If you need to create an empty volume, skip this step.
 
-![](../img/volumes/i-vol4-ua.svg)
+![](../img/volumes/i-vol4.png)
 
 5. Choose the volume type. Volume differ in read/write speed and throughput values.
 
-![](../img/volumes/i-vol5-ua.svg)
+![](../img/volumes/i-vol5.png)
 
 6. Specify the volume size in GB. The size of a volume created from a source should be equal to or greater than the source size. We recommend not exceeding the maximum volume size limits. After creating a volume, you won't be able to decrease its size directly.
 
-![](../img/volumes/i-vol6-ua.svg)
+![](../img/volumes/i-vol6.png)
 
 7. Click Create.
 
-![](../img/volumes/i-vol7-ua.svg)
+![](../img/volumes/i-vol7.png)
 
 </TabItem>
 <TabItem value="openstack" label="Openstack CLI">

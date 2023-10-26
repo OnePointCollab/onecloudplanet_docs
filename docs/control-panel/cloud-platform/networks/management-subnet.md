@@ -9,15 +9,15 @@ title: Manage subnet
 
 1. Go to **Network**.
 
-![](../img/i-net1-ua.svg)
+![](../img/i-net1.png)
 
 2. In the list of networks, find the network you need and click on the name of the network in which you want to create a subnet.
 
-![](../img/i-net27-ua.svg)
+![](../img/i-net12.png)
 
 3. Click the **Create Subnet** button.
 
-![](../img/i-net26-ua.svg)
+![](../img/i-net24.png)
 
 - Specify the name of the subnet.
 
@@ -29,36 +29,39 @@ title: Manage subnet
 
 - Click the **Create** button.
 
-![](../img/i-net28-ua.svg)
+![](../img/i-net25.png)
 
 ## Editing a subnet.
 
 1. Go to **Network**.
 
-![](../img/i-net1-ua.svg)
+![](../img/i-net1.png)
 
 2. Find the necessary network in the list and click on the network's name in which you need to edit a subnet.
 
-![](../img/i-net27-ua.svg)
+![](../img/i-net12.png)
+
+![](../img/i-net29.png)
+
 
 3. Click on the name of the subnet you want to edit.
 
-![](../img/i-net25-ua.svg)
+![](../img/i-net26.png)
 
 ## Subnet Deletion
 
 1. Go to **Network**.
 
-![](../img/i-net1-ua.svg)
+![](../img/i-net1.png)
 
 2. In the list of networks, find the network you need and click on the network's name in which you want to delete a subnet.
 
-![](../img/i-net27-ua.svg)
+![](../img/i-net12.png)
 
-4. Expand the context menu of the subnet you want to delete.
+3. Expand the context menu of the subnet you want to delete.
 
-![](../img/i-net29-ua.svg)
+![](../img/i-net27.png)
 
-5. Select the **Delete** action.
+4. Select the **Delete** action.
 
-![](../img/i-net30-ua.svg)
+![](../img/i-net28.png)
