@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 On the OneCloudPlanet platform, you can change the instance type, which includes the number of processors (vCPU) and the amount of RAM.
 
-1. Go to **Instances**.
+1. Go to **Volumes**.
 
 ![](../img/volumes/i-vol1.png)
 

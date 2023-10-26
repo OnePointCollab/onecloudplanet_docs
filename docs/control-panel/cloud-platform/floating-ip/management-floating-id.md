@@ -20,7 +20,7 @@ title: Manage floating IP
 <br />
 
 ## Assigning a Floating IP Address Without Prior Creation.
-1. Using the sidebar, navigate to the Instances section.
+1. Using the sidebar, navigate to the **Instances** section.
 
 ![](../img/floating-ip/16.png)
 
