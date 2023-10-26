@@ -25,6 +25,7 @@ In the list, click on the name of the router that is attached to the network.
 A page with detailed information about the router will open, including the network to which the router is attached.
 
 ![](../img/i-net22.png)
+
 ![](../img/i-net14.png)
 
 3. Go to the **Interfaces** tab.
