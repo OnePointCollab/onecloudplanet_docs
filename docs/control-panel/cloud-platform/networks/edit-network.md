@@ -7,7 +7,7 @@ title: Edit network
 
 1. Go to **Networks**.
 
-![](../img/i-net1-ua.svg)
+![](../img/i-net1.png)
 
 **Using the context menu:**
 
@@ -15,10 +15,10 @@ title: Edit network
 
 - Expand the context menu of the network.
 
-![](../img/i-net10-ua.svg)
+![](../img/i-net10.png)
 
 - Select the **Edit** action.
 
-![](../img/i-net11-ua.svg)
+![](../img/i-net11.png)
 
 You can change the name and status of the network.
