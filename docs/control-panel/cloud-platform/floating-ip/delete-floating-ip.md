@@ -33,6 +33,6 @@ title: Delete floating IP
 
 ![](../img/floating-ip/9.png)
 
-4. Use the button with the trash can icon next to the **Create floating IP address** button.
+3. Use the button with the trash can icon next to the **Create floating IP address** button.
 
 ![](../img/floating-ip/10.png)

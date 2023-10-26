@@ -58,7 +58,7 @@ You will see a list of ports connected to this instance.
 
 ## Adding a port to the instance
 
-1. Go to Instances.
+1. Go to **Instances**.
 
 ![](../img/ic-instance-1.svg)
 
