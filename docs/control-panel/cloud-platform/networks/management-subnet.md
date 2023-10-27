@@ -31,7 +31,7 @@ title: Manage subnet
 
 ![](../img/i-net25.png)
 
-## Editing a subnet.
+## Edit a subnet
 
 1. Go to **Network**.
 

@@ -3,7 +3,7 @@ sidebar_position: 4
 title: Create volume
 ---
 
-# Creating a Volume
+# Create a Volume
 
 You can create a network volume together with an instance or create it separately and then attach it to an instance.
 
