@@ -56,7 +56,7 @@ You will see a list of ports connected to this instance.
 
 ![](../img/i-inst-4.png)
 
-## Add a port to the instance
+## Add port to the instance
 
 1. Go to **Instances**.
 

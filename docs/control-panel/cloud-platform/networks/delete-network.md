@@ -3,7 +3,7 @@ sidebar_position: 4
 title: Delete network
 ---
 
-# Delete a Network
+# Delete Network
 
 To delete a network, you should first remove the associations with interfaces in routers, the routers themselves, the ports within the networks, and only then delete the network.
 1. Go to **Networks**.
