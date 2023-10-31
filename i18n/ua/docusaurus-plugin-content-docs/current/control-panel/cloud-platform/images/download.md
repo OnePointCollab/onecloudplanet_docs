@@ -3,7 +3,7 @@ sidebar_position: 3
 title: Завантаження образу
 ---
 
-# Завантаження образу
+# Завантаження(Експорт) образу
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
