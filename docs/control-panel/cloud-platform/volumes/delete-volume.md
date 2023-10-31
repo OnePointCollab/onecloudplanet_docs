@@ -3,7 +3,7 @@ sidebar_position: 4
 title: Delete volume
 ---
 
-# Deleting a Volume
+# Delete a Volume
 
 You can only delete a [local volume](#) together with the server to which it is attached.
 

@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Viewing the list of networks and subnetworks
 ---
 
-# Viewing the list of networks and subnetworks.
+# View the list of networks and subnetworks
 
 1. Go to **Network**.
 

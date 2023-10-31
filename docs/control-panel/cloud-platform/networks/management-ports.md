@@ -3,11 +3,11 @@ sidebar_position: 7
 title:  Manage port
 ---
 
-# Port management.
+# Port management
 
 You can manage ports: view, add, edit, and delete them.
 
-## View the list of ports in the network.
+## View the list of ports in the network
 
 1. Go to **Network**.
 
@@ -32,7 +32,7 @@ A list of ports will be displayed.
 ![](../img/i-port2.png)
 
 
-## View the list of ports attached to the instance.
+## View the list of ports attached to the instance
 
 1. Go to **Instances**.
 
@@ -56,7 +56,7 @@ You will see a list of ports connected to this instance.
 
 ![](../img/i-inst-4.png)
 
-## Adding a port to the instance
+## Add port to the instance
 
 1. Go to **Instances**.
 
@@ -136,7 +136,7 @@ Using the context menu:
 
 - Confirm the operation.
 
-## Disconnect the port.
+## Disconnect the port
 
 1. Go to **Instances**.
 
@@ -168,7 +168,7 @@ By using the context menu:
 
 - Підтвердіть виконання операції.
 
-## Confirm the operation.
+## Confirm the operation
 
 1. Go to **Instances**.
 

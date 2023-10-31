@@ -3,7 +3,7 @@ sidebar_position: 2
 title: Create network
 ---
 
-# Creating a Network
+# Create Network
 
 1.Go to **Networks**.
 

@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Manage local volume
 ---
 
-# Managing volumes
+# Manage volumes
 
 A local volume is directly connected to the compute server through the PCIe NVMe protocol interface. Therefore, a local volume can only be created with a cloud instance and used as a boot (system) volume.
 
