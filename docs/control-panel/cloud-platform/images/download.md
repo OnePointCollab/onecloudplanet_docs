@@ -3,7 +3,7 @@ sidebar_position: 3
 title: Download Image
 ---
 
-# Download Image
+# Download (Export) Image
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

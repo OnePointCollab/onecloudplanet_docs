@@ -72,7 +72,7 @@ openstack image set --name <name>
 
 `--os-distro <os-distro>` - Operating system distribution name.
 
-`--os-version <os-version>` - Версия дистрибутива операционной системы.
+`--os-version <os-version>` - Operating system distribution version.
 
 `--protected` - Operating system distribution version.
 
