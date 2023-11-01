@@ -62,5 +62,9 @@
   "sidebar.tutorialSidebar.category.Connection to Instance": {
     "message": "Підключення до інстансу",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Security groups": {
+    "message": "Групи безпеки",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
   }
 }
