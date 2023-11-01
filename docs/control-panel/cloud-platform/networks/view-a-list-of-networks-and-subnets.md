@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Viewing the list of networks and subnetworks
+title: View the list of networks and subnetworks
 ---
 
 # View the list of networks and subnetworks

@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Create image
 ---
 
-# Standard image creat
+# Create image
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
