@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ![](../../img/security-group/5.png)
 
-3. Змініть назву майбутньої групи безпеки у полі **Назва**.
+3. Змініть назву групи безпеки у полі **Назва**.
 
 ![](../../img/security-group/6.png)
 
