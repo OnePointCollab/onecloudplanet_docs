@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ![](../../img/ports/2.png)
 
-3. Enter the name of the future port in the **Port Name** field.
+3. Enter the name of the future port in the **Name Port** field.
 
 ![](../../img/ports/3.png)
 

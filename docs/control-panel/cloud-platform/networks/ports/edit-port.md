@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ![](../../img/ports/15.png)
 
-3. If necessary, change the name of the port in the **Port Name** field.
+3. If necessary, change the name of the port in the **Name Port** field.
 
 ![](../../img/ports/16.png)
 
