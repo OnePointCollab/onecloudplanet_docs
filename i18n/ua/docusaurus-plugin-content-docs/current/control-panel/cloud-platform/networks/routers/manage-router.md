@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Управління групою безпеки
+title: Управління маршрутизатором
 ---
 
 # Загальна інформація
@@ -22,7 +22,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="personal-area" label="Personal Area" default>
+<TabItem value="personal-area" label="Особистий кабінет" default>
 
 1. Перейдіть до підрозділу **Маршрутизатори**.
 
@@ -40,7 +40,7 @@ import TabItem from '@theme/TabItem';
 
 ![](../../img/routers/11.png)
 
-5. Оберіть IP адрес у полі **IP**.
+5. Вкажіть IP адресу інтерфейсу у полі **IP**.
 
 ![](../../img/routers/12.png)
 
@@ -54,20 +54,20 @@ import TabItem from '@theme/TabItem';
 Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання. Виконайте потрібні команди.    
 
 ```
-openstack router add subnet <router> <subnet-name> | <subnet-id>
+openstack router add route --route destination=<subnet>,gateway=<ip-address> <router>
 ```
 
-`<subnet-name> | <subnet-id>` - Добавить подсеть по имени или id
+`--route destination=<subnet>,gateway=<ip-address>` - Додайте до маршрутизатора додатковий статичний маршрут. призначення: підмережа призначення (в нотації CIDR), шлюз: IP-адреса наступного переходу. Опція повторення, щоб додати кілька маршрутів. Спроба додати маршрут, який уже присутній (точно, включаючи пункт призначення та наступний крок) у таблицю маршрутизації, дозволена та вважається успішною операцією.
 
-`router` - Маршрутизатор, к которому будет добавлена подсеть (имя или идентификатор)
+`router` - Маршрутизатор, до якого будуть додані додаткові статичні маршрути (назва або ID).
 
 </TabItem>
 </Tabs>
 
-<Tabs>
-<TabItem value="personal-area" label="Personal Area" default>
-
 # Видалити інтерфейс
+
+<Tabs>
+<TabItem value="personal-area" label="Особистий кабінет" default>
 
 1. Перейдіть до підрозділу **Маршрутизатори**.
 
@@ -95,12 +95,12 @@ openstack router add subnet <router> <subnet-name> | <subnet-id>
 Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання. Виконайте потрібні команди.    
 
 ```
-openstack router remove subnet <router> <subnet-name> | <subnet-id>
+openstack router remove route --route destination=<subnet>,gateway=<ip-address> <router>
 ```
 
-`<subnet-name> | <subnet-id>` - Добавить подсеть по имени или id
+`--route destination=<subnet>,gateway=<ip-address>` - Видаліть додатковий статичний маршрут з маршрутизатора. призначення: підмережа призначення (в нотації CIDR), шлюз: IP-адреса наступного переходу. Опція повторення, щоб видалити кілька маршрутів. Спроба видалити з таблиці маршрутизації маршрут, якого вже немає (повністю, включно з пунктом призначення та наступним переходом), дозволена та вважається успішною операцією.
 
-`router` - Маршрутизатор, к которому будет добавлена подсеть (имя или идентификатор)
+`router` - Маршрутизатор, до якого буде додано додаткові статичні маршрути (ім'я або ідентифікатор).
 
 </TabItem>
 </Tabs>

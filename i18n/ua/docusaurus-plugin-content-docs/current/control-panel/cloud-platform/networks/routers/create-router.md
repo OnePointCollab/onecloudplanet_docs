@@ -9,7 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="personal-area" label="Personal Area" default>
+<TabItem value="personal-area" label="Особистий кабінет" default>
 
 1. Перейдіть до підрозділу **Маршрутизатори**.
 

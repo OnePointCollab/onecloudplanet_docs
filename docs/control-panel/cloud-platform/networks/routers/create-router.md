@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ![](../../img/routers/2.png)
 
-3. Enter the name of the future router in the **Router Name** field.
+3. Enter the name of the future router in the **Name Router** field.
 
 ![](../../img/routers/3.png)
 

@@ -66,5 +66,17 @@
   "sidebar.tutorialSidebar.category.Security groups": {
     "message": "Групи безпеки",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Ports": {
+    "message": "Порти",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Routers": {
+    "message": "Маршрутизатори",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Cloud compute": {
+    "message": "Хмарні обчислення",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
   }
 }

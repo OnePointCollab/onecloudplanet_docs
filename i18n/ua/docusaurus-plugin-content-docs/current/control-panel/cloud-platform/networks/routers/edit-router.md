@@ -9,7 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="personal-area" label="Personal Area" default>
+<TabItem value="personal-area" label="Особистий кабінет" default>
 
 1. Перейдіть до підрозділу **Маршрутизатори**.
 
@@ -27,7 +27,7 @@ import TabItem from '@theme/TabItem';
 
 ![](../../img/routers/16.png)
 
-5. Натисніть **Створити**.
+5. Натисніть **Зберегти**.
 
 ![](../../img/routers/17.png)
 
@@ -50,9 +50,6 @@ openstack router set --name <name> /
 `--disable` - Вимкнути маршрутизатор.
 
 `--route destination=<subnet>, gateway=<ip-address>` - Добавьте маршруты к месту назначения маршрутизатора: подсеть назначения (в нотации CIDR) шлюз: IP-адрес следующего перехода (повторите опцию, чтобы добавить несколько маршрутов). Это устарело в пользу «маршрута добавления/удаления маршрутизатора», поскольку оно подвержено состояниям гонки между одновременными клиентами, если не используется вместе с параметром –no-route для перезаписи текущего значения «маршрутов».
-
-`--fixed-ip subnet=<subnet>,ip-address=<ip-address>` - Желаемый IP-адрес и/или подсеть (имя или идентификатор) на внешнем шлюзе: subnet=<подсеть>,ip-адрес=<ip-адрес> (повторите опцию, чтобы установить несколько фиксированных IP-адресов)
-
 
 </TabItem>
 </Tabs>
