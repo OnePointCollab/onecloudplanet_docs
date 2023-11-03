@@ -75,6 +75,10 @@
     "message": "Маршрутизатори",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.Load balancer": {
+    "message": "Балансувальники навантаження",
+    "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Cloud compute": {
     "message": "Хмарні обчислення",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
