@@ -25,16 +25,17 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'uk-UA'],
+    locales: ['en', 'ua'],
     localeConfigs: {
       en: {
         label:'English',
         direction: 'ltr',
         path:'en',
       },
-      'uk-UA':{
+      ua:{
         label:'Українська',
         direction: 'ltr',
+        htmlLang: 'uk-UA',
         path:'ua'
       }
     }
