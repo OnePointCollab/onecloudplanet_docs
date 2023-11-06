@@ -96,7 +96,7 @@ openstack port create --network <network> /
 
 `--allowed-address ip-address=<ip_address>[,mac-address=<mac_address>]` - Add allowed-address pair associated with this port: ip-address=<ip_address>[,mac-address=< <mac_address> >] (repeat option to set multiple allowed-address pairs).
 
-`name` - Назва цього порту.
+`name` - Name of port.
 
 </TabItem>
 </Tabs>
