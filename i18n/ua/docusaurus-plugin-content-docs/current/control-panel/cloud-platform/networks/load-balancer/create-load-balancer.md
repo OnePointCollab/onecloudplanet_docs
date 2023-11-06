@@ -44,14 +44,14 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 <TabItem value="openstack" label="Openstack CLI">
 
-Make sure the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
-Execute the required commands.
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+Виконайте потрібні команди.
 
 ```
 openstack loadbalancer create --name <name> / 
-                              --description <description>
-                              --vip-subnet-id <vip_subnet_id>
-                              --enable | --disable
+                              --description <description> / 
+                              --vip-subnet-id <vip_subnet_id> /
+                              --enable | --disable /
 ```
 
 `--name <name>` - Нове ім'я балансувальника навантаження.
@@ -100,8 +100,8 @@ openstack loadbalancer create --name <name> /
 </TabItem>
 <TabItem value="openstack" label="Openstack CLI">
 
-Make sure the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
-Execute the required commands.
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+Виконайте потрібні команди.
 
 ```
 openstack loadbalancer listener create
@@ -173,8 +173,8 @@ openstack loadbalancer listener create
 </TabItem>
 <TabItem value="openstack" label="Openstack CLI">
 
-Make sure the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
-Execute the required commands.
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+Виконайте потрібні команди.
 
 ```
 openstack loadbalancer pool create    
@@ -231,8 +231,8 @@ openstack loadbalancer pool create
 </TabItem>
 <TabItem value="openstack" label="Openstack CLI">
 
-Make sure the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
-Execute the required commands.
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+Виконайте потрібні команди.
 
 ```
 openstack loadbalancer member create --name <name>
@@ -310,8 +310,8 @@ openstack loadbalancer member create --name <name>
 </TabItem>
 <TabItem value="openstack" label="Openstack CLI">
 
-Make sure the OpenStack client is [installed](#) and you can [authenticate](#) to use it.
-Execute the required commands.
+Переконайтеся, що клієнт OpenStack [встановлений](#) і ви можете [авторизуватись](#) для його використання.
+Виконайте потрібні команди.
 
 ```
 openstack loadbalancer healthmonitor create

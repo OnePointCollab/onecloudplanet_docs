@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
 
 ![](../../img/ports/18.png)
 
-6. You can add or delete IP addresses for the port in the **IP Addresses** field.
+6. You can add or delete IP addresses for the port in the **IP Address`es** field.
 
 ![](../../img/ports/19.png)
 

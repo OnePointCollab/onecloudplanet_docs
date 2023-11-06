@@ -21,11 +21,11 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="personal-area" label="Personal Area" default>
 
-1. Enter the name of the future load balancer in the **Load Balancer Name** field.
+1. Enter the name of the future load balancer in the **Name Load Balancer** field.
 
 ![](../../img/load-balancer/3.png)
 
-2. You can specify an IP address in the **IP Address** field.
+2. You can specify an IP address in the **IP address** field.
 
 ![](../../img/load-balancer/4.png)
 
@@ -216,7 +216,7 @@ openstack loadbalancer pool create
 <Tabs>
 <TabItem value="personal-area" label="Personal Area" default>
 
-- You can add pool members manually by clicking **Add an External Member** and filling in all the required fields.
+- You can add pool members manually by clicking **Add External Member** and filling in all the required fields.
 
    ![](../../img/load-balancer/16.png)
 

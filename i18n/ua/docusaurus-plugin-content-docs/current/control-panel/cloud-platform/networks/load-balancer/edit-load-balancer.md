@@ -52,13 +52,13 @@ openstack loadbalancer set --enable | --disable /
 
 `<load_balancer>` - Ім’я або UUID балансувальника навантаження для оновлення.
 
-`--enable` - Enable load balancer.
+`--enable` - Увімкнути балансувальник навантаження.
 
-`--disable` - Disable load balancer.
+`--disable` - Вимкнути балансувальник навантаження.
 
-`--name <name>` - Set load balancer name.
+`--name <name>` - Встановити ім'я балансувальника навантаження.
 
-`--description <description>` - Set load balancer description.
+`--description <description>` - Встановити опис балансувальника навантаження.
 
 </TabItem>
 </Tabs>
