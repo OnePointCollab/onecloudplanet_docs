@@ -49,9 +49,9 @@ import TabItem from '@theme/TabItem';
 
 ```
 openstack loadbalancer create --name <name> / 
-                              --description <description>
-                              --vip-subnet-id <vip_subnet_id>
-                              --enable | --disable
+                              --description <description> / 
+                              --vip-subnet-id <vip_subnet_id> /
+                              --enable | --disable /
 ```
 
 `--name <name>` - Нове ім'я балансувальника навантаження.
