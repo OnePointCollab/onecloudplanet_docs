@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Creating a Load Balancer
+title: Create a Load Balancer
 ---
 
 # Creating a Load Balancer
