@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Create a Load Balancer
 ---
 
-# Creating a Load Balancer
+# Create a Load Balancer
 
 1. Go to the **Load Balancers** section.
 
@@ -13,7 +13,7 @@ title: Create a Load Balancer
 
 ![](../../img/load-balancer/33.png)
 
-### Load Balancing Information
+### Load Balancer Information
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -216,7 +216,7 @@ openstack loadbalancer pool create
 <Tabs>
 <TabItem value="personal-area" label="Personal Area" default>
 
-- You can add pool members manually by clicking **Add External Member** and filling in all the required fields.
+- You can add pool members manually by click **Add External Member** and filling in all the required fields.
 
    ![](../../img/load-balancer/16.png)
 
