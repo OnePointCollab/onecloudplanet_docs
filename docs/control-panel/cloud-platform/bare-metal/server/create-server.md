@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: Create bare metal server
+title: Create Bare Metal server
 ---
 
-# Create a bare metal server
+# Create a Bare Metal server
 
 1. Go to the **Bare Metal** section.
 
@@ -23,7 +23,7 @@ title: Create bare metal server
 
 ## Configure Bare Metal Server
 
-1. Enter the name of the future bare metal server to **Name of Server** field.
+1. Enter the name of the future Bare Metal server to **Name of Server** field.
 
 ![](../../img/bare-metal/create/2.png)
 
@@ -81,7 +81,7 @@ title: Create bare metal server
 
 ## Full create info
 
-1. In this page display all info about your choice during creating bare metal server.
+1. In this page display all info about your choice during creating Bare Metal server.
 
 ![](../../img/bare-metal/create/8.png)
 

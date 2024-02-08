@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: Delete bare metal server
+title: Delete Bare Metal server
 ---
 
-# Delete bare metal server
+# Delete Bare Metal server
 
 1. Go to the section **Bare Metal**.
 

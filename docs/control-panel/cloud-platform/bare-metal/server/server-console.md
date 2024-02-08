@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Bare metal server console
+title: Bare Metal server console
 ---
 
 # Reinstall
