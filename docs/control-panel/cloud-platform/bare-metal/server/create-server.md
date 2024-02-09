@@ -85,6 +85,6 @@ title: Create Bare Metal server
 
 ![](../../img/bare-metal/create/8.png)
 
-2. Make sure you have filled in all the required fields, then click **Continue**.
+2. Make sure you have filled in all the required fields, then click **Create**.
 
 ![](../../img/bare-metal/create/9.png)
