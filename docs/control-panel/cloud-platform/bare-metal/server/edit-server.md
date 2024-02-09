@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Edit bare metal server
+title: Edit Bare Metal server
 ---
 
 # Reinstall
