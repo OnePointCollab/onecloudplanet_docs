@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: List of Floating IP
+title: Bare Metal server metrics
 ---
 
 ## Bare Metal server metrics
