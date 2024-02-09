@@ -15,7 +15,7 @@ title: List of Floating IP
 
 ![](../../img/bare-metal/edit/19.png)
 
-3. In this page display all associated floating IPs.
+3. In this page display detail info about server.
 
 ![](../../img/bare-metal/list_of_floating_ip/1.png)
 
