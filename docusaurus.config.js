@@ -47,6 +47,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: ({versionDocsDirPath, docPath}) =>
@@ -67,79 +68,231 @@ const config = {
       }),
     ],
   ],
-
-      themeConfig:
-      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-      ({
-        algolia: {
-          appId: 'NQO6IXTPQW',
-          apiKey: 'a96759f341966142e7b893daa53a61a1',
-          indexName: 'onecloudplanet',
-          contextualSearch: true,
-          // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-          // externalUrlRegex: 'https://docs.ocplanet.cloud',
-          // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-          // replaceSearchResultPathname: {
-          //   from: '/docs/', // or as RegExp: /\/docs\//
-          //   to: '/',
-          // },
-    
-        },
-
-        //   searchPagePath: false,
-    
-        // },
-        // Replace with your project's social card
-        colorMode: {
-          defaultMode: 'light',
-          disableSwitch: true,
-          respectPrefersColorScheme: false,
-        },
-        metadata:[
-          {name:'og:image', content:'https://i.imgur.com/uoDPdKD.png'},
-        ],
-        image: 'https://i.imgur.com/uoDPdKD.png',
-        navbar: {
-          title: 'OneCloudPlanet',
-
-          logo: {
-            alt: 'OneCloudPlanet',
-            src: 'img/logo.svg',
+  plugins: [
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "classic",
+        config: {
+          petstore_versioned: {
+            specPath: "examples/petstore.yaml",
+            outputDir: "docs/petstore_versioned", // No trailing slash
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+            version: "2.0.0", // Current version
+            label: "v2.0.0", // Current version label
+            baseUrl: "/petstore_versioned/swagger-petstore-yaml", // Leading slash is important
+            versions: {
+              "1.0.0": {
+                specPath: "examples/petstore-1.0.0.yaml",
+                outputDir: "docs/petstore_versioned/1.0.0", // No trailing slash
+                label: "v1.0.0",
+                baseUrl: "/petstore_versioned/1.0.0/swagger-petstore-yaml", // Leading slash is important
+              },
+            },
           },
-          
+          petstore: {
+            specPath: "examples/petstore.yaml",
+            proxy: "https://cors.pan.dev",
+            outputDir: "docs/petstore",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+            template: "api.mustache", // Customize API MDX with mustache template
+            downloadUrl:
+              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-openapi-docs/main/demo/examples/petstore.yaml",
+            hideSendButton: false,
+            // showSchemas: true,
+          },
+          cos: {
+            specPath: "examples/openapi-cos.json",
+            outputDir: "docs/cos",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          burgers: {
+            specPath: "examples/food/burgers/openapi.yaml",
+            outputDir: "docs/food/burgers",
+          },
+          yogurt: {
+            specPath: "examples/food/yogurtstore/openapi.yaml",
+            outputDir: "docs/food/yogurtstore",
+          },
+        },
+      },
+    ],
+  ],
+  themes: ["docusaurus-theme-openapi-docs"],
+  stylesheets: [
+    {
+      href: "https://use.fontawesome.com/releases/v5.11.0/css/all.css",
+      type: "text/css",
+    },
+  ],
+  themeConfig:
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  ({
+    algolia: {
+      appId: 'NQO6IXTPQW',
+      apiKey: 'a96759f341966142e7b893daa53a61a1',
+      indexName: 'onecloudplanet',
+      contextualSearch: true,
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      // externalUrlRegex: 'https://docs.ocplanet.cloud',
+      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+      // replaceSearchResultPathname: {
+      //   from: '/docs/', // or as RegExp: /\/docs\//
+      //   to: '/',
+      // },
+
+    },
+
+    //   searchPagePath: false,
+
+    // },
+    // Replace with your project's social card
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+    metadata:[
+      {name:'og:image', content:'https://i.imgur.com/uoDPdKD.png'},
+    ],
+    image: 'https://i.imgur.com/uoDPdKD.png',
+    navbar: {
+      title: 'OneCloudPlanet',
+
+      logo: {
+        alt: 'OneCloudPlanet',
+        src: 'img/logo.svg',
+      },
+      
+      items: [
+        {
+          type: 'docSidebar',
+          to: '/documentation',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Documentation',
+        },
+        {
+          type: "dropdown",
+          label: "Demos",
+          position: "left",
           items: [
-            // {
-            //   type: 'docSidebar',
-            //   to: '/documentation',
-            //   sidebarId: 'tutorialSidebar',
-            //   position: 'left',
-            //   label: 'Documentation',
-            // },
             {
-              type: 'search',
-              position: 'right',
+              label: "API Zoo",
+              to: "/category/petstore-api",
             },
             {
-              type: 'localeDropdown',
-              position: 'right',
+              label: "Petstore (versioned)",
+              to: "/category/petstore-versioned-api",
             },
-            // {to: '/documentation', label: 'Documentation', position: 'left'},
-            // {
-            //   href: 'https://github.com/facebook/docusaurus',
-            //   label: 'GitHub',
-            //   position: 'right',
-            // },
           ],
         },
-        footer: {
-          style: 'dark',
-          copyright: `Copyright © ${new Date().getFullYear()} OneCloudPlanet. Documentation for users`,
+        // {
+        //   to: '/category/petstore',
+        //   sidebarId: 'api',
+        //   label: 'API Documentation',
+        // },
+        // {
+        //   type: "dropdown",
+        //   label: "Demos",
+        //   position: "left",
+        //   items: [
+        //     {
+        //       label: "API Zoo",
+        //       to: "/category/petstore-api",
+        //     },
+        //     {
+        //       label: "Petstore (versioned)",
+        //       to: "/category/petstore-versioned-api",
+        //     },
+        //   ],
+        // },
+        {
+          type: 'search',
+          position: 'right',
         },
-        prism: {
-          theme: lightCodeTheme,
-          darkTheme: darkCodeTheme,
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
-      }),
+        // {to: '/documentation', label: 'Documentation', position: 'left'},
+        // {
+        //   href: 'https://github.com/facebook/docusaurus',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      copyright: `Copyright © ${new Date().getFullYear()} OneCloudPlanet. Documentation for users`,
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+      additionalLanguages: ["ruby", "csharp", "php", "java", "powershell"],
+    },
+    languageTabs: [
+      {
+        highlight: "bash",
+        language: "curl",
+        logoClass: "bash",
+      },
+      {
+        highlight: "python",
+        language: "python",
+        logoClass: "python",
+        variant: "requests",
+      },
+      {
+        highlight: "go",
+        language: "go",
+        logoClass: "go",
+      },
+      {
+        highlight: "javascript",
+        language: "nodejs",
+        logoClass: "nodejs",
+        variant: "axios",
+      },
+      {
+        highlight: "ruby",
+        language: "ruby",
+        logoClass: "ruby",
+      },
+      {
+        highlight: "csharp",
+        language: "csharp",
+        logoClass: "csharp",
+        variant: "httpclient",
+      },
+      {
+        highlight: "php",
+        language: "php",
+        logoClass: "php",
+      },
+      {
+        highlight: "java",
+        language: "java",
+        logoClass: "java",
+        variant: "unirest",
+      },
+      {
+        highlight: "powershell",
+        language: "powershell",
+        logoClass: "powershell",
+      },
+    ],
+  }),
 };
 
 module.exports = config;
