@@ -18,7 +18,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'onecloudplanet', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -47,7 +47,8 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-
+          docLayoutComponent: "@theme/DocPage",
+          docItemComponent: "@theme/ApiItem",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: ({versionDocsDirPath, docPath}) =>
@@ -94,35 +95,28 @@ const config = {
               },
             },
           },
-          petstore: {
-            specPath: "examples/petstore.yaml",
+          api: {
+            specPath: "api/CloudOpenAPI.json",
             proxy: "https://cors.pan.dev",
-            outputDir: "docs/petstore",
+            outputDir: "docs/api",
+            version: "2.0.0",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
             },
             template: "api.mustache", // Customize API MDX with mustache template
-            downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-openapi-docs/main/demo/examples/petstore.yaml",
+            // downloadUrl:
+            //   "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-openapi-docs/main/demo/examples/petstore.yaml",
             hideSendButton: false,
             // showSchemas: true,
           },
-          cos: {
-            specPath: "examples/openapi-cos.json",
-            outputDir: "docs/cos",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          },
-          burgers: {
-            specPath: "examples/food/burgers/openapi.yaml",
-            outputDir: "docs/food/burgers",
-          },
-          yogurt: {
-            specPath: "examples/food/yogurtstore/openapi.yaml",
-            outputDir: "docs/food/yogurtstore",
-          },
+          // cos: {
+          //   specPath: "examples/openapi-cos.json",
+          //   outputDir: "docs/cos",
+          //   sidebarOptions: {
+          //     groupPathsBy: "tag",
+          //   },
+          // },
         },
       },
     ],
@@ -182,40 +176,12 @@ const config = {
           label: 'Documentation',
         },
         {
-          type: "dropdown",
-          label: "Demos",
-          position: "left",
-          items: [
-            {
-              label: "API Zoo",
-              to: "/category/petstore-api",
-            },
-            {
-              label: "Petstore (versioned)",
-              to: "/category/petstore-versioned-api",
-            },
-          ],
+          type: 'docSidebar',
+          to: '/category/api',
+          sidebarId: 'api',
+          position: 'left',
+          label: 'API Documentation',
         },
-        // {
-        //   to: '/category/petstore',
-        //   sidebarId: 'api',
-        //   label: 'API Documentation',
-        // },
-        // {
-        //   type: "dropdown",
-        //   label: "Demos",
-        //   position: "left",
-        //   items: [
-        //     {
-        //       label: "API Zoo",
-        //       to: "/category/petstore-api",
-        //     },
-        //     {
-        //       label: "Petstore (versioned)",
-        //       to: "/category/petstore-versioned-api",
-        //     },
-        //   ],
-        // },
         {
           type: 'search',
           position: 'right',

@@ -1,0 +1,5089 @@
+{
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "url": "https://api.fotbo.com"
+    }
+  ],
+  "description": "Default server",
+  "info": {
+    "title": "OpenAPI Fotbo.com",
+    "version": "Specification  1.0.5",
+    "description": "\n# Introduction\nWelcome to the API documentation for Fotbo.com services. This API is documented in OpenAPI format. Explore the following sections to gain comprehensive insights into the functionalities and capabilities offered by our platform. Whether you are interested in user registration, account management, billing details, or the configuration of virtualized resources, this documentation provides detailed information and examples to facilitate your interaction with our services.\n\n **Authentication**\nBilling offers forms of authentication - API Key.\nAuthentication tokens are used instead of passwords and are handy when using Fotbo API from scripts or other software that you write and interacts with Fotbo.\nYou can  make simple GET, POST, PUT or DELETE HTTP requests by using curl.\nMake sure you include the authorization header as curl parameter:\n- 'Authorization: Token {Token}'\n\n  **Sections:**\n  - **Instances (VPS):** Dive into the world of Virtual Private Servers (VPS), covering instance creation, management, and configuration.\n\n  - **Load balancers:** Understand load balancing functionalities for efficient traffic distribution and high availability.\n\n  - **Networks (VPC):** Explore Virtual Private Cloud (VPC) features, including network creation, subnet configuration, and security settings.\n\n  - **Routers:** Manage and optimize routing settings for your infrastructure.\n\n  - **Zones (DNS):** Gain insights into Domain Name System (DNS) functionalities, managing DNS zones and domain settings.\n\n  - **Security groups:** Define and apply security group rules to control inbound and outbound traffic.\n\n  - **Floating IPs:** Allocate, associate, and manage floating IP addresses for flexible network configurations.\n\n  - **SSH Keys:** Manage Secure Shell (SSH) keys for secure access to instances and services.\n\n  - **My images:** Handle custom images, including creation, upload, and management for efficient deployment.\n\n  - **Billing:** Access information on billing functionalities, including invoice management, payment methods, and billing history.\n\n  - **User:** Explore user management, profile customization, and authentication options to tailor your experience.\n\n  - **Clients:** Access features related to client management, usage statistics, and client experience optimization.\n\n  - **Tickets:** Utilize support ticket management features, from creation to resolution.\n\n  - **Notifications:** Configure notification preferences to stay informed about important events and updates.\n\n  Explore the detailed descriptions, endpoints, features, and examples provided in each section to make the most of our hosting services.\n  Through a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+    "x-logo": {
+      "url": "https://storage.fotbo.host/u/Fotbo_logo2.png",
+      "altText": "Fotbo logo"
+    }
+  },
+  "tags": [
+    {
+      "name": "Instances (VPS)",
+      "description": "The \"Instances (VPS)\" section covers everything related to Virtual Private Servers (VPS). Users can create, manage, and monitor their instances, customize configurations, and explore features for efficient virtualization.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n"
+    },
+    {
+      "name": "Networks (VPC)",
+      "description": "The \"Networks (VPC)\" section provides detailed information on Virtual Private Cloud (VPC) functionalities. Users can create and manage networks, define subnets, and configure security settings for optimal network architecture.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n"
+    },
+    {
+      "name": "Routers",
+      "description": "The \"Routers\" section focuses on router management, allowing users to configure and optimize routing settings for their infrastructure.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n"
+    },
+    {
+      "name": "Floating IPs",
+      "description": "The \"Floating IPs\" section explores functionalities related to floating IP addresses. Users can allocate, associate, and manage floating IPs to achieve flexible and scalable network configurations.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n"
+    },
+    {
+      "name": "SSH Keys",
+      "description": "The \"SSH Keys\" section focuses on Secure Shell (SSH) key management. Users can add, remove, and manage SSH keys for secure access to instances and services.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n"
+    },
+    {
+      "name": "Zones (DNS)",
+      "description": "The \"Zones (DNS)\" section covers Domain Name System (DNS) functionalities. Users can manage DNS zones, configure domain settings, and ensure seamless domain resolution for their services.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "Cloud",
+      "tags": [
+        "Instances (VPS)",
+        "Networks (VPC)",
+        "Routers",
+        "Floating IPs",
+        "SSH Keys",
+        "Zones (DNS)"
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "InstanceCreate": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "flavor": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "availability_zone": {
+            "type": "null"
+          },
+          "operation_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "flavor",
+          "region",
+          "availability_zone",
+          "operation_id"
+        ]
+      },
+      "InstanceCreateBadRequest": {
+        "properties": {
+          "name": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "boot_source": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "flavor": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "region": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "boot_source",
+          "flavor",
+          "region"
+        ],
+        "type": "object"
+      },
+      "InstanceCreateBody": {
+        "properties": {
+          "boot_source": {
+            "properties": {
+              "cinder_az": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "create_new_volume": {
+                "type": "boolean"
+              },
+              "delete_on_termination": {
+                "type": "boolean"
+              },
+              "source_id": {
+                "type": "string"
+              },
+              "source_type": {
+                "type": "string"
+              },
+              "volume_size": {
+                "type": "string",
+                "description": "This value specified of GB."
+              }
+            },
+            "required": [
+              "source_id",
+              "source_type"
+            ],
+            "type": "object"
+          },
+          "client": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "flavor": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nics": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "region": {
+            "type": "string"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "root_password": {
+            "type": "string"
+          },
+          "ssh_keys": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tags",
+          "flavor",
+          "name",
+          "nics",
+          "region",
+          "root_password",
+          "boot_source"
+        ],
+        "type": "object"
+      },
+      "InstanceReboot": {
+        "properties": {
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "detail"
+        ],
+        "type": "object"
+      },
+      "FloatingIP": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "floating_network": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "region": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "description",
+              "region"
+            ]
+          },
+          "port": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name"
+                ]
+              }
+            ]
+          },
+          "router": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name"
+                ]
+              }
+            ]
+          },
+          "associated_object": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "device_type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "device_type"
+                ]
+              }
+            ]
+          },
+          "floating_ip_address": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "fixed_ip_address": {
+            "type": "null"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "project": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "floating_network",
+          "port",
+          "router",
+          "associated_object",
+          "floating_ip_address",
+          "status",
+          "description",
+          "fixed_ip_address",
+          "created_at",
+          "updated_at",
+          "project"
+        ],
+        "type": "object"
+      },
+      "FloatingIPs": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer"
+          },
+          "next": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "previous": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "objects": {
+            "items": {
+              "$ref": "#/components/schemas/FloatingIP"
+            },
+            "type": "array"
+          },
+          "totalCount": {
+            "type": "integer"
+          },
+          "pageNo": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "permissions": {
+            "type": "object",
+            "properties": {
+              "floatingips.list": {
+                "type": "boolean"
+              },
+              "floatingips.retrieve": {
+                "type": "boolean"
+              },
+              "floatingips.create": {
+                "type": "boolean"
+              },
+              "floatingips.destroy": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "floatingips.list",
+              "floatingips.retrieve",
+              "floatingips.create",
+              "floatingips.destroy"
+            ]
+          },
+          "filter_options": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "display": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "display",
+                    "value"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "count",
+          "next",
+          "previous",
+          "objects",
+          "totalCount",
+          "pageNo",
+          "permissions",
+          "filter_options"
+        ]
+      },
+      "AddFloatingIP": {
+        "properties": {
+          "fixed_ip": {
+            "type": "string",
+            "description": "Fixed IP specified in ports."
+          },
+          "floating_ip": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "floating_ip",
+          "fixed_ip"
+        ],
+        "type": "object"
+      },
+      "Instance": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "name": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "floating_ips": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "floating_ip_address": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "allowed_actions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "access_ip": {
+              "type": "string"
+            },
+            "uuid": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "created": {
+              "type": "string"
+            },
+            "display_status": {
+              "type": "string"
+            },
+            "display_task": {
+              "type": "null"
+            },
+            "description": {
+              "type": "null"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array"
+                },
+                "client": {
+                  "type": "null"
+                },
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "owner_specified.openstack.md5": {
+                      "type": "string"
+                    },
+                    "owner_specified.openstack.sha256": {
+                      "type": "string"
+                    },
+                    "owner_specified.openstack.object": {
+                      "type": "string"
+                    },
+                    "os_hidden": {
+                      "type": "boolean"
+                    },
+                    "os_hash_algo": {
+                      "type": "string"
+                    },
+                    "os_hash_value": {
+                      "type": "string"
+                    },
+                    "stores": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "fleio_default_image_username",
+                    "hw_qemu_guest_agent",
+                    "os_glance_importing_to_stores",
+                    "os_glance_failed_import",
+                    "os_hidden",
+                    "os_hash_algo",
+                    "os_hash_value",
+                    "stores"
+                  ]
+                },
+                "is_iso": {
+                  "type": "boolean"
+                },
+                "display_name": {
+                  "type": "string"
+                },
+                "cleanup_date": {
+                  "type": "null"
+                },
+                "assigned_to_flavor": {
+                  "type": "boolean"
+                },
+                "related_instance": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "deleted_at": {
+                  "type": "null"
+                },
+                "os_distro": {
+                  "type": "string"
+                },
+                "hypervisor_type": {
+                  "type": "null"
+                },
+                "os_version": {
+                  "type": "string"
+                },
+                "architecture": {
+                  "type": "null"
+                },
+                "min_disk": {
+                  "type": "integer"
+                },
+                "min_ram": {
+                  "type": "integer"
+                },
+                "protected": {
+                  "type": "boolean"
+                },
+                "visibility": {
+                  "type": "string"
+                },
+                "container_format": {
+                  "type": "string"
+                },
+                "disk_format": {
+                  "type": "string"
+                },
+                "hw_qemu_guest_agent": {
+                  "type": "boolean"
+                },
+                "instance_uuid": {
+                  "type": "null"
+                },
+                "volume_snapshot_uuid": {
+                  "type": "null"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "reseller_resources": {
+                  "type": "null"
+                },
+                "used_by_resellers": {
+                  "type": "array"
+                }
+              },
+              "required": [
+                "id",
+                "tags",
+                "client",
+                "properties",
+                "is_iso",
+                "display_name",
+                "cleanup_date",
+                "assigned_to_flavor",
+                "related_instance",
+                "name",
+                "type",
+                "status",
+                "size",
+                "created_at",
+                "updated_at",
+                "deleted_at",
+                "os_distro",
+                "hypervisor_type",
+                "os_version",
+                "architecture",
+                "min_disk",
+                "min_ram",
+                "protected",
+                "visibility",
+                "container_format",
+                "disk_format",
+                "hw_qemu_guest_agent",
+                "instance_uuid",
+                "volume_snapshot_uuid",
+                "region",
+                "reseller_resources",
+                "used_by_resellers",
+                "floating_ips",
+                "tags"
+              ]
+            },
+            "region": {
+              "type": "string"
+            },
+            "region_obj": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "enabled": {
+                  "type": "boolean"
+                },
+                "enable_volumes": {
+                  "type": "boolean"
+                },
+                "enable_snapshots": {
+                  "type": "boolean"
+                },
+                "is_default": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "description",
+                "enabled",
+                "enable_volumes",
+                "enable_snapshots",
+                "is_default"
+              ]
+            },
+            "flavor": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "memory_gb": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "flavor_group": {
+                  "type": "null"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "memory_mb": {
+                  "type": "integer"
+                },
+                "vcpus": {
+                  "type": "integer"
+                },
+                "swap": {
+                  "type": "integer"
+                },
+                "root_gb": {
+                  "type": "integer"
+                },
+                "ephemeral_gb": {
+                  "type": "integer"
+                },
+                "out_of_stock": {
+                  "type": "boolean"
+                },
+                "properties": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "reseller_resources": {
+                  "type": "null"
+                },
+                "assigned_cluster_templates": {
+                  "type": "array"
+                },
+                "used_by_resellers": {
+                  "type": "array"
+                }
+              },
+              "required": [
+                "id",
+                "memory_gb",
+                "flavor_group",
+                "name",
+                "description",
+                "memory_mb",
+                "vcpus",
+                "swap",
+                "root_gb",
+                "ephemeral_gb",
+                "out_of_stock",
+                "properties",
+                "region",
+                "reseller_resources",
+                "assigned_cluster_templates",
+                "used_by_resellers"
+              ]
+            },
+            "status": {
+              "type": "string"
+            },
+            "booted_from_iso": {
+              "type": "boolean"
+            },
+            "locked": {
+              "type": "boolean"
+            },
+            "current_cycle_traffic": {
+              "type": "integer"
+            },
+            "current_month_traffic": {
+              "type": "integer"
+            },
+            "hostId": {
+              "type": "string"
+            },
+            "host_name": {
+              "type": "string"
+            },
+            "access_subnet_id": {
+              "type": "string"
+            },
+            "availability_zone": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "allowed_actions",
+            "access_ip",
+            "uuid",
+            "created",
+            "display_status",
+            "display_task",
+            "description",
+            "image",
+            "region",
+            "region_obj",
+            "flavor",
+            "status",
+            "booted_from_iso",
+            "locked",
+            "current_cycle_traffic",
+            "current_month_traffic",
+            "hostId",
+            "host_name",
+            "access_subnet_id",
+            "availability_zone",
+            "tags",
+            "floating_ips"
+          ]
+        }
+      },
+      "Instances": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer"
+          },
+          "next": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "previous": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "objects": {
+            "items": {
+              "$ref": "#/components/schemas/Instance"
+            },
+            "type": "array"
+          },
+          "totalCount": {
+            "type": "integer"
+          },
+          "pageNo": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "permissions": {
+            "type": "object",
+            "properties": {
+              "instances.list": {
+                "type": "boolean"
+              },
+              "instances.retrieve": {
+                "type": "boolean"
+              },
+              "instances.create": {
+                "type": "boolean"
+              },
+              "instances.abort-migrate": {
+                "type": "boolean"
+              },
+              "instances.attach-volume": {
+                "type": "boolean"
+              },
+              "instances.change-password": {
+                "type": "boolean"
+              },
+              "instances.confirm-resize": {
+                "type": "boolean"
+              },
+              "instances.create_snapshot": {
+                "type": "boolean"
+              },
+              "instances.detach_volume": {
+                "type": "boolean"
+              },
+              "instances.destroy": {
+                "type": "boolean"
+              },
+              "instances.attach_port": {
+                "type": "boolean"
+              },
+              "instances.detach_port": {
+                "type": "boolean"
+              },
+              "instances.lock": {
+                "type": "boolean"
+              },
+              "instances.migrate": {
+                "type": "boolean"
+              },
+              "instances.move": {
+                "type": "boolean"
+              },
+              "instances.reboot": {
+                "type": "boolean"
+              },
+              "instances.rebuild": {
+                "type": "boolean"
+              },
+              "instances.rename": {
+                "type": "boolean"
+              },
+              "instances.rescue": {
+                "type": "boolean"
+              },
+              "instances.boot_from_iso": {
+                "type": "boolean"
+              },
+              "instances.reset-state": {
+                "type": "boolean"
+              },
+              "instances.resize": {
+                "type": "boolean"
+              },
+              "instances.resume": {
+                "type": "boolean"
+              },
+              "instances.revert-resize": {
+                "type": "boolean"
+              },
+              "instances.start": {
+                "type": "boolean"
+              },
+              "instances.stop": {
+                "type": "boolean"
+              },
+              "instances.shelve": {
+                "type": "boolean"
+              },
+              "instances.suspend": {
+                "type": "boolean"
+              },
+              "instances.unlock": {
+                "type": "boolean"
+              },
+              "instances.unrescue": {
+                "type": "boolean"
+              },
+              "instances.unshelve": {
+                "type": "boolean"
+              },
+              "instances.dissociate_security_group": {
+                "type": "boolean"
+              },
+              "instances.associate_security_group": {
+                "type": "boolean"
+              },
+              "instances.create_backup": {
+                "type": "boolean"
+              },
+              "instances.add_floating_ip": {
+                "type": "boolean"
+              },
+              "instances.remove_floating_ip": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "instances.list",
+              "instances.retrieve",
+              "instances.create",
+              "instances.abort-migrate",
+              "instances.attach-volume",
+              "instances.change-password",
+              "instances.confirm-resize",
+              "instances.create_snapshot",
+              "instances.detach_volume",
+              "instances.destroy",
+              "instances.attach_port",
+              "instances.detach_port",
+              "instances.lock",
+              "instances.migrate",
+              "instances.move",
+              "instances.reboot",
+              "instances.rebuild",
+              "instances.rename",
+              "instances.rescue",
+              "instances.boot_from_iso",
+              "instances.reset-state",
+              "instances.resize",
+              "instances.resume",
+              "instances.revert-resize",
+              "instances.start",
+              "instances.stop",
+              "instances.shelve",
+              "instances.suspend",
+              "instances.unlock",
+              "instances.unrescue",
+              "instances.unshelve",
+              "instances.dissociate_security_group",
+              "instances.associate_security_group",
+              "instances.create_backup",
+              "instances.add_floating_ip",
+              "instances.remove_floating_ip"
+            ]
+          },
+          "filter_options": {
+            "type": "object",
+            "properties": {
+              "task_state": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "display": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "display",
+                    "value"
+                  ]
+                }
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "display": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "display",
+                    "value"
+                  ]
+                }
+              },
+              "availability_zone": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "display": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "display",
+                    "value"
+                  ]
+                }
+              },
+              "project__service__client__status": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "display": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "display",
+                    "value"
+                  ]
+                }
+              },
+              "project__service__status": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "display": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "display",
+                    "value"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "task_state",
+              "status",
+              "availability_zone",
+              "project__service__client__status",
+              "project__service__status"
+            ]
+          },
+          "operations": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "count",
+          "next",
+          "previous",
+          "objects",
+          "totalCount",
+          "pageNo",
+          "permissions",
+          "filter_options",
+          "operations"
+        ]
+      },
+      "InstanceImage": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+            "tags": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+            "client": {
+                      "type": "null"
+                    },
+            "properties": {
+                "type": "object",
+                "properties": {
+                  "owner_specified.openstack.md5": {
+                    "type": "string"
+                  },
+                  "owner_specified.openstack.sha256": {
+                    "type": "string"
+                  },
+                  "owner_specified.openstack.object": {
+                    "type": "string"
+                  },
+                  "hw_qemu_guest_agent": {
+                    "type": "string"
+                  },
+                  "os_hidden": {
+                    "type": "boolean"
+                  },
+                  "os_hash_algo": {
+                    "type": "string"
+                  },
+                  "os_hash_value": {
+                    "type": "string"
+                  },
+                  "stores": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "hw_qemu_guest_agent"
+                ]
+              },
+              "is_iso": {
+                "type": "boolean"
+              },
+              "display_name": {
+                "type": "string"
+              },
+              "cleanup_date": {
+                "type": "null"
+              },
+              "assigned_to_flavor": {
+                "type": "boolean"
+              },
+              "related_instance": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              },
+              "deleted_at": {
+                "type": "null"
+              },
+              "os_distro": {
+                "type": "string"
+              },
+              "hypervisor_type": {
+                "type": "null"
+              },
+              "os_version": {
+                "type": "string"
+              },
+              "architecture": {
+                "type": "null"
+              },
+              "min_disk": {
+                "type": "integer"
+              },
+              "min_ram": {
+                "type": "integer"
+              },
+              "protected": {
+                "type": "boolean"
+              },
+              "visibility": {
+                "type": "string"
+              },
+              "container_format": {
+                "type": "string"
+              },
+              "disk_format": {
+                "type": "string"
+              },
+              "hw_qemu_guest_agent": {
+                "type": "boolean"
+              },
+              "instance_uuid": {
+                "type": "null"
+              },
+              "volume_snapshot_uuid": {
+                "type": "null"
+              },
+              "region": {
+                "type": "string"
+              },
+              "reseller_resources": {
+                "type": "null"
+              },
+              "used_by_resellers": {
+                "type": "array"
+              }
+            },
+          "required": [
+            "id",
+            "tags",
+            "client",
+            "properties",
+            "is_iso",
+            "display_name",
+            "cleanup_date",
+            "assigned_to_flavor",
+            "related_instance",
+            "name",
+            "type",
+            "status",
+            "size",
+            "created_at",
+            "updated_at",
+            "deleted_at",
+            "os_distro",
+            "hypervisor_type",
+            "os_version",
+            "architecture",
+            "min_disk",
+            "min_ram",
+            "protected",
+            "visibility",
+            "container_format",
+            "disk_format",
+            "hw_qemu_guest_agent",
+            "instance_uuid",
+            "volume_snapshot_uuid",
+            "region",
+            "reseller_resources",
+            "used_by_resellers"
+          ]
+        }
+      },
+      "InstanceCreateOptions": {
+        "type": "object",
+        "properties": {
+          "bootSources": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "$ref": "#/components/schemas/InstanceImage"
+              },
+              "owned_image": {
+                "type": "array"
+              },
+              "shared_image": {
+                "type": "array"
+              },
+              "community_image": {
+                "type": "array"
+              },
+              "volume": {
+                "type": "array"
+              },
+              "volume_snapshot": {
+                "type": "array"
+              },
+              "volume_types": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "sizeIncrement": {
+                    "type": "integer"
+                  },
+                  "minimumSize": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "requested_boot_source": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "image",
+              "owned_image",
+              "shared_image",
+              "community_image",
+              "volume",
+              "volume_snapshot",
+              "volume_types",
+              "requested_boot_source"
+            ]
+          },
+          "flavor": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "memory_gb": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "flavor_group": {
+                  "type": "null"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "memory_mb": {
+                  "type": "integer"
+                },
+                "vcpus": {
+                  "type": "integer"
+                },
+                "swap": {
+                  "type": "integer"
+                },
+                "root_gb": {
+                  "type": "integer"
+                },
+                "ephemeral_gb": {
+                  "type": "integer"
+                },
+                "out_of_stock": {
+                  "type": "boolean"
+                },
+                "properties": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "reseller_resources": {
+                  "type": "null"
+                },
+                "assigned_cluster_templates": {
+                  "type": "array"
+                },
+                "used_by_resellers": {
+                  "type": "array"
+                }
+              },
+              "required": [
+                "id",
+                "memory_gb",
+                "flavor_group",
+                "flavor_id",
+                "name",
+                "description",
+                "memory_mb",
+                "vcpus",
+                "swap",
+                "root_gb",
+                "ephemeral_gb",
+                "out_of_stock",
+                "properties",
+                "region",
+                "reseller_resources",
+                "assigned_cluster_templates",
+                "used_by_resellers"
+              ]
+            }
+          },
+          "ssh_key": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "public_key": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "fingerprint": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "full_name": {
+                      "type": "string"
+                    },
+                    "display": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "email",
+                    "full_name",
+                    "display"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "public_key",
+                "created_at",
+                "fingerprint",
+                "user"
+              ]
+            }
+          },
+          "nics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "tags"
+              ]
+            }
+          },
+          "availability_zones": {
+            "type": "array"
+          },
+          "cinder_az": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "enable_volumes": {
+            "type": "boolean"
+          },
+          "enable_snapshots": {
+            "type": "boolean"
+          },
+          "hide_volume_az": {
+            "type": "boolean"
+          },
+          "region": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "description"
+              ]
+            }
+          },
+          "selected_region": {
+            "type": "string"
+          },
+          "client": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "display": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "display"
+            ]
+          }
+        },
+        "required": [
+          "bootSources",
+          "flavor",
+          "ssh_key",
+          "nics",
+          "availability_zones",
+          "cinder_az",
+          "enable_volumes",
+          "enable_snapshots",
+          "hide_volume_az",
+          "region",
+          "selected_region",
+          "client"
+        ]
+      },
+      "ImageToRescue":  {
+        "properties": {
+          "architecture": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "assigned_to_flavor": {
+            "type": "boolean"
+          },
+          "cleanup_date": {
+            "type": "null"
+          },
+          "client": {
+            "properties": {
+              "display": {
+                "type": "string"
+              },
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "display"
+            ],
+            "type": ["object", "null"]
+          },
+          "container_format": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "deleted_at": {
+            "type": "null"
+          },
+          "disk_format": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "hw_qemu_guest_agent": {
+            "type": "boolean"
+          },
+          "hypervisor_type": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "instance_uuid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "is_iso": {
+            "type": "boolean"
+          },
+          "min_disk": {
+            "type": "integer"
+          },
+          "min_ram": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "os_distro": {
+            "type": "string"
+          },
+          "os_version": {
+            "type": "string"
+          },
+          "properties": {
+            "properties": {
+              "hw_qemu_guest_agent": {
+                "type": "string"
+              },
+              "os_hash_algo": {
+                "type": "string"
+              },
+              "os_hash_value": {
+                "type": "string"
+              },
+              "os_hidden": {
+                "type": "boolean"
+              },
+              "owner_specified.openstack.md5": {
+                "type": "string"
+              },
+              "owner_specified.openstack.object": {
+                "type": "string"
+              },
+              "owner_specified.openstack.sha256\n": {
+                "type": "string"
+              },
+              "stores": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "protected": {
+            "type": "boolean"
+          },
+          "region": {
+            "type": "string"
+          },
+          "related_instance": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "reseller_resources": {
+            "type": "null"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array"
+          },
+          "type": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "used_by_resellers": {
+            "type": "array"
+          },
+          "visibility": {
+            "type": "string"
+          },
+          "volume_snapshot_uuid": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "id",
+          "tags",
+          "client",
+          "properties",
+          "is_iso",
+          "display_name",
+          "cleanup_date",
+          "assigned_to_flavor",
+          "related_instance",
+          "name",
+          "type",
+          "status",
+          "size",
+          "created_at",
+          "updated_at",
+          "deleted_at",
+          "os_distro",
+          "hypervisor_type",
+          "os_version",
+          "architecture",
+          "min_disk",
+          "min_ram",
+          "protected",
+          "visibility",
+          "container_format",
+          "disk_format",
+          "hw_qemu_guest_agent",
+          "instance_uuid",
+          "volume_snapshot_uuid",
+          "region",
+          "reseller_resources",
+          "used_by_resellers"
+        ],
+        "type": "object"
+      },
+      "InstanceToRescue": {
+                      "properties": {
+                        "access_ip": {
+                          "type": "string"
+                        },
+                        "access_subnet_id": {
+                          "type": "string"
+                        },
+                        "allowed_actions": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "availability_zone": {
+                          "type": "string"
+                        },
+                        "booted_from_iso": {
+                          "type": "boolean"
+                        },
+                        "created": {
+                          "type": "string"
+                        },
+                        "current_cycle_traffic": {
+                          "type": "integer"
+                        },
+                        "current_month_traffic": {
+                          "type": "integer"
+                        },
+                        "description": {
+                          "type": "null"
+                        },
+                        "display_status": {
+                          "type": "string"
+                        },
+                        "display_task": {
+                          "type": "null"
+                        },
+                        "flavor": {
+                          "properties": {
+                            "assigned_cluster_templates": {
+                              "type": "array"
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "ephemeral_gb": {
+                              "type": "integer"
+                            },
+                            "flavor_group": {
+                              "type": "null"
+                            },
+                            "id": {
+                              "type": "string",
+                              "format": "uuid"
+                            },
+                            "memory_gb": {
+                              "type": "integer"
+                            },
+                            "memory_mb": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "out_of_stock": {
+                              "type": "boolean"
+                            },
+                            "properties": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "reseller_resources": {
+                              "type": "null"
+                            },
+                            "root_gb": {
+                              "type": "integer"
+                            },
+                            "swap": {
+                              "type": "integer"
+                            },
+                            "used_by_resellers": {
+                              "type": "array"
+                            },
+                            "vcpus": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "memory_gb",
+                            "flavor_group",
+                            "name",
+                            "description",
+                            "memory_mb",
+                            "vcpus",
+                            "swap",
+                            "root_gb",
+                            "ephemeral_gb",
+                            "out_of_stock",
+                            "properties",
+                            "region",
+                            "reseller_resources",
+                            "assigned_cluster_templates",
+                            "used_by_resellers"
+                          ],
+                          "type": "object"
+                        },
+                        "hostId": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "host_name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "image": {
+                          "properties": {
+                            "architecture": {
+                              "type": "null"
+                            },
+                            "assigned_to_flavor": {
+                              "type": "boolean"
+                            },
+                            "cleanup_date": {
+                              "type": "null"
+                            },
+                            "client": {
+                              "type": "null"
+                            },
+                            "container_format": {
+                              "type": "string"
+                            },
+                            "created_at": {
+                              "type": "string"
+                            },
+                            "deleted_at": {
+                              "type": "null"
+                            },
+                            "disk_format": {
+                              "type": "string"
+                            },
+                            "display_name": {
+                              "type": "string"
+                            },
+                            "hw_qemu_guest_agent": {
+                              "type": "boolean"
+                            },
+                            "hypervisor_type": {
+                              "type": "null"
+                            },
+                            "id": {
+                              "type": "string",
+                              "format": "uuid"
+                            },
+                            "instance_uuid": {
+                              "type": "null"
+                            },
+                            "is_iso": {
+                              "type": "boolean"
+                            },
+                            "min_disk": {
+                              "type": "integer"
+                            },
+                            "min_ram": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "os_distro": {
+                              "type": "string"
+                            },
+                            "os_version": {
+                              "type": "string"
+                            },
+                            "properties": {
+                              "properties": {
+                                "hw_qemu_guest_agent": {
+                                  "type": "string"
+                                },
+                                "os_hash_algo": {
+                                  "type": "string"
+                                },
+                                "os_hash_value": {
+                                  "type": "string"
+                                },
+                                "os_hidden": {
+                                  "type": "boolean"
+                                },
+                                "owner_specified.openstack.md5": {
+                                  "type": "string"
+                                },
+                                "owner_specified.openstack.object": {
+                                  "type": "string"
+                                },
+                                "owner_specified.openstack.sha256": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "protected": {
+                              "type": "boolean"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "related_instance": {
+                              "type": "null"
+                            },
+                            "reseller_resources": {
+                              "type": "null"
+                            },
+                            "size": {
+                              "type": "integer"
+                            },
+                            "status": {
+                              "type": "string"
+                            },
+                            "tags": {
+                              "type": "array"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "updated_at": {
+                              "type": "string"
+                            },
+                            "used_by_resellers": {
+                              "type": "array"
+                            },
+                            "visibility": {
+                              "type": "string"
+                            },
+                            "volume_snapshot_uuid": {
+                              "type": "null"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "tags",
+                            "client",
+                            "properties",
+                            "is_iso",
+                            "display_name",
+                            "cleanup_date",
+                            "assigned_to_flavor",
+                            "related_instance",
+                            "name",
+                            "type",
+                            "status",
+                            "size",
+                            "created_at",
+                            "updated_at",
+                            "deleted_at",
+                            "os_distro",
+                            "hypervisor_type",
+                            "os_version",
+                            "architecture",
+                            "min_disk",
+                            "min_ram",
+                            "protected",
+                            "visibility",
+                            "container_format",
+                            "disk_format",
+                            "hw_qemu_guest_agent",
+                            "instance_uuid",
+                            "volume_snapshot_uuid",
+                            "region",
+                            "reseller_resources",
+                            "used_by_resellers"
+                          ],
+                          "type": "object"
+                        },
+                        "locked": {
+                          "type": "boolean"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "region": {
+                          "type": "string"
+                        },
+                        "region_obj": {
+                          "properties": {
+                            "description": {
+                              "type": "string"
+                            },
+                            "enable_snapshots": {
+                              "type": "boolean"
+                            },
+                            "enable_volumes": {
+                              "type": "boolean"
+                            },
+                            "enabled": {
+                              "type": "boolean"
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "is_default": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "description",
+                            "enabled",
+                            "enable_volumes",
+                            "enable_snapshots",
+                            "is_default"
+                          ],
+                          "type": "object"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "uuid": {
+                          "type": "string",
+                          "format": "uuid"
+                        }
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "tags",
+                        "allowed_actions",
+                        "access_ip",
+                        "uuid",
+                        "created",
+                        "display_status",
+                        "display_task",
+                        "description",
+                        "image",
+                        "region",
+                        "region_obj",
+                        "flavor",
+                        "status",
+                        "booted_from_iso",
+                        "locked",
+                        "current_cycle_traffic",
+                        "current_month_traffic",
+                        "hostId",
+                        "host_name",
+                        "access_subnet_id",
+                        "availability_zone"
+                      ],
+                      "type": "object"
+                    },
+      "AddTag": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "InstanceTags": {
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name"
+          ]
+        },
+        "type": "array"
+      }
+    },
+    "securitySchemes": {
+      "apikey header authorization": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "AUTHORIZATION"
+      }
+    }
+  },
+  "paths": {
+    "/backend/api/openstack/instances": {
+      "get": {
+        "summary": "Get Instance list",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of OpenStack instances associated with the user's account.\nGet a list of information about instances when they don't exist yet.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Instance"
+                },
+                "example": {
+                  "count": 1,
+                  "next": null,
+                  "previous": null,
+                  "objects": [
+                    {
+                      "id": "3aa3a443-8642-4c1c-9099-3e8205f88d5e",
+                      "name": "instance",
+                      "allowed_actions": [
+                        "shutoff",
+                        "reboot",
+                        "resize",
+                        "rescue",
+                        "rebuild",
+                        "console",
+                        "rename",
+                        "create_snapshot",
+                        "attach_volume",
+                        "boot_from_iso",
+                        "shelve",
+                        "associate_ip",
+                        "dissociate_ip",
+                        "change_password"
+                      ],
+                      "access_ip": "10.0.1.141",
+                      "uuid": "3aa3a443-8642-4c1c-9099-3e8205f88d5e",
+                      "created": "2024-03-15T08:30:06Z",
+                      "display_status": "Виконується",
+                      "display_task": null,
+                      "description": null,
+                      "image": {
+                        "id": "2b979045-4e10-45c9-805c-c95be46a37b9",
+                        "tags": [],
+                        "client": null,
+                        "properties": {
+                          "owner_specified.openstack.md5": "",
+                          "owner_specified.openstack.sha256": "",
+                          "owner_specified.openstack.object": "images/Centos-7",
+                          "hw_qemu_guest_agent": "yes",
+                          "os_hidden": false,
+                          "os_hash_algo": "sha512",
+                          "os_hash_value": "1b29cd42a53a3b0807962c1c9fbbf7fb360e0d95bb0c962c15fd9fa27ad13e908f45d81558a273ecdc4a5db1b7b3ae8cd14678b56e17e8d7ee5f588d36a8a401",
+                          "stores": "rbd"
+                        },
+                        "is_iso": false,
+                        "display_name": "Centos 7 (x64)",
+                        "cleanup_date": null,
+                        "assigned_to_flavor": true,
+                        "related_instance": null,
+                        "name": "Centos 7 (x64)",
+                        "type": "template",
+                        "status": "active",
+                        "size": 902889472,
+                        "created_at": "2023-12-30T11:54:35Z",
+                        "updated_at": "2023-12-30T11:57:43Z",
+                        "deleted_at": null,
+                        "os_distro": "centos",
+                        "hypervisor_type": null,
+                        "os_version": "7",
+                        "architecture": null,
+                        "min_disk": 0,
+                        "min_ram": 0,
+                        "protected": false,
+                        "visibility": "public",
+                        "container_format": "bare",
+                        "disk_format": "qcow2",
+                        "hw_qemu_guest_agent": true,
+                        "instance_uuid": null,
+                        "volume_snapshot_uuid": null,
+                        "region": "default",
+                        "reseller_resources": null,
+                        "used_by_resellers": []
+                      },
+                      "region": "default",
+                      "region_obj": {
+                        "id": "default",
+                        "description": "",
+                        "enabled": true,
+                        "enable_volumes": true,
+                        "enable_snapshots": true,
+                        "is_default": true
+                      },
+                      "flavor": {
+                        "id": "4d429bcd-252c-4522-9ed0-4a24d6d8249e",
+                        "memory_gb": 1,
+                        "flavor_group": null,
+                        "name": "v1.m1",
+                        "description": "v1.m1",
+                        "memory_mb": 1024,
+                        "vcpus": 1,
+                        "swap": 0,
+                        "root_gb": 10,
+                        "ephemeral_gb": 0,
+                        "out_of_stock": false,
+                        "properties": "{}",
+                        "region": "default",
+                        "reseller_resources": null,
+                        "assigned_cluster_templates": [],
+                        "used_by_resellers": []
+                      },
+                      "status": "active",
+                      "booted_from_iso": false,
+                      "locked": false,
+                      "current_cycle_traffic": 0,
+                      "current_month_traffic": 0,
+                      "hostId": "5edc2161bc58cd4920fd84600b7ef1d1b4a4b68bef7bcaf209911915",
+                      "host_name": "s10",
+                      "access_subnet_id": "04830e34-ee2b-4257-8c25-fddcd3c3eeba",
+                      "availability_zone": "nova",
+                      "tags": [
+                        {
+                          "id": 24,
+                          "name": "fdgdfgfd"
+                        },
+                        {
+                          "id": 25,
+                          "name": "fggdfg"
+                        },
+                        {
+                          "id": 26,
+                          "name": "fggggggg"
+                        }
+                      ],
+                      "floating_ips": [
+                        {
+                          "id": "869f5f03-d96f-48c9-ab1a-7f450193c2f5",
+                          "floating_ip_address": "217.147.172.153"
+                        }
+                      ]
+                    }
+                  ],
+                  "totalCount": 1,
+                  "pageNo": "1",
+                  "permissions": {
+                    "instances.list": true,
+                    "instances.retrieve": true,
+                    "instances.create": true,
+                    "instances.abort-migrate": true,
+                    "instances.attach-volume": true,
+                    "instances.change-password": true,
+                    "instances.confirm-resize": true,
+                    "instances.create_snapshot": true,
+                    "instances.detach_volume": true,
+                    "instances.destroy": true,
+                    "instances.attach_port": true,
+                    "instances.detach_port": true,
+                    "instances.lock": true,
+                    "instances.migrate": true,
+                    "instances.move": true,
+                    "instances.reboot": true,
+                    "instances.rebuild": true,
+                    "instances.rename": true,
+                    "instances.rescue": true,
+                    "instances.boot_from_iso": true,
+                    "instances.reset-state": true,
+                    "instances.resize": true,
+                    "instances.resume": true,
+                    "instances.revert-resize": true,
+                    "instances.start": true,
+                    "instances.stop": true,
+                    "instances.shelve": true,
+                    "instances.suspend": true,
+                    "instances.unlock": true,
+                    "instances.unrescue": true,
+                    "instances.unshelve": true,
+                    "instances.dissociate_security_group": true,
+                    "instances.associate_security_group": true,
+                    "instances.create_backup": true,
+                    "instances.add_floating_ip": true,
+                    "instances.remove_floating_ip": true
+                  },
+                  "filter_options": {
+                    "task_state": [
+                      {
+                        "display": "Вивантаження збереженого стану",
+                        "value": "shelving_offloading"
+                      },
+                      {
+                        "display": "Видалення",
+                        "value": "deleting"
+                      },
+                      {
+                        "display": "Вимкнення",
+                        "value": "powering-off"
+                      },
+                      {
+                        "display": "Відновити зіставлення блокових пристроїв",
+                        "value": "rebuild_block_device_mapping"
+                      },
+                      {
+                        "display": "Відновити створення копії обʼєкта",
+                        "value": "rebuild_spawning"
+                      },
+                      {
+                        "display": "Відновлення",
+                        "value": "resuming"
+                      },
+                      {
+                        "display": "Відновлення",
+                        "value": "restoring"
+                      },
+                      {
+                        "display": "Відновлення паузи",
+                        "value": "unpausing"
+                      },
+                      {
+                        "display": "Відновлення стану",
+                        "value": "unshelving"
+                      },
+                      {
+                        "display": "Відновлюється",
+                        "value": "rescuing"
+                      },
+                      {
+                        "display": "Демонтування ISO та перезавантаження",
+                        "value": "unmounting_ISO_and_rebooting"
+                      },
+                      {
+                        "display": "Жорстке перезавантаження",
+                        "value": "rebooting_hard"
+                      },
+                      {
+                        "display": "Заблокувати відображення пристроїв",
+                        "value": "block_device_mapping"
+                      },
+                      {
+                        "display": "Завантаження з ISO",
+                        "value": "booting_from_iso"
+                      },
+                      {
+                        "display": "Завантаження образу",
+                        "value": "image_uploading"
+                      },
+                      {
+                        "display": "Завантаження образу стану",
+                        "value": "shelving_image_uploading"
+                      },
+                      {
+                        "display": "Збереження стану",
+                        "value": "shelving"
+                      },
+                      {
+                        "display": "Змінити розмір prep",
+                        "value": "resize_prep"
+                      },
+                      {
+                        "display": "Змінити розмір завершення",
+                        "value": "resize_finish"
+                      },
+                      {
+                        "display": "Змінити розмір перенесено",
+                        "value": "resize_migrated"
+                      },
+                      {
+                        "display": "Знімок образу",
+                        "value": "image_snapshot"
+                      },
+                      {
+                        "display": "М'яке видалення",
+                        "value": "soft-deleting"
+                      },
+                      {
+                        "display": "Мережа",
+                        "value": "networking"
+                      },
+                      {
+                        "display": "Міграція зміни розміру",
+                        "value": "resize_migrating"
+                      },
+                      {
+                        "display": "Мігрувати",
+                        "value": "migrating"
+                      },
+                      {
+                        "display": "Невідновлюється",
+                        "value": "unrescuing"
+                      },
+                      {
+                        "display": "Образ очікує на завантаження",
+                        "value": "image_pending_upload"
+                      },
+                      {
+                        "display": "Оновлення пароля",
+                        "value": "updating_password"
+                      },
+                      {
+                        "display": "Очікується жорстке перезавантаження",
+                        "value": "reboot_pending_hard"
+                      },
+                      {
+                        "display": "Очікується завантаження образу стану",
+                        "value": "shelving_image_pending_upload"
+                      },
+                      {
+                        "display": "Очікується знімок образу",
+                        "value": "image_snapshot_pending"
+                      },
+                      {
+                        "display": "Очікується перезавантаження",
+                        "value": "reboot_pending"
+                      },
+                      {
+                        "display": "Пауза",
+                        "value": "pausing"
+                      },
+                      {
+                        "display": "Перезавантаження",
+                        "value": "rebooting"
+                      },
+                      {
+                        "display": "Перетворювання",
+                        "value": "rebuilding"
+                      },
+                      {
+                        "display": "Планування",
+                        "value": "scheduling"
+                      },
+                      {
+                        "display": "Повернення розміру",
+                        "value": "resize_reverting"
+                      },
+                      {
+                        "display": "Почалося перезавантаження",
+                        "value": "reboot_started"
+                      },
+                      {
+                        "display": "Призупинення",
+                        "value": "suspending"
+                      },
+                      {
+                        "display": "Підтвердження зміни розміру",
+                        "value": "resize_confirming"
+                      },
+                      {
+                        "display": "Резервне копіювання образу",
+                        "value": "image_backup"
+                      },
+                      {
+                        "display": "Розпочато примусове перезавантаження",
+                        "value": "reboot_started_hard"
+                      },
+                      {
+                        "display": "Створити копію об'єкта",
+                        "value": "spawning"
+                      },
+                      {
+                        "display": "Увімкнення",
+                        "value": "powering-on"
+                      }
+                    ],
+                    "status": [
+                      {
+                        "display": "Активний",
+                        "value": "active"
+                      },
+                      {
+                        "display": "Видалено",
+                        "value": "deleted"
+                      },
+                      {
+                        "display": "Відновлено",
+                        "value": "rescued"
+                      },
+                      {
+                        "display": "Завантажується з ISO",
+                        "value": "booted_from_iso"
+                      },
+                      {
+                        "display": "Збережений стан",
+                        "value": "shelved"
+                      },
+                      {
+                        "display": "Збережений стан і звільнені ресурси",
+                        "value": "shelved_offloaded"
+                      },
+                      {
+                        "display": "Змінено розмір",
+                        "value": "resized"
+                      },
+                      {
+                        "display": "Зупинено",
+                        "value": "stopped"
+                      },
+                      {
+                        "display": "Мʼяке видалення",
+                        "value": "soft-delete"
+                      },
+                      {
+                        "display": "Помилка",
+                        "value": "error"
+                      },
+                      {
+                        "display": "Призупинено",
+                        "value": "paused"
+                      },
+                      {
+                        "display": "Створюється",
+                        "value": "building"
+                      },
+                      {
+                        "display": "Тимчасово припинений",
+                        "value": "suspended"
+                      }
+                    ],
+                    "availability_zone": [
+                      {
+                        "display": "nova",
+                        "value": "nova"
+                      }
+                    ],
+                    "project__service__client__status": [
+                      {
+                        "display": "Активний",
+                        "value": "active"
+                      },
+                      {
+                        "display": "Видалення",
+                        "value": "deleting"
+                      },
+                      {
+                        "display": "Закінчений",
+                        "value": "closed"
+                      },
+                      {
+                        "display": "Неактивний",
+                        "value": "inactive"
+                      },
+                      {
+                        "display": "Призупинення",
+                        "value": "suspending"
+                      },
+                      {
+                        "display": "Тимчасово припинений",
+                        "value": "suspended"
+                      }
+                    ],
+                    "project__service__status": [
+                      {
+                        "display": "Активний",
+                        "value": "active"
+                      },
+                      {
+                        "display": "В очікуванні",
+                        "value": "pending"
+                      },
+                      {
+                        "display": "Припинено",
+                        "value": "terminated"
+                      },
+                      {
+                        "display": "Скасовано",
+                        "value": "canceled"
+                      },
+                      {
+                        "display": "Тимчасово припинений",
+                        "value": "suspended"
+                      },
+                      {
+                        "display": "Шахрайство",
+                        "value": "fraud"
+                      }
+                    ]
+                  },
+                  "operations": []
+                }
+              }
+            },
+            "description": ""
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "detail": "Your client has no active OpenStack project"
+                }
+              }
+            },
+            "description": "You may not have services or there may not be funds on your balance to complete this operation."
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create Instances",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nCreate Instances. You can specify SSH key or password.\nIt is recommended to use a complex password of 16 characters or more, of different case, including numbers and special characters.\nYou can also specify the number of instances to create.\n",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstanceCreate"
+                },
+                "example": {
+                  "name": "Instance",
+                  "flavor": "4d429bcd-252c-4522-9ed0-4a24d6d8249e",
+                  "region": "default",
+                  "availability_zone": null,
+                  "operation_id": "efdf23dd-c7d4-4630-8e8c-41e06cbfde4d"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstanceCreateBadRequest"
+                },
+                "example": {
+                  "name": [
+                    "This field is required."
+                  ],
+                  "boot_source": [
+                    "This field is required."
+                  ],
+                  "flavor": [
+                    "This field is required."
+                  ],
+                  "region": [
+                    "This field is required."
+                  ]
+                }
+              }
+            }
+          },
+          "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InstanceCreateBody"
+            },
+            "example": {
+              "boot_source": {
+                "cinder_az": null,
+                "create_new_volume": true,
+                "delete_on_termination": true,
+                "source_id": "2b979045-4e10-45c9-805c-c95be46a37b9",
+                "source_type": "image",
+                "volume_type": "__DEFAULT__",
+                "volume_size": "10"
+              },
+              "tags": [
+                "tag 1",
+                "tag 2"
+              ],
+              "client": "993320",
+              "flavor": "4d429bcd-252c-4522-9ed0-4a24d6d8249e",
+              "name": "First Instance",
+              "nics": [
+                "f089fb6a-4887-40f6-9b54-93853ab32173"
+              ],
+              "region": "default",
+              "root_password": "PassWord__123__",
+              "ssh_keys": "[115]"
+            }
+          }
+        }
+      },
+          "security": [
+        {
+          "apikey header authorization": []
+        }
+      ],
+          "description": "You may not have services or there may not be funds on your balance to complete this operation."
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/reboot": {
+      "post": {
+        "summary": "Reboot Instance",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nInitiate a reboot for the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstanceReboot"
+                }
+              }
+            }
+          },
+          "description": "",
+          "security": [
+        {
+          "apikey header authorization": []
+        }
+      ]
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/add_floating_ip": {
+      "post": {
+        "summary": "Add Floating IP",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nAdd a floating IP to the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "detail": "Floating ip associated"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddFloatingIP"
+              },
+              "example": {
+                "fixed_ip": "217.157.172.179",
+                "floating_ip": "10.0.1.117"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/remove_floating_ip": {
+      "post": {
+        "summary": "Remove Floating IP",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nRemove a floating IP from the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "detail": "Floating ip dissociated"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "ip": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ip"
+                ],
+                "type": "object"
+              },
+              "example": {
+                "ip": "217.157.172.179"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}": {
+      "delete": {
+        "summary": " Delete instance",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nDelete a specific instance, identified by its unique ID.\n",
+        "responses": {
+          "404": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/openstack/instances/create_options": {
+      "get": {
+        "summary": "Get create Instance options",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for creating a new instance.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstanceCreateOptions"
+                },
+                "example": {
+                  "bootSources": {
+        "image": [
+            {
+                "id": "2b979045-4e10-45c9-805c-c95be46a37b9",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/Centos-7",
+                    "hw_qemu_guest_agent": "yes",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "1b29cd42a53a3b0807962c1c9fbbf7fb360e0d95bb0c962c15fd9fa27ad13e908f45d81558a273ecdc4a5db1b7b3ae8cd14678b56e17e8d7ee5f588d36a8a401",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "Centos 7 (x64)",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "Centos 7 (x64)",
+                "type": "template",
+                "status": "active",
+                "size": 902889472,
+                "created_at": "2023-12-30T11:54:35Z",
+                "updated_at": "2023-12-30T11:57:43Z",
+                "deleted_at": null,
+                "os_distro": "centos",
+                "hypervisor_type": null,
+                "os_version": "7",
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": true,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "e204d056-81d0-4e61-b2aa-a4ee25da6ce2",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/cirros",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "1103b92ce8ad966e41235a4de260deb791ff571670c0342666c8582fbb9caefe6af07ebb11d34f44f8414b609b29c1bdf1d72ffa6faa39c88e8721d09847952b",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "cirros",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "cirros",
+                "type": "template",
+                "status": "active",
+                "size": 21430272,
+                "created_at": "2023-12-30T12:01:01Z",
+                "updated_at": "2023-12-30T12:01:17Z",
+                "deleted_at": null,
+                "os_distro": "cirros",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "736b728a-6fe9-4dfd-92b3-7b86026dcc85",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-ubunut-20-04",
+                    "hw_qemu_guest_agent": "yes",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "e72fd59b0faf06f4f56bbcac327faf434727353b21468b64465cca1afbc88ccfd81501dbd104db2d329003d2afb827f391dc3fb68e337f3ebe70e6147d25b927",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "Ubuntu 20.04 LTS (x64)",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "Ubuntu 20.04 LTS (x64)",
+                "type": "template",
+                "status": "active",
+                "size": 1047592960,
+                "created_at": "2023-12-30T11:54:59Z",
+                "updated_at": "2023-12-30T11:58:51Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": "20.04",
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": true,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "6c27efd8-0305-44fc-8c2b-51bc6b3a77c9",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-20.04-kube-v1.24.11",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "f245b5a189a73c283e3f7033be14b981529977c7d7c97352d8f7f0ca34d91dcc1ecb76a76c0868c0883f2b90a017fee488ba3d7f570872b4662b32c3f83695fb",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-20.04-kube-v1.24.11",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-20.04-kube-v1.24.11",
+                "type": "template",
+                "status": "active",
+                "size": 4460118016,
+                "created_at": "2023-12-30T11:55:32Z",
+                "updated_at": "2023-12-30T11:59:15Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "20774861-02cf-4450-ac6a-238e4f1272fc",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-20.04-kube-v1.26.7",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "ffb988c5cd564a9d7a0748415925dc568f4bd47489be10f8fdaf95cc60a4004c52e98086808a55d94186b0e23692514faab23a6cae718ba565d12b702fd3664f",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-20.04-kube-v1.26.7",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-20.04-kube-v1.26.7",
+                "type": "template",
+                "status": "active",
+                "size": 4440457216,
+                "created_at": "2023-12-30T11:56:40Z",
+                "updated_at": "2023-12-30T11:59:25Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "5e2c1d1a-88af-41f2-ab7e-a0968413a6c1",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-20.04-kube-v1.27.4",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "972e0114d5cc664c127bdad963d919ee5b54885ac6e43b3983845ece5d065b91ccb58758cd00b5da2178c8fb15fc0ca602ff3ef59ff2b79452c37d42ae86d245",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-20.04-kube-v1.27.4",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-20.04-kube-v1.27.4",
+                "type": "template",
+                "status": "active",
+                "size": 4424204288,
+                "created_at": "2023-12-30T11:58:00Z",
+                "updated_at": "2023-12-30T11:59:35Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "ec2439ca-7c00-4d23-a17a-61aea0992590",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-22.04-kube-v1.27.4",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "d1d9de1da35b665f7d368dab891375f09b1597b41dc47bf44e06dcad199f802e6aaaa77209df854082576bd16a63e7f15b377caefdb286209fbaf884d59188ac",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-22.04-kube-v1.27.4",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-22.04-kube-v1.27.4",
+                "type": "template",
+                "status": "active",
+                "size": 4985520128,
+                "created_at": "2023-12-30T11:59:45Z",
+                "updated_at": "2023-12-30T12:00:52Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "52e39a74-c2c0-4085-a587-e49f7fd12100",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-22.04-kube-v1.28.6",
+                    "hw_qemu_guest_agent": "yes",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "4fc24716c7db6e59087df44904c16cf3a52d574fd6bc989e9cd2eee33dc8d178769a504a0cb7a97936a6931ecb532c11268d7357f62570c5a23af7c17967ba7b",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-22.04-kube-v1.28.6",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-22.04-kube-v1.28.6",
+                "type": "template",
+                "status": "active",
+                "size": 4971495424,
+                "created_at": "2024-02-06T12:17:28Z",
+                "updated_at": "2024-02-09T12:46:51Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": "22.04",
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": true,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "58bb6945-d3ae-4362-b3ca-8bca627fcbee",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/Win-RAW2",
+                    "hw_qemu_guest_agent": "yes",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "e774a849fc9ee2895bd106c51eb46fb5a836adebb77039d750f96ff614bda033e2c796deb61b7ed2222014c9372fa923c4777ff3858d8dbbaea12d6a8189dc64",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "Windows Server 2016 ENG (x64)",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "Windows Server 2016 ENG (x64)",
+                "type": "template",
+                "status": "active",
+                "size": 21474836480,
+                "created_at": "2023-12-30T17:17:35Z",
+                "updated_at": "2024-02-16T14:16:12Z",
+                "deleted_at": null,
+                "os_distro": "windows",
+                "hypervisor_type": null,
+                "os_version": "2016",
+                "architecture": null,
+                "min_disk": 30,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "raw",
+                "hw_qemu_guest_agent": true,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            }
+        ],
+        "owned_image": [],
+        "shared_image": [],
+        "community_image": [],
+        "volume": [],
+        "volume_snapshot": [],
+        "volume_types": [
+            {
+                "name": "__DEFAULT__",
+                "description": "Default Volume Type",
+                "sizeIncrement": 1,
+                "minimumSize": 1
+            }
+        ],
+        "requested_boot_source": false
+    },
+                  "flavor": [
+        {
+            "id": "4d429bcd-252c-4522-9ed0-4a24d6d8249e",
+            "memory_gb": 1.0,
+            "flavor_group": null,
+            "name": "v1.m1",
+            "description": "v1.m1",
+            "memory_mb": 1024,
+            "vcpus": 1,
+            "swap": 0,
+            "root_gb": 10,
+            "ephemeral_gb": 0,
+            "out_of_stock": false,
+            "properties": "{}",
+            "region": "default",
+            "reseller_resources": null,
+            "assigned_cluster_templates": [],
+            "used_by_resellers": []
+        },
+        {
+            "id": "82d264ca-ed5a-4e3c-a393-15d8de580c1f",
+            "memory_gb": 2.0,
+            "flavor_group": null,
+            "name": "v1.m2",
+            "description": "v1.m2",
+            "memory_mb": 2048,
+            "vcpus": 1,
+            "swap": 0,
+            "root_gb": 15,
+            "ephemeral_gb": 0,
+            "out_of_stock": false,
+            "properties": "{}",
+            "region": "default",
+            "reseller_resources": null,
+            "assigned_cluster_templates": [],
+            "used_by_resellers": []
+        },
+        {
+            "id": "863f524f-3d31-4f17-848f-be58036eef31",
+            "memory_gb": 2.0,
+            "flavor_group": null,
+            "name": "v1.m3",
+            "description": "v1.m3",
+            "memory_mb": 2048,
+            "vcpus": 2,
+            "swap": 0,
+            "root_gb": 20,
+            "ephemeral_gb": 0,
+            "out_of_stock": false,
+            "properties": "{}",
+            "region": "default",
+            "reseller_resources": null,
+            "assigned_cluster_templates": [],
+            "used_by_resellers": []
+        },
+        {
+            "id": "a9ec3da2-87b2-4fbe-b3ae-5374a204653d",
+            "memory_gb": 4.0,
+            "flavor_group": null,
+            "name": "v1.m4",
+            "description": "v1.m4",
+            "memory_mb": 4096,
+            "vcpus": 2,
+            "swap": 0,
+            "root_gb": 30,
+            "ephemeral_gb": 0,
+            "out_of_stock": false,
+            "properties": "{}",
+            "region": "default",
+            "reseller_resources": null,
+            "assigned_cluster_templates": [],
+            "used_by_resellers": []
+        },
+        {
+            "id": "61c79c33-6113-41fd-9d87-594764813c67",
+            "memory_gb": 8.0,
+            "flavor_group": null,
+            "name": "v1.m8",
+            "description": "v1.m8",
+            "memory_mb": 8196,
+            "vcpus": 2,
+            "swap": 0,
+            "root_gb": 50,
+            "ephemeral_gb": 0,
+            "out_of_stock": false,
+            "properties": "{}",
+            "region": "default",
+            "reseller_resources": null,
+            "assigned_cluster_templates": [],
+            "used_by_resellers": []
+        }
+    ],
+                  "ssh_key": [{
+                    "id": 115,
+                    "name": "gggg",
+                    "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1lDHAJGtxCcnjNaAob6UddlVOrMeCMNqCkANJa2okY14l2mpIe94oKyUhVAnPfkbbIRQYuZH5uvTnV7Q7tzHZM93KSve2EZ5f+CUJzxp67cmi0ZTOBaCP4xfvDT8HYBm5ZtUqxlhXlVGgd0SsN0ZU73C34ghS+S/PrnO8/hSs6PrZEBbYD3Z89mGq2/SjKeRzy24h7n7/jb5/g8lVh/x+7MqViEaWFOOaGWOVW1HET28GYmwmdM3Q2x6brHH8+RrfskpY7Zpbu8fAX0JEOGv64wO8EIwHyW6D7vysU8yW37w3wCUU40K0uq82IG9+/H3uhhmwYtXftuF3JidKf7kX",
+                    "created_at": "2024-03-04T09:34:22.272228Z",
+                    "fingerprint": "18:83:76:06:3b:8f:c0:84:c4:2a:bd:97:46:fb:8f:63",
+                    "user": {
+                      "id": 970519,
+                      "email": "dev141620@gmail.com",
+                      "full_name": "EN EN",
+                      "display": "EN EN (dev141620@gmail.com) #970519"
+                    }
+                  }],
+                  "nics": [
+        {
+            "id": "7e800880-26d4-4674-851f-dda4c8a362da",
+            "name": "external_network",
+            "tags": []
+        },
+        {
+            "id": "d76c58ea-98ca-4abe-a9b9-0a04f1740a71",
+            "name": "network94532",
+            "tags": []
+        }
+    ],
+                  "availability_zones": [],
+                  "cinder_az": [
+        "nova"
+    ],
+                  "enable_volumes": true,
+                  "enable_snapshots": true,
+                  "hide_volume_az": true,
+                  "region": [
+        {
+            "id": "default",
+            "description": ""
+        },
+        {
+            "id": "RegionTwo",
+            "description": ""
+        }
+    ],
+                  "selected_region": "default",
+                  "client": {
+        "id": 933016,
+        "name": "EN EN",
+        "display": "EN EN #933016"
+    }
+                }
+              }
+            },
+            "description": "Create instanc"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "detail": "Image not available in region {country_name}"
+                }
+              }
+            },
+            "description": "You may not have services or there may not be funds on your balance to complete this operation."
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/shelve": {
+      "post": {
+        "summary": "Shelve Instance",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nShelve the specified instance, saving its state for later use.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/unshelve": {
+      "post": {
+        "summary": "Unshelve Instance",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nUnshelve the specified instance, restoring its state.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/rescue": {
+      "get": {
+        "summary": "List Rescue Instance",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nList recovery options for the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "image": {
+                      "properties": {
+                        "own": {
+                          "type": "array"
+                        },
+                        "pub": {
+                          "items": {
+                            "$ref": "#/components/schemas/ImageToRescue"
+                          },
+                          "type": "array"
+                        },
+                        "shr": {
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "pub",
+                        "own",
+                        "shr"
+                      ],
+                      "type": "object"
+                    },
+                    "instance": {
+                      "properties": {
+                        "access_ip": {
+                          "type": "string"
+                        },
+                        "access_subnet_id": {
+                          "type": "string"
+                        },
+                        "allowed_actions": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "availability_zone": {
+                          "type": "string"
+                        },
+                        "booted_from_iso": {
+                          "type": "boolean"
+                        },
+                        "created": {
+                          "type": "string"
+                        },
+                        "current_cycle_traffic": {
+                          "type": "integer"
+                        },
+                        "current_month_traffic": {
+                          "type": "integer"
+                        },
+                        "description": {
+                          "type": "null"
+                        },
+                        "display_status": {
+                          "type": "string"
+                        },
+                        "display_task": {
+                          "type": "null"
+                        },
+                        "flavor": {
+                          "properties": {
+                            "assigned_cluster_templates": {
+                              "type": "array"
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "ephemeral_gb": {
+                              "type": "integer"
+                            },
+                            "flavor_group": {
+                              "type": "null"
+                            },
+                            "id": {
+                              "type": "string",
+                              "format": "uuid"
+                            },
+                            "memory_gb": {
+                              "type": "integer"
+                            },
+                            "memory_mb": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "out_of_stock": {
+                              "type": "boolean"
+                            },
+                            "properties": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "reseller_resources": {
+                              "type": "null"
+                            },
+                            "root_gb": {
+                              "type": "integer"
+                            },
+                            "swap": {
+                              "type": "integer"
+                            },
+                            "used_by_resellers": {
+                              "type": "array"
+                            },
+                            "vcpus": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "memory_gb",
+                            "flavor_group",
+                            "name",
+                            "description",
+                            "memory_mb",
+                            "vcpus",
+                            "swap",
+                            "root_gb",
+                            "ephemeral_gb",
+                            "out_of_stock",
+                            "properties",
+                            "region",
+                            "reseller_resources",
+                            "assigned_cluster_templates",
+                            "used_by_resellers"
+                          ],
+                          "type": "object"
+                        },
+                        "hostId": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "host_name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "image": {
+                          "properties": {
+                            "architecture": {
+                              "type": "null"
+                            },
+                            "assigned_to_flavor": {
+                              "type": "boolean"
+                            },
+                            "cleanup_date": {
+                              "type": "null"
+                            },
+                            "client": {
+                              "type": "null"
+                            },
+                            "container_format": {
+                              "type": "string"
+                            },
+                            "created_at": {
+                              "type": "string"
+                            },
+                            "deleted_at": {
+                              "type": "null"
+                            },
+                            "disk_format": {
+                              "type": "string"
+                            },
+                            "display_name": {
+                              "type": "string"
+                            },
+                            "hw_qemu_guest_agent": {
+                              "type": "boolean"
+                            },
+                            "hypervisor_type": {
+                              "type": "null"
+                            },
+                            "id": {
+                              "type": "string",
+                              "format": "uuid"
+                            },
+                            "instance_uuid": {
+                              "type": "null"
+                            },
+                            "is_iso": {
+                              "type": "boolean"
+                            },
+                            "min_disk": {
+                              "type": "integer"
+                            },
+                            "min_ram": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "os_distro": {
+                              "type": "string"
+                            },
+                            "os_version": {
+                              "type": "string"
+                            },
+                            "properties": {
+                              "properties": {
+                                "hw_qemu_guest_agent": {
+                                  "type": "string"
+                                },
+                                "os_hash_algo": {
+                                  "type": "string"
+                                },
+                                "os_hash_value": {
+                                  "type": "string"
+                                },
+                                "os_hidden": {
+                                  "type": "boolean"
+                                },
+                                "owner_specified.openstack.md5": {
+                                  "type": "string"
+                                },
+                                "owner_specified.openstack.object": {
+                                  "type": "string"
+                                },
+                                "owner_specified.openstack.sha256": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "protected": {
+                              "type": "boolean"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "related_instance": {
+                              "type": "null"
+                            },
+                            "reseller_resources": {
+                              "type": "null"
+                            },
+                            "size": {
+                              "type": "integer"
+                            },
+                            "status": {
+                              "type": "string"
+                            },
+                            "tags": {
+                              "type": "array"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "updated_at": {
+                              "type": "string"
+                            },
+                            "used_by_resellers": {
+                              "type": "array"
+                            },
+                            "visibility": {
+                              "type": "string"
+                            },
+                            "volume_snapshot_uuid": {
+                              "type": "null"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "tags",
+                            "client",
+                            "properties",
+                            "is_iso",
+                            "display_name",
+                            "cleanup_date",
+                            "assigned_to_flavor",
+                            "related_instance",
+                            "name",
+                            "type",
+                            "status",
+                            "size",
+                            "created_at",
+                            "updated_at",
+                            "deleted_at",
+                            "os_distro",
+                            "hypervisor_type",
+                            "os_version",
+                            "architecture",
+                            "min_disk",
+                            "min_ram",
+                            "protected",
+                            "visibility",
+                            "container_format",
+                            "disk_format",
+                            "hw_qemu_guest_agent",
+                            "instance_uuid",
+                            "volume_snapshot_uuid",
+                            "region",
+                            "reseller_resources",
+                            "used_by_resellers"
+                          ],
+                          "type": "object"
+                        },
+                        "locked": {
+                          "type": "boolean"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "region": {
+                          "type": "string"
+                        },
+                        "region_obj": {
+                          "properties": {
+                            "description": {
+                              "type": "string"
+                            },
+                            "enable_snapshots": {
+                              "type": "boolean"
+                            },
+                            "enable_volumes": {
+                              "type": "boolean"
+                            },
+                            "enabled": {
+                              "type": "boolean"
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "is_default": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "description",
+                            "enabled",
+                            "enable_volumes",
+                            "enable_snapshots",
+                            "is_default"
+                          ],
+                          "type": "object"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "uuid": {
+                          "type": "string",
+                          "format": "uuid"
+                        }
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "tags",
+                        "allowed_actions",
+                        "access_ip",
+                        "uuid",
+                        "created",
+                        "display_status",
+                        "display_task",
+                        "description",
+                        "image",
+                        "region",
+                        "region_obj",
+                        "flavor",
+                        "status",
+                        "booted_from_iso",
+                        "locked",
+                        "current_cycle_traffic",
+                        "current_month_traffic",
+                        "hostId",
+                        "host_name",
+                        "access_subnet_id",
+                        "availability_zone"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "image",
+                    "instance"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+    "image": {
+        "pub": [
+            {
+                "id": "2b979045-4e10-45c9-805c-c95be46a37b9",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/Centos-7",
+                    "hw_qemu_guest_agent": "yes",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "1b29cd42a53a3b0807962c1c9fbbf7fb360e0d95bb0c962c15fd9fa27ad13e908f45d81558a273ecdc4a5db1b7b3ae8cd14678b56e17e8d7ee5f588d36a8a401",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "Centos 7 (x64)",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "Centos 7 (x64)",
+                "type": "template",
+                "status": "active",
+                "size": 902889472,
+                "created_at": "2023-12-30T11:54:35Z",
+                "updated_at": "2023-12-30T11:57:43Z",
+                "deleted_at": null,
+                "os_distro": "centos",
+                "hypervisor_type": null,
+                "os_version": "7",
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": true,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "e204d056-81d0-4e61-b2aa-a4ee25da6ce2",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/cirros",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "1103b92ce8ad966e41235a4de260deb791ff571670c0342666c8582fbb9caefe6af07ebb11d34f44f8414b609b29c1bdf1d72ffa6faa39c88e8721d09847952b",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "cirros",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "cirros",
+                "type": "template",
+                "status": "active",
+                "size": 21430272,
+                "created_at": "2023-12-30T12:01:01Z",
+                "updated_at": "2023-12-30T12:01:17Z",
+                "deleted_at": null,
+                "os_distro": "cirros",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "736b728a-6fe9-4dfd-92b3-7b86026dcc85",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-ubunut-20-04",
+                    "hw_qemu_guest_agent": "yes",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "e72fd59b0faf06f4f56bbcac327faf434727353b21468b64465cca1afbc88ccfd81501dbd104db2d329003d2afb827f391dc3fb68e337f3ebe70e6147d25b927",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "Ubuntu 20.04 LTS (x64)",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "Ubuntu 20.04 LTS (x64)",
+                "type": "template",
+                "status": "active",
+                "size": 1047592960,
+                "created_at": "2023-12-30T11:54:59Z",
+                "updated_at": "2023-12-30T11:58:51Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": "20.04",
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": true,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "6c27efd8-0305-44fc-8c2b-51bc6b3a77c9",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-20.04-kube-v1.24.11",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "f245b5a189a73c283e3f7033be14b981529977c7d7c97352d8f7f0ca34d91dcc1ecb76a76c0868c0883f2b90a017fee488ba3d7f570872b4662b32c3f83695fb",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-20.04-kube-v1.24.11",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-20.04-kube-v1.24.11",
+                "type": "template",
+                "status": "active",
+                "size": 4460118016,
+                "created_at": "2023-12-30T11:55:32Z",
+                "updated_at": "2023-12-30T11:59:15Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "20774861-02cf-4450-ac6a-238e4f1272fc",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-20.04-kube-v1.26.7",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "ffb988c5cd564a9d7a0748415925dc568f4bd47489be10f8fdaf95cc60a4004c52e98086808a55d94186b0e23692514faab23a6cae718ba565d12b702fd3664f",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-20.04-kube-v1.26.7",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-20.04-kube-v1.26.7",
+                "type": "template",
+                "status": "active",
+                "size": 4440457216,
+                "created_at": "2023-12-30T11:56:40Z",
+                "updated_at": "2023-12-30T11:59:25Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "5e2c1d1a-88af-41f2-ab7e-a0968413a6c1",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-20.04-kube-v1.27.4",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "972e0114d5cc664c127bdad963d919ee5b54885ac6e43b3983845ece5d065b91ccb58758cd00b5da2178c8fb15fc0ca602ff3ef59ff2b79452c37d42ae86d245",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-20.04-kube-v1.27.4",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-20.04-kube-v1.27.4",
+                "type": "template",
+                "status": "active",
+                "size": 4424204288,
+                "created_at": "2023-12-30T11:58:00Z",
+                "updated_at": "2023-12-30T11:59:35Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "ec2439ca-7c00-4d23-a17a-61aea0992590",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-22.04-kube-v1.27.4",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "d1d9de1da35b665f7d368dab891375f09b1597b41dc47bf44e06dcad199f802e6aaaa77209df854082576bd16a63e7f15b377caefdb286209fbaf884d59188ac",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-22.04-kube-v1.27.4",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-22.04-kube-v1.27.4",
+                "type": "template",
+                "status": "active",
+                "size": 4985520128,
+                "created_at": "2023-12-30T11:59:45Z",
+                "updated_at": "2023-12-30T12:00:52Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": null,
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": false,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            },
+            {
+                "id": "52e39a74-c2c0-4085-a587-e49f7fd12100",
+                "tags": [],
+                "client": null,
+                "properties": {
+                    "owner_specified.openstack.md5": "",
+                    "owner_specified.openstack.sha256": "",
+                    "owner_specified.openstack.object": "images/ubuntu-22.04-kube-v1.28.6",
+                    "hw_qemu_guest_agent": "yes",
+                    "os_hidden": false,
+                    "os_hash_algo": "sha512",
+                    "os_hash_value": "4fc24716c7db6e59087df44904c16cf3a52d574fd6bc989e9cd2eee33dc8d178769a504a0cb7a97936a6931ecb532c11268d7357f62570c5a23af7c17967ba7b",
+                    "stores": "rbd"
+                },
+                "is_iso": false,
+                "display_name": "ubuntu-22.04-kube-v1.28.6",
+                "cleanup_date": null,
+                "assigned_to_flavor": true,
+                "related_instance": null,
+                "name": "ubuntu-22.04-kube-v1.28.6",
+                "type": "template",
+                "status": "active",
+                "size": 4971495424,
+                "created_at": "2024-02-06T12:17:28Z",
+                "updated_at": "2024-02-09T12:46:51Z",
+                "deleted_at": null,
+                "os_distro": "ubuntu",
+                "hypervisor_type": null,
+                "os_version": "22.04",
+                "architecture": null,
+                "min_disk": 0,
+                "min_ram": 0,
+                "protected": false,
+                "visibility": "public",
+                "container_format": "bare",
+                "disk_format": "qcow2",
+                "hw_qemu_guest_agent": true,
+                "instance_uuid": null,
+                "volume_snapshot_uuid": null,
+                "region": "default",
+                "reseller_resources": null,
+                "used_by_resellers": []
+            }
+        ],
+        "own": [],
+        "shr": []
+    },
+    "instance": {
+        "id": "3aa3a443-8642-4c1c-9099-3e8205f88d5e",
+        "name": "instance",
+        "allowed_actions": [
+            "shutoff",
+            "reboot",
+            "resize",
+            "rescue",
+            "rebuild",
+            "console",
+            "rename",
+            "create_snapshot",
+            "attach_volume",
+            "boot_from_iso",
+            "shelve",
+            "associate_ip",
+            "dissociate_ip",
+            "change_password"
+        ],
+        "access_ip": "10.0.1.141",
+        "uuid": "3aa3a443-8642-4c1c-9099-3e8205f88d5e",
+        "created": "2024-03-15T08:30:06Z",
+        "display_status": "Виконується",
+        "display_task": null,
+        "description": null,
+        "image": {
+            "id": "2b979045-4e10-45c9-805c-c95be46a37b9",
+            "tags": [],
+            "client": null,
+            "properties": {
+                "owner_specified.openstack.md5": "",
+                "owner_specified.openstack.sha256": "",
+                "owner_specified.openstack.object": "images/Centos-7",
+                "hw_qemu_guest_agent": "yes",
+                "os_hidden": false,
+                "os_hash_algo": "sha512",
+                "os_hash_value": "1b29cd42a53a3b0807962c1c9fbbf7fb360e0d95bb0c962c15fd9fa27ad13e908f45d81558a273ecdc4a5db1b7b3ae8cd14678b56e17e8d7ee5f588d36a8a401",
+                "stores": "rbd"
+            },
+            "is_iso": false,
+            "display_name": "Centos 7 (x64)",
+            "cleanup_date": null,
+            "assigned_to_flavor": true,
+            "related_instance": null,
+            "name": "Centos 7 (x64)",
+            "type": "template",
+            "status": "active",
+            "size": 902889472,
+            "created_at": "2023-12-30T11:54:35Z",
+            "updated_at": "2023-12-30T11:57:43Z",
+            "deleted_at": null,
+            "os_distro": "centos",
+            "hypervisor_type": null,
+            "os_version": "7",
+            "architecture": null,
+            "min_disk": 0,
+            "min_ram": 0,
+            "protected": false,
+            "visibility": "public",
+            "container_format": "bare",
+            "disk_format": "qcow2",
+            "hw_qemu_guest_agent": true,
+            "instance_uuid": null,
+            "volume_snapshot_uuid": null,
+            "region": "default",
+            "reseller_resources": null,
+            "used_by_resellers": []
+        },
+        "region": "default",
+        "region_obj": {
+            "id": "default",
+            "description": "",
+            "enabled": true,
+            "enable_volumes": true,
+            "enable_snapshots": true,
+            "is_default": true
+        },
+        "flavor": {
+            "id": "4d429bcd-252c-4522-9ed0-4a24d6d8249e",
+            "memory_gb": 1,
+            "flavor_group": null,
+            "name": "v1.m1",
+            "description": "v1.m1",
+            "memory_mb": 1024,
+            "vcpus": 1,
+            "swap": 0,
+            "root_gb": 10,
+            "ephemeral_gb": 0,
+            "out_of_stock": false,
+            "properties": "{}",
+            "region": "default",
+            "reseller_resources": null,
+            "assigned_cluster_templates": [],
+            "used_by_resellers": []
+        },
+        "status": "active",
+        "booted_from_iso": false,
+        "locked": false,
+        "current_cycle_traffic": 1,
+        "current_month_traffic": 1,
+        "hostId": "5edc2161bc58cd4920fd84600b7ef1d1b4a4b68bef7bcaf209911915",
+        "host_name": "s10",
+        "access_subnet_id": "04830e34-ee2b-4257-8c25-fddcd3c3eeba",
+        "availability_zone": "nova",
+        "tags": [
+            {
+                "id": 24,
+                "name": "fdgdfgfd"
+            },
+            {
+                "id": 25,
+                "name": "fggdfg"
+            },
+            {
+                "id": 26,
+                "name": "fggggggg"
+            }
+        ],
+        "floating_ips": [
+            {
+                "id": "869f5f03-d96f-48c9-ab1a-7f450193c2f5",
+                "floating_ip_address": "217.147.172.153"
+            }
+        ]
+    }
+}
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Rescue Instance",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nActivate rescue mode for the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "root_password": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "image",
+                  "root_password"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/rename": {
+      "post": {
+        "summary": "Rename Instance",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nChange the name of the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "detail": "Renamed"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              "example": {
+                "name": "instance1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/resize": {
+      "post": {
+        "summary": "Resize Instance",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nChange the size of the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "detail": "Instance resize started successfully"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "flavor": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                },
+                "required": [
+                  "flavor"
+                ],
+                "type": "object"
+              },
+              "example": {
+                "flavor": "82d264ca-ed5a-4e3c-a393-15d8de580c1f"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/confirm_resize": {
+      "post": {
+        "summary": "Confirm Resize",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nConfirm the resizing of the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "detail": "Resize confirmed"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/change_password": {
+      "post": {
+        "summary": "Change Instance Password",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nChange the password for the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "password"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/tag": {
+      "post": {
+        "summary": "Add Tag",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nAdd a tag to the specified instance.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstanceTags"
+                },
+                "example": [
+                  {
+                    "id": 33,
+                    "name": "gggtag"
+                  },
+                  {
+                    "id": 34,
+                    "name": "ddddd"
+                  }
+                ]
+              }
+            },
+            "description": "Response contain all instance tags."
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddTag"
+              },
+              "example": {
+                "name": "ddddd"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/openstack/instances/{instance_id}/tag/{tag_id}": {
+      "delete": {
+        "summary": "Delete Instance Tag",
+        "tags": [
+          "Instances (VPS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nDelete a specific instance tag by id.\n",
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+
+
+
+
+    "/backend/api/openstack/floatingips": {
+      "get": {
+        "summary": "Floating IPs",
+        "tags": [
+          "Floating IPs"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nAccess information related to floating IPs within the OpenStack context.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FloatingIPs"
+                },
+                "example": {
+                  "count": 1,
+                  "next": null,
+                  "previous": null,
+                  "objects": [
+                      {
+                          "id": "cdde54cc-9370-4c43-8b86-1c3e979a108e",
+                          "floating_network": {
+                              "id": "16c6c0e9-d20a-42a7-8d66-9dd9e8abcadb",
+                              "name": "external_network",
+                              "description": "",
+                              "region": "default"
+                          },
+                          "port": {
+                              "id": "50da7bcc-aacf-4735-8bff-e05b17e57887",
+                              "name": ""
+                          },
+                          "router": {
+                              "id": "720dc4d4-8fae-431a-8922-a5552f799ade",
+                              "name": "router40624"
+                          },
+                          "associated_object": {
+                              "device_type": "instance",
+                              "id": "927e7149-529e-4913-9e50-34cfa04df2b0",
+                              "name": "evdokimov@onepointcollab.com"
+                          },
+                          "floating_ip_address": "217.147.172.179",
+                          "status": "ACTIVE",
+                          "description": "",
+                          "fixed_ip_address": "10.0.1.117",
+                          "created_at": "2024-03-07T08:48:51Z",
+                          "updated_at": "2024-03-07T14:26:53Z",
+                          "project": "3f7a11e7c9ea4c2eab24f7b0077ca78b"
+                      }
+                  ],
+                  "totalCount": 1,
+                  "pageNo": "1",
+                  "permissions": {
+                      "floatingips.list": true,
+                      "floatingips.retrieve": true,
+                      "floatingips.create": true,
+                      "floatingips.destroy": true
+                  },
+                  "filter_options": {
+                      "status": [
+                          {
+                              "display": "Active",
+                              "value": "ACTIVE"
+                          },
+                          {
+                              "display": "Down",
+                              "value": "DOWN"
+                          }
+                      ]
+                  }
+                }
+              }
+            },
+            "description": ""
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "detail": "Your client has no active OpenStack project"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/backend/api/openstack/dns/get_floating_ip_ptr": {
+      "post": {
+        "summary": "POST Floating IP PTR",
+        "tags": [
+          "Zones (DNS)"
+        ],
+        "description": "**Host**: https://api.fotbo.com\n\nRetrieve PTR records associated with a floating IP within the DNS context.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "floating_ip_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "ptrdname": {
+                      "type": "string"
+                    },
+                    "ttl": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "floating_ip_id",
+                    "description",
+                    "ptrdname",
+                    "ttl"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "ptrdname": "text.",
+    	          "floating_ip_id": "cdde54cc-9370-4c43-8b86-1c3e979a108e",
+    	          "description": "text",
+    	          "ttl": "60"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    }
+
+  }
+}
