@@ -9,7 +9,7 @@
   "info": {
     "title": "OpenAPI OneCloudPlanet",
     "version": "Specification  1.0.5",
-    "description": "\n# Introduction\nWelcome to the API documentation for OneCloudPlanet services. This API is documented in OpenAPI format. Explore the following sections to gain comprehensive insights into the functionalities and capabilities offered by our platform.\n\n **Authentication** tokens are used instead of passwords and are handy when using OneCloudPlanet API from scripts or other software that you write and interacts with OneCloudPlanet.\nYou can  make simple GET, POST, PUT or DELETE HTTP requests by using curl.\nMake sure you include the authorization header as curl parameter:\n- 'Authorization: OpenAPIToken {Token}'\n\n  **Sections:**\n  - **Instances :** Dive into the world of Virtual Private Servers, covering instance creation, management, and configuration.\n\n  - **Networks (VPC):** Explore Virtual Private Cloud (VPC) features, including network creation, subnet configuration, and security settings.\n\n  - **Routers:** Manage and optimize routing settings for your infrastructure.\n\n  - **Zones (DNS):** Gain insights into Domain Name System (DNS) functionalities, managing DNS zones and domain settings.\n\n  - **Floating IPs:** Allocate, associate, and manage floating IP addresses for flexible network configurations.\n\n  - **SSH Keys:** Manage Secure Shell (SSH) keys for secure access to instances and services.\n\n  Explore the detailed descriptions, endpoints, features, and examples provided in each section to make the most of our hosting services.\n  Through a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.\n",
+    "description": "\n# Introduction\nWelcome to the API documentation for OneCloudPlanet services. This API is documented in OpenAPI format. Explore the following sections to gain comprehensive insights into the functionalities and capabilities offered by our platform.\n\n **Authentication** tokens are used instead of passwords and are handy when using OneCloudPlanet API from scripts or other software that you write and interacts with OneCloudPlanet.\nYou can  make simple GET, POST, PUT or DELETE HTTP requests by using curl.\nMake sure you include the authorization header as curl parameter:\n- 'Authorization: OpenAPIToken {Token}'\n\n  **Sections:**\n  - **Instances :** Dive into the world of Virtual Private Servers, covering instance creation, management, and configuration.\n\n  - **Networks:** Explore Virtual Private Cloud (VPC) features, including network creation, subnet configuration, and security settings.\n\n  - **Routers:** Manage and optimize routing settings for your infrastructure.\n\n  - **Zones (DNS):** Gain insights into Domain Name System (DNS) functionalities, managing DNS zones and domain settings.\n\n  - **Floating IPs:** Allocate, associate, and manage floating IP addresses for flexible network configurations.\n\n  - **SSH Keys:** Manage Secure Shell (SSH) keys for secure access to instances and services.\n\n  Explore the detailed descriptions, endpoints, features, and examples provided in each section to make the most of our hosting services.\n  Through a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.\n",
     "x-logo": {
       "url": "https://storage.fotbo.host/u/Fotbo_logo2.png",
       "altText": "Fotbo logo"
@@ -21,8 +21,8 @@
       "description": "The \"Instances\" section covers everything related to Virtual Private Servers. Users can create, manage, and monitor their instances, customize configurations, and explore features for efficient virtualization.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.\n"
     },
     {
-      "name": "Networks (VPC)",
-      "description": "The \"Networks (VPC)\" section provides detailed information on Virtual Private Cloud (VPC) functionalities. Users can create and manage networks, define subnets, and configure security settings for optimal network architecture.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.\n"
+      "name": "Networks",
+      "description": "The \"Networks\" section provides detailed information on Virtual Private Cloud (VPC) functionalities. Users can create and manage networks, define subnets, and configure security settings for optimal network architecture.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.\n"
     },
     {
       "name": "Security groups",
@@ -47,6 +47,18 @@
     {
       "name": "My Images",
       "description": "The \"My images\" section provides users with the ability to manage custom images. Users can create, upload, and manage custom images for efficient deployment and scaling.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n"
+    },
+    {
+      "name": "Load balancers",
+      "description": ""
+    },
+    {
+      "name": "Kubernetes",
+      "description": ""
+    },
+    {
+      "name": "Security groups",
+      "description": ""
     }
   ],
   "x-tagGroups": [
@@ -54,11 +66,14 @@
       "name": "Cloud",
       "tags": [
         "Instances",
-        "Networks (VPC)",
+        "Networks",
         "Routers",
         "Floating IPs",
         "SSH Keys",
-        "Zones (DNS)"
+        "Zones (DNS)",
+        "Load balancers",
+        "Kubernetes",
+        "Security groups"
       ]
     }
   ],
@@ -4139,6 +4154,21 @@
         ],
         "type": "object"
       },
+      "Label": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "values": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "values"
+        ]
+      },
       "BasePagedList": {
         "type": "object",
         "properties": {
@@ -4174,15 +4204,356 @@
           "totalCount",
           "pageNo"
         ]
+      },
+      "Taint": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "effect": {
+            "type": "string",
+            "format": "NoSchedule | PreferNoSchedule | NoExecute"
+          }
+        },
+        "required": [
+          "key",
+          "value",
+          "effect"
+        ]
+      },
+      "Node": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "state": {
+            "type": "string"
+          },
+          "flavor": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "node_pool": {
+            "type": "string"
+          },
+          "control_plane": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ClusterRequestBody": {
+        "type": "object",
+        "properties": {
+          "cluster_name": {
+            "type": "string"
+          },
+          "cluster_version": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "networking": {
+            "type": "string"
+          },
+          "muster_flavor_id": {
+            "type": "string"
+          },
+          "master_count": {
+            "type": "integer"
+          },
+          "addons": {
+            "type": "object",
+            "properties": {
+              "dashboard": {
+                "type": "boolean"
+              },
+              "metrics": {
+                "type": "boolean"
+              },
+              "nginx": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "dashboard",
+              "metrics",
+              "nginx"
+            ]
+          },
+          "restriction_api": {
+            "type": "boolean"
+          },
+          "restriction_ips": {
+            "type": "string"
+          },
+          "ssh_keys": {
+            "type": "string"
+          },
+          "node_pools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "flavor_id": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer"
+                },
+                "autoscale": {
+                  "type": "boolean"
+                },
+                "max_count": {
+                  "type": ["integer", "null"]
+                },
+                "is_default": {
+                  "type": "boolean"
+                },
+                "labels": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Label"
+                  }
+                },
+                "taints": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Taint"
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "flavor_id",
+                "count",
+                "autoscale",
+                "max_count",
+                "is_default",
+                "labels",
+                "taints"
+              ]
+            }
+          }
+        },
+        "required": [
+          "addons"
+        ]
+      },
+      "BaseNodePool": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "flavor_id": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "autoscale": {
+            "type": "boolean"
+          },
+          "max_count": {
+            "type": ["integer", "null"]
+          },
+          "is_default": {
+            "type": "boolean"
+          }
+        }
+      },
+      "BaseNodePoolList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/BaseNodePool"
+        }
+      },
+      "DetailNodePool": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseNodePool"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "labels": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Label"
+                }
+              },
+              "taints": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Taint"
+                }
+              },
+              "nodes": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Node"
+                }
+              }
+            }
+          }
+
+        ]
+      },
+      "DetailNodePoolList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DetailNodePool"
+        }
+      },
+      "DetailCluster": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Cluster"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "node_pools": {
+                "$ref": "#/components/schemas/DetailNodePoolList"
+              },
+              "restriction_api": {
+                "type": "boolean"
+              },
+              "restriction_ips": {
+                "type": "string"
+              },
+              "control_nodes": {
+                "$ref": "#/components/schemas/Node"
+              }
+            }
+          }
+        ]
+      },
+      "BaseCluster": {
+        "type": "object",
+        "properties": {
+          "cluster_name": {
+            "type": "string"
+          },
+          "cluster_version": {
+            "type": "string"
+          },
+          "node_pools": {
+            "$ref": "#/components/schemas/BaseNodePoolList"
+          }
+        },
+        "required": [
+          "cluster_name", "cluster_version", "node_pools"
+        ]
+      },
+      "Cluster": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseCluster"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "status": {
+                "type": "string"
+              },
+              "status_reason": {
+                "type": ["null", "string"]
+              },
+              "api_address": {
+                "type": "string"
+              },
+              "create_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            },
+            "required": [
+          "id"
+        ]
+          }
+        ]
+      },
+      "ClusterCreateResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseCluster"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            "required": [
+              "operation_id"
+            ]
+          }
+        ]
+      },
+      "Clusters": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BasePagedList"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "objects": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Cluster"
+                }
+              }
+            },
+            "required": [
+              "objects"
+            ]
+          }
+        ]
       }
     },
     "securitySchemes": {
       "apikey header authorization": {
         "type": "apiKey",
         "in": "header",
-        "name": "AUTHORIZATION"
+        "name": "Authorization",
+        "description": "Use 'OpenAPIToken {token}' as the value"
       }
     }
+  },
+  "security": {
+    "apikey header authorization": []
   },
   "paths": {
     "/backend/api/openstack/instances": {
@@ -4268,11 +4639,11 @@
                         "hw_qemu_guest_agent": true,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
-                      "region": "default",
+                      "region": "ua-central-1",
                       "region_obj": {
                         "id": "default",
                         "description": "",
@@ -4294,7 +4665,7 @@
                         "ephemeral_gb": 0,
                         "out_of_stock": false,
                         "properties": "{}",
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "assigned_cluster_templates": [],
                         "used_by_resellers": []
@@ -4719,6 +5090,44 @@
         "tags": [
           "Instances"
         ],
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstanceCreateBody"
+                },
+                "example": {
+                  "boot_source": {
+                    "cinder_az": null,
+                    "create_new_volume": true,
+                    "delete_on_termination": true,
+                    "source_id": "2b979045-4e10-45c9-805c-c95be46a37b9",
+                    "source_type": "image",
+                    "volume_type": "__DEFAULT__",
+                    "volume_size": "10"
+                  },
+                  "tags": [
+                    "tag 1",
+                    "tag 2"
+                  ],
+                  "client": "993320",
+                  "flavor": "4d429bcd-252c-4522-9ed0-4a24d6d8249e",
+                  "name": "First Instance",
+                  "nics": [
+                    "f089fb6a-4887-40f6-9b54-93853ab32173"
+                  ],
+                  "region": "ua-central-1",
+                  "root_password": "PassWord__123__",
+                  "ssh_keys": "[115]"
+                }
+              }
+            }
+          },
         "description": "**Host**: https://core.ocplanet.cloud\n\nCreate Instances. You can specify SSH key or password.\nPassword required must contain different case, including numbers and special characters.\n",
         "responses": {
           "201": {
@@ -4730,7 +5139,7 @@
                 "example": {
                   "name": "Instance",
                   "flavor": "4d429bcd-252c-4522-9ed0-4a24d6d8249e",
-                  "region": "default",
+                  "region": "ua-central-1",
                   "availability_zone": null,
                   "operation_id": "efdf23dd-c7d4-4630-8e8c-41e06cbfde4d"
                 }
@@ -4761,39 +5170,6 @@
               }
             }
           },
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InstanceCreateBody"
-                },
-                "example": {
-                  "boot_source": {
-                    "cinder_az": null,
-                    "create_new_volume": true,
-                    "delete_on_termination": true,
-                    "source_id": "2b979045-4e10-45c9-805c-c95be46a37b9",
-                    "source_type": "image",
-                    "volume_type": "__DEFAULT__",
-                    "volume_size": "10"
-                  },
-                  "tags": [
-                    "tag 1",
-                    "tag 2"
-                  ],
-                  "client": "993320",
-                  "flavor": "4d429bcd-252c-4522-9ed0-4a24d6d8249e",
-                  "name": "First Instance",
-                  "nics": [
-                    "f089fb6a-4887-40f6-9b54-93853ab32173"
-                  ],
-                  "region": "default",
-                  "root_password": "PassWord__123__",
-                  "ssh_keys": "[115]"
-                }
-              }
-            }
-          },
           "security": [
             {
               "apikey header authorization": []
@@ -4815,18 +5191,26 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InstanceReboot"
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ],
+                  "type": "object"
                 }
               }
-            }
-          },
-          "description": "",
-          "security": [
-            {
-              "apikey header authorization": []
-            }
-          ]
-        }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
       }
     },
     "/backend/api/openstack/instances/{instance_id}/add_floating_ip": {
@@ -4964,7 +5348,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve detailed information about a specific OpenStack instance identified by its unique ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific OpenStack instance identified by its unique ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -5036,11 +5420,11 @@
                     "hw_qemu_guest_agent": true,
                     "instance_uuid": null,
                     "volume_snapshot_uuid": null,
-                    "region": "default",
+                    "region": "ua-central-1",
                     "reseller_resources": null,
                     "used_by_resellers": []
                   },
-                  "region": "default",
+                  "region": "ua-central-1",
                   "region_obj": {
                     "id": "default",
                     "description": "",
@@ -5062,7 +5446,7 @@
                     "ephemeral_gb": 0,
                     "out_of_stock": false,
                     "properties": "{}",
-                    "region": "default",
+                    "region": "ua-central-1",
                     "reseller_resources": null,
                     "assigned_cluster_templates": [],
                     "used_by_resellers": []
@@ -5192,7 +5576,7 @@
                         "hw_qemu_guest_agent": true,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -5234,7 +5618,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -5277,7 +5661,7 @@
                         "hw_qemu_guest_agent": true,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -5319,7 +5703,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -5361,7 +5745,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -5403,7 +5787,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -5445,7 +5829,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -5488,7 +5872,7 @@
                         "hw_qemu_guest_agent": true,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -5531,7 +5915,7 @@
                         "hw_qemu_guest_agent": true,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       }
@@ -5565,7 +5949,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -5583,7 +5967,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -5601,7 +5985,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -5619,7 +6003,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -5637,7 +6021,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -6248,7 +6632,7 @@
                         "hw_qemu_guest_agent": true,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -6290,7 +6674,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -6333,7 +6717,7 @@
                         "hw_qemu_guest_agent": true,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -6375,7 +6759,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -6417,7 +6801,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -6459,7 +6843,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -6501,7 +6885,7 @@
                         "hw_qemu_guest_agent": false,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       },
@@ -6544,7 +6928,7 @@
                         "hw_qemu_guest_agent": true,
                         "instance_uuid": null,
                         "volume_snapshot_uuid": null,
-                        "region": "default",
+                        "region": "ua-central-1",
                         "reseller_resources": null,
                         "used_by_resellers": []
                       }
@@ -6616,11 +7000,11 @@
                       "hw_qemu_guest_agent": true,
                       "instance_uuid": null,
                       "volume_snapshot_uuid": null,
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "used_by_resellers": []
                     },
-                    "region": "default",
+                    "region": "ua-central-1",
                     "region_obj": {
                       "id": "default",
                       "description": "",
@@ -6642,7 +7026,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -7025,7 +7409,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nStart the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nStart the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -7059,7 +7443,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nStop the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nStop the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -7093,7 +7477,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nDeactivate rescue ISO-mode for the specified instance. Umount ISO-image ande reboot.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDeactivate rescue ISO-mode for the specified instance. Umount ISO-image ande reboot.\n",
         "responses": {
           "200": {
             "content": {
@@ -7127,7 +7511,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nSelect the specified instance for Rebuild. In this case, all current data on instance will be destroyed.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nSelect the specified instance for Rebuild. In this case, all current data on instance will be destroyed.\n",
         "responses": {
           "200": {
             "content": {
@@ -8889,7 +9273,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRebuild the specified instance. In this case, all current data on instance will be destroyed.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRebuild the specified instance. In this case, all current data on instance will be destroyed.\n",
         "responses": {
           "200": {
             "content": {
@@ -8958,7 +9342,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve available options for resizing the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve available options for resizing the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -8981,7 +9365,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -8999,7 +9383,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -9017,7 +9401,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -9035,7 +9419,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -9053,7 +9437,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -9123,11 +9507,11 @@
                       "hw_qemu_guest_agent": true,
                       "instance_uuid": null,
                       "volume_snapshot_uuid": null,
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "used_by_resellers": []
                     },
-                    "region": "default",
+                    "region": "ua-central-1",
                     "region_obj": {
                       "id": "default",
                       "description": "",
@@ -9149,7 +9533,7 @@
                       "ephemeral_gb": 0,
                       "out_of_stock": false,
                       "properties": "{}",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "assigned_cluster_templates": [],
                       "used_by_resellers": []
@@ -9185,7 +9569,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve traffic data for the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve traffic data for the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -9297,7 +9681,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nView a list of booting or launching an instance from an ISO image.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nView a list of booting or launching an instance from an ISO image.\n",
         "responses": {
           "200": {
             "content": {
@@ -9349,7 +9733,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: http://bill.fotbo.host",
+        "description": "**Host**: https://core.ocplanet.cloud",
         "responses": {
           "200": {
             "content": {
@@ -9400,7 +9784,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for dissociating an IP from the specified instance.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for dissociating an IP from the specified instance.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
         "responses": {
           "200": {
             "content": {
@@ -9539,7 +9923,7 @@
                         "id": "7e800880-26d4-4674-851f-dda4c8a362da",
                         "name": "external_network",
                         "description": "",
-                        "region": "default"
+                        "region": "ua-central-1"
                       },
                       "port": {
                         "id": "fb770ca8-3d8d-4166-b06e-6c7396460fda",
@@ -9600,7 +9984,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve the console URL for the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve the console URL for the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -9650,7 +10034,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for adding an IP to the specified instance.\nNo ports found for instance\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for adding an IP to the specified instance.\nNo ports found for instance\n",
         "responses": {
           "200": {
             "content": {
@@ -9715,7 +10099,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve the console output for the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve the console output for the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -9767,7 +10151,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for adding a port to the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for adding a port to the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -9829,7 +10213,7 @@
                       "admin_state_up": true,
                       "created_at": "2024-03-15T12:51:49Z",
                       "updated_at": "2024-03-18T13:55:06Z",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "project": "50caa053ebc847c39b9c3149c746f0fa"
                     },
                     {
@@ -9872,7 +10256,7 @@
                       "admin_state_up": true,
                       "created_at": "2024-03-14T07:36:57Z",
                       "updated_at": "2024-03-14T07:36:58Z",
-                      "region": "default",
+                      "region": "ua-central-1",
                       "project": "50caa053ebc847c39b9c3149c746f0fa"
                     }
                   ],
@@ -9896,7 +10280,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nCreate a backup for the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nCreate a backup for the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -9963,7 +10347,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve the price for creating a backup of the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve the price for creating a backup of the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10000,7 +10384,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nCreate a snapshot for the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nCreate a snapshot for the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10057,7 +10441,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve the price per cycle for creating a snapshot of the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve the price per cycle for creating a snapshot of the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10099,7 +10483,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of actions available for the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of actions available for the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10174,7 +10558,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAssociate a security group with the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAssociate a security group with the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10225,7 +10609,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for associating a security group with the specified instance.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for associating a security group with the specified instance.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
         "responses": {
           "200": {
             "content": {
@@ -10274,7 +10658,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of security groups associated with the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of security groups associated with the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10365,7 +10749,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve the price for creating a new instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve the price for creating a new instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10436,7 +10820,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve permissions related to instances.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve permissions related to instances.\n",
         "responses": {
           "200": {
             "content": {
@@ -10648,7 +11032,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nDissociate a security group from the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDissociate a security group from the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10699,7 +11083,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve information about backups and backup schedules for the specified instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve information about backups and backup schedules for the specified instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -10823,7 +11207,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for associating an IP with the specified instance.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for associating an IP with the specified instance.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
         "responses": {
           "404": {
             "content": {
@@ -10865,39 +11249,7 @@
                 }
               }
             },
-            "description": "",
-            "headers": {
-              "cf-cache-status": {
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "cf-ray": {
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "cross-origin-opener-policy": {
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "nel": {
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "x-content-type-options": {
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": ""
           },
           "200": {
             "content": {
@@ -11057,7 +11409,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAccess and manage OpenStack backup options and configurations.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAccess and manage OpenStack backup options and configurations.\n",
         "responses": {
           "201": {
             "content": {
@@ -11136,7 +11488,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAccess and manage OpenStack backup options and configurations.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAccess and manage OpenStack backup options and configurations.\n",
         "responses": {
           "200": {
             "content": {
@@ -11172,7 +11524,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of regions available.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of regions available.\n",
         "responses": {
           "200": {
             "content": {
@@ -11284,15 +11636,13 @@
         ]
       }
     },
-
-
     "/backend/api/openstack/ports": {
       "post": {
         "summary": "Add Ports",
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of ports associated with the user's account.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of ports associated with the user's account.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
         "responses": {
           "201": {
             "content": {
@@ -11515,7 +11865,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAdd an IP address to the specified port in VPS.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAdd an IP address to the specified port in VPS.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
         "responses": {
           "200": {
             "content": {
@@ -11658,7 +12008,7 @@
                 ],
                 "network": "5820370d-c55b-40d4-a172-089e457fb611",
                 "project": "50caa053ebc847c39b9c3149c746f0fa",
-                "region": "default",
+                "region": "ua-central-1",
                 "subnet": "96ba4fff-f76c-4498-83cb-b4f4502c3cad"
               }
             }
@@ -11672,7 +12022,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAutomatically add IPs to the specified port in VPS.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAutomatically add IPs to the specified port in VPS.\n",
         "responses": {
           "200": {
             "content": {
@@ -11749,7 +12099,7 @@
         "tags": [
           "Instances"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRemove IP from the specified port in VPS.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRemove IP from the specified port in VPS.\n",
         "responses": {
           "200": {
             "content": {
@@ -11825,15 +12175,13 @@
         }
       }
     },
-
-
     "/backend/api/clients/{client_id}": {
       "get": {
         "summary": "Get Client Details",
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve detailed information about a specific client identified by ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific client identified by ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -12038,7 +12386,7 @@
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nChange  a specific client identified by ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nChange  a specific client identified by ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -12182,7 +12530,10 @@
     "/backend/api/openstack/summary": {
       "get": {
         "summary": "OpenStack Summary",
-        "description": "**Host**: https://api.fotbo.com\n\nAccess a summary of information related to the user's account.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
+        "tags": [
+          "Another"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAccess a summary of information related to the user's account.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
         "responses": {
           "200": {
             "content": {
@@ -12249,15 +12600,13 @@
         ]
       }
     },
-
-
     "/backend/api/billing/summary": {
       "get": {
         "summary": "Billing Summary",
         "tags": [
           "Billing"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAccess a summary of billing information, providing an overview of the user's financial status.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAccess a summary of billing information, providing an overview of the user's financial status.\n",
         "responses": {
           "200": {
             "content": {
@@ -12544,7 +12893,7 @@
         "tags": [
           "SSH Keys"
         ],
-        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific PKM item identified by ID. You may have entered the wrong ssh-key.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\n",
         "responses": {
           "200": {
             "content": {
@@ -12632,7 +12981,7 @@
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve information about the currently authenticated user.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve information about the currently authenticated user.\n",
         "responses": {
           "200": {
             "content": {
@@ -13330,7 +13679,7 @@
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nList operations\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nList operations\n",
         "responses": {
           "200": {
             "content": {
@@ -13599,7 +13948,7 @@
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nList opearation status\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nList opearation status\n",
         "responses": {
           "200": {
             "content": {
@@ -13743,7 +14092,7 @@
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nOperation retry\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nOperation retry\n",
         "responses": {
           "200": {
             "content": {
@@ -13777,7 +14126,7 @@
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nОperations in progress\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nОperations in progress\n",
         "responses": {
           "200": {
             "content": {
@@ -13815,11 +14164,11 @@
     },
     "/backend/api/operations/mark_all_as_read": {
       "post": {
-        "summary": "Mark all as read",
+        "summary": "Mark all operations as read",
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nMark all as read\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nMark all as read\n",
         "responses": {
           "200": {
             "content": {
@@ -13847,11 +14196,35 @@
         ]
       }
     },
+    "/backend/api/operations/{operation_id}/abort_operation": {
+      "post": {
+        "summary": "Abort operation",
+        "tags": [
+          "Clients"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nMark all as read\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": null
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      },
     "/backend/api/openstack/networks": {
       "get": {
         "summary": "Get Network VPC",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
         "description": "**Host**: https://core.ocplanet.cloud\n\nAccess information related to networks.\n",
         "responses": {
@@ -14031,7 +14404,7 @@
       "post": {
         "summary": "Create Network VPC",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
         "description": "**Host**: https://core.ocplanet.cloud\n\nCreate Network VPC. Change information about of networks.\n",
         "responses": {
@@ -14045,7 +14418,7 @@
                   "admin_state_up": true,
                   "description": "",
                   "name": "network95065",
-                  "region": "default"
+                  "region": "ua-central-1"
                 }
               }
             },
@@ -14067,7 +14440,7 @@
                 "id": "5820370d-c55b-40d4-a172-089e457fb611",
                 "name": "network95065",
                 "admin_state_up": true,
-                "region": "default",
+                "region": "ua-central-1",
                 "description": ""
               }
             }
@@ -14079,7 +14452,7 @@
       "get": {
         "summary": "Get Network VPC create options",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
         "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for view Network VPC.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.\n",
         "responses": {
@@ -14124,7 +14497,7 @@
       "get": {
         "summary": "Get Network Details",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
         "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific network in OpenStack identified by its unique ID.\n",
         "responses": {
@@ -14174,7 +14547,7 @@
                   "admin_state_up": true,
                   "created_at": "2024-03-15T12:51:49Z",
                   "updated_at": "2024-03-15T12:51:50Z",
-                  "region": "default",
+                  "region": "ua-central-1",
                   "project": "50caa053ebc847c39b9c3149c746f0fa"
                 }
               }
@@ -14191,7 +14564,7 @@
       "put": {
         "summary": "Change Network",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
         "description": "**Host**: https://core.ocplanet.cloud\n\nChange a specific network in OpenStack identified by its unique ID.\n",
         "responses": {
@@ -14226,7 +14599,7 @@
                 "admin_state_up": true,
                 "description": "",
                 "name": "network95065dd",
-                "region": "default"
+                "region": "ua-central-1"
               }
             }
           }
@@ -14237,9 +14610,9 @@
       "get": {
         "summary": "Network Permissions",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nManage permissions related to networks\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nManage permissions related to networks\n",
         "responses": {
           "200": {
             "content": {
@@ -14304,7 +14677,7 @@
       "post": {
         "summary": "Create Subnets",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
         "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of subnets associated with the user's account.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
         "responses": {
@@ -14378,9 +14751,9 @@
       "get": {
         "summary": "Get Subnet Creation Options",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for creating a new subnet in user's account.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for creating a new subnet in user's account.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
         "responses": {
           "200": {
             "content": {
@@ -14492,9 +14865,9 @@
       "put": {
         "summary": "Change Subnet",
         "tags": [
-          "Networks (VPC)"
+          "Networks"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nChange a specific subnet associated with the user's VPS identified by ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nChange a specific subnet associated with the user's VPS identified by ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -14717,7 +15090,7 @@
         "tags": [
           "Routers"
         ],
-        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of routers associated with the user's instances.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nCreate router associated with the user's instance.\n",
         "responses": {
           "201": {
             "content": {
@@ -14731,7 +15104,7 @@
                   "description": "",
                   "external_network_id": "7e800880-26d4-4674-851f-dda4c8a362da",
                   "admin_state_up": true,
-                  "region": "default"
+                  "region": "ua-central-1"
                 }
               }
             },
@@ -14754,7 +15127,7 @@
                 "description": "",
                 "external_network_id": "7e800880-26d4-4674-851f-dda4c8a362da",
                 "name": "router97744",
-                "region": "default"
+                "region": "ua-central-1"
               }
             }
           }
@@ -15016,7 +15389,7 @@
                     {
                       "name": "external_network",
                       "id": "7e800880-26d4-4674-851f-dda4c8a362da",
-                      "region": "default"
+                      "region": "ua-central-1"
                     }
                   ],
                   "selected_region": "default",
@@ -15042,7 +15415,7 @@
         "tags": [
           "Routers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nManage permissions related to routers associated with the VPS.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nManage permissions related to routers associated with the VPS.\n",
         "responses": {
           "200": {
             "content": {
@@ -15096,7 +15469,7 @@
                         "id": "16c6c0e9-d20a-42a7-8d66-9dd9e8abcadb",
                         "name": "external_network",
                         "description": "",
-                        "region": "default"
+                        "region": "ua-central-1"
                       },
                       "port": {
                         "id": "50da7bcc-aacf-4735-8bff-e05b17e57887",
@@ -15196,7 +15569,7 @@
         "tags": [
           "Floating IPs"
         ],
-        "description": "**Host**: https://core.ocplanet.cloud\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n Create Floating IP.\n",
         "responses": {
           "201": {
             "content": {
@@ -15273,7 +15646,7 @@
         "tags": [
           "Zones (DNS)"
         ],
-        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve PTR records associated with a floating IP within the DNS context.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAdd PTR records associated with a floating IP within the DNS context.\n",
         "responses": {
           "200": {
             "content": {
@@ -15409,7 +15782,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for creating a new image when your has no active project.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for creating a new image when your has no active project.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
         "responses": {
           "200": {
             "content": {
@@ -15566,7 +15939,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve detailed information about a specific Images or ISO identified by its unique ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific Images or ISO identified by its unique ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -15850,7 +16223,7 @@
                   "hw_qemu_guest_agent": true,
                   "instance_uuid": "81ddeb48-937b-4e54-8b37-091bfcabf18e",
                   "volume_snapshot_uuid": null,
-                  "region": "default",
+                  "region": "ua-central-1",
                   "reseller_resources": null,
                   "used_by_resellers": []
                 }
@@ -15870,7 +16243,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nImages, ISO\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nImages, ISO\n",
         "responses": {
           "200": {
             "content": {
@@ -16020,7 +16393,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nDelete a specific Images or ISO identified by ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific Images or ISO identified by ID.\n",
         "responses": {
           "204": {
             "content": {
@@ -16044,7 +16417,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nCopy the specified image.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nCopy the specified image.\n",
         "responses": {
           "200": {
             "content": {
@@ -16111,7 +16484,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve snapshots associated with a specific instance.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve snapshots associated with a specific instance.\n",
         "responses": {
           "200": {
             "content": {
@@ -16459,7 +16832,7 @@
                       "hw_qemu_guest_agent": true,
                       "instance_uuid": "81ddeb48-937b-4e54-8b37-091bfcabf18e",
                       "volume_snapshot_uuid": null,
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "used_by_resellers": []
                     }
@@ -16494,7 +16867,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve permissions related to images within the OpenStack context.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve permissions related to images within the OpenStack context.\n",
         "responses": {
           "200": {
             "content": {
@@ -16566,7 +16939,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve the price for creating a new image within the OpenStack context.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve the price for creating a new image within the OpenStack context.\n",
         "responses": {
           "200": {
             "content": {
@@ -16629,7 +17002,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAccess information related to images within the OpenStack context.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAccess information related to images within the OpenStack context.\n",
         "responses": {
           "200": {
             "content": {
@@ -16943,7 +17316,7 @@
                       "hw_qemu_guest_agent": true,
                       "instance_uuid": "81ddeb48-937b-4e54-8b37-091bfcabf18e",
                       "volume_snapshot_uuid": null,
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "used_by_resellers": []
                     },
@@ -17006,7 +17379,7 @@
                       "hw_qemu_guest_agent": true,
                       "instance_uuid": "1666a5a6-1ba1-43a4-ae4e-3d24d7015e98",
                       "volume_snapshot_uuid": null,
-                      "region": "default",
+                      "region": "ua-central-1",
                       "reseller_resources": null,
                       "used_by_resellers": []
                     }
@@ -17162,7 +17535,7 @@
         "tags": [
           "My Images"
         ],
-        "description": "**Host**: https://api.fotbo.com\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n",
         "responses": {
           "201": {
             "content": {
@@ -17321,7 +17694,7 @@
         "tags": [
           "Security groups"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of security groups associated with the user's account.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of security groups associated with the user's account.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
         "responses": {
           "200": {
             "content": {
@@ -17525,7 +17898,7 @@
         "tags": [
           "Security groups"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of security groups associated with the user's account.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of security groups associated with the user's account.\n",
         "responses": {
           "201": {
             "content": {
@@ -17589,7 +17962,7 @@
               "example": {
                 "description": "tttttt",
                 "name": "TTTTTTtttttt",
-                "region": "default"
+                "region": "ua-central-1"
               }
             }
           }
@@ -17602,7 +17975,7 @@
         "tags": [
           "Security groups"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve detailed information about a specific security group identified by ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific security group identified by ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -17740,7 +18113,7 @@
                   "created_at": "2024-03-20T11:36:53Z",
                   "updated_at": "2024-03-20T11:36:53Z",
                   "project": "50caa053ebc847c39b9c3149c746f0fa",
-                  "region": "default"
+                  "region": "ua-central-1"
                 }
               }
             },
@@ -17758,7 +18131,7 @@
         "tags": [
           "Security groups"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nChange settings a specific security group identified by ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nChange settings a specific security group identified by ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -17834,7 +18207,7 @@
         "tags": [
           "Security groups"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAdd a rule to the settings in specified security group identified by ID in user's account.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAdd a rule to the settings in specified security group identified by ID in user's account.\n",
         "responses": {
           "201": {
             "content": {
@@ -17914,7 +18287,7 @@
         "tags": [
           "Security groups"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nDelete a rule from the specified security group in user's account.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a rule from the specified security group in user's account.\n",
         "responses": {
           "204": {
             "content": {
@@ -17959,7 +18332,7 @@
         "tags": [
           "Security groups"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nManage permissions related to security groups in user's account.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nManage permissions related to security groups in user's account.\n",
         "responses": {
           "200": {
             "content": {
@@ -18026,7 +18399,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for creating a new LBAAS listener within the Load Balancer as a Service context.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for creating a new LBAAS listener within the Load Balancer as a Service context.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
         "responses": {
           "200": {
             "content": {
@@ -18478,7 +18851,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAccess LBAAS load balancers within the Load Balancer as a Service context.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAccess load balancers within the Load Balancer as a Service context.\n",
         "responses": {
           "200": {
             "content": {
@@ -18691,7 +19064,10 @@
       },
       "post": {
         "summary": "Create Load Balancer",
-        "description": "**Host**: https://api.fotbo.com\n\nCreate LBAAS load balancers within the Load Balancer as a Service context.\n",
+        "tags": [
+          "Load balancers"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nCreate load balancers within the Load Balancer as a Service context.\n",
         "responses": {
           "200": {
             "content": {
@@ -19043,7 +19419,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve options for creating a new LBAAS listener within the Load Balancer as a Service context.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve options for creating a new listener within the Load Balancer as a Service context.\nThrough a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options must be specified when using POST/PUT requests.\n",
         "responses": {
           "200": {
             "content": {
@@ -19491,11 +19867,11 @@
     },
     "/backend/api/openstack/lbaas-listeners": {
       "get": {
-        "summary": "Get LBAAS Listeners",
+        "summary": "Get Listeners",
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nAccess LBAAS listeners within the Load Balancer as a Service context.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAccess  listeners within the Load Balancer as a Service context.\n",
         "responses": {
           "200": {
             "content": {
@@ -19665,7 +20041,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
         "responses": {
           "400": {
             "content": {
@@ -19967,11 +20343,11 @@
     },
     "/backend/api/openstack/lbaas-listeners/{lbaas-listeners_id}": {
       "delete": {
-        "summary": "Delete LBAAS listener",
+        "summary": "Delete listener",
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nDelete a specific LBAAS listener identified by its unique ID.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific listener identified by its unique ID.\nYou may not have services or there may not be funds on your balance to complete this operation.\n",
         "responses": {
           "400": {
             "content": {
@@ -20044,11 +20420,11 @@
         ]
       },
       "get": {
-        "summary": "Get LBAAS Listener Details",
+        "summary": "Get Listener Details",
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve detailed information about a specific LBAAS listener identified by its unique ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific listener identified by its unique ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -20174,11 +20550,11 @@
         ]
       },
       "put": {
-        "summary": "Change LBAAS Listener Details",
+        "summary": "Change Listener Details",
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nChange specific LBAAS listener identified by its unique ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nChange specific listener identified by its unique ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -20370,7 +20746,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve detailed information about a specific LBAAS load balancer identified by its unique ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific load balancer identified by its unique ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -20547,7 +20923,10 @@
       },
       "put": {
         "summary": "Change Load Balancer",
-        "description": "**Host**: https://api.fotbo.com\n\nChange specific LBAAS load balancer identified by its unique ID.\n",
+        "tags": [
+          "Load balancers"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nChange specific load balancer identified by its unique ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -20780,7 +21159,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nDelete a specific LBAAS load balancer identified by its unique ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific load balancer identified by its unique ID.\n",
         "responses": {
           "204": {
             "content": {
@@ -20804,7 +21183,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of Load Balancer Pools associated with the user's account.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of Load Balancer Pools associated with the user's account.\n",
         "responses": {
           "200": {
             "content": {
@@ -20996,7 +21375,10 @@
       },
       "post": {
         "summary": "Change Load Balancer Pools",
-        "description": "**Host**: https://api.fotbo.com\n\nChange Load Balancer Pools associated with the user's account.\n",
+        "tags": [
+          "Load balancers"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nChange Load Balancer Pools associated with the user's account.\n",
         "responses": {
           "200": {
             "content": {
@@ -21183,7 +21565,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nDelete a specific Load Balancer Pool identified by its unique ID.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific Load Balancer Pool identified by its unique ID.\n",
         "responses": {
           "204": {
             "content": {
@@ -21220,7 +21602,10 @@
       },
       "get": {
         "summary": "Get Load Balancer Pool Details",
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve detailed information about a specific network in OpenStack identified by its unique ID.\n",
+        "tags": [
+          "Load balancers"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve detailed information about a specific network in OpenStack identified by its unique ID.\n",
         "responses": {
           "200": {
             "content": {
@@ -21313,7 +21698,7 @@
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nChange Load Balancer Pool. You may not have services or there may not be funds on your balance to complete this operation.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nChange Load Balancer Pool. You may not have services or there may not be funds on your balance to complete this operation.\n",
         "responses": {
           "200": {
           "content": {
@@ -21485,11 +21870,11 @@
     },
     "/backend/api/openstack/lbaas-pools/get_load_balancer_price/": {
       "get": {
-        "summary": "List Load Balancer Pools",
+        "summary": "Load Balancer price",
         "tags": [
           "Load balancers"
         ],
-        "description": "**Host**: https://api.fotbo.com\n\nRetrieve a list of Load Balancer Pools associated with the user's account.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve load balancer price.\n",
         "responses": {
           "200": {
             "content": {
@@ -21556,6 +21941,490 @@
           }
         ]
       }
+    },
+    "/backend/api/cluster/check_name/": {
+      "post": {
+        "summary": "Check that cluster name available.",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\n.Check that cluster name available\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cluster_name_available": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "example": {
+                  "cluster_name_available":true
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "cluster_name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "cluster_name"
+                ],
+                "type": "object"
+              },
+              "example": {
+                "cluster_name": "cluster94260"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/cluster/": {
+      "get": {
+        "summary": "List of Clusters",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of Clusters.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "objects": {
+                      "items": {
+                        "properties": {
+                          "admin_state_up": {
+                            "type": "boolean"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "lb_algorithm": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "operating_status": {
+                            "type": "string"
+                          },
+                          "protocol": {
+                            "type": "string"
+                          },
+                          "provisioning_status": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "name",
+                          "protocol",
+                          "lb_algorithm",
+                          "operating_status",
+                          "provisioning_status",
+                          "admin_state_up"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "onePage": {
+                      "type": "boolean"
+                    },
+                    "pageNo": {
+                      "type": "integer"
+                    },
+                    "permissions": {
+                      "properties": {
+                        "lbaas-pools.create": {
+                          "type": "boolean"
+                        },
+                        "lbaas-pools.destroy": {
+                          "type": "boolean"
+                        },
+                        "lbaas-pools.list": {
+                          "type": "boolean"
+                        },
+                        "lbaas-pools.retrieve": {
+                          "type": "boolean"
+                        },
+                        "lbaas-pools.update": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "lbaas-pools.list",
+                        "lbaas-pools.retrieve",
+                        "lbaas-pools.create",
+                        "lbaas-pools.destroy",
+                        "lbaas-pools.update"
+                      ],
+                      "type": "object"
+                    },
+                    "previous": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "totalCount": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "next",
+                    "previous",
+                    "objects",
+                    "totalCount",
+                    "pageNo",
+                    "onePage",
+                    "permissions"
+                  ],
+                  "type": "object"
+                },
+                "example": {
+                  "count": 7,
+                  "next": null,
+                  "previous": null,
+                  "objects": [
+                    {
+                      "id": "d1008e5f-4c0f-4d63-ba0b-b8f91da5fbf3",
+                      "name": "ffff",
+                      "protocol": "UDP",
+                      "lb_algorithm": "LEAST_CONNECTIONS",
+                      "operating_status": "OFFLINE",
+                      "provisioning_status": "ACTIVE",
+                      "admin_state_up": true
+                    },
+                    {
+                      "id": "e95eaf85-6781-4813-85be-96261775e2dd",
+                      "name": "ffff",
+                      "protocol": "UDP",
+                      "lb_algorithm": "LEAST_CONNECTIONS",
+                      "operating_status": "OFFLINE",
+                      "provisioning_status": "ACTIVE",
+                      "admin_state_up": true
+                    },
+                    {
+                      "id": "97eac0cd-2c2f-4f11-a59d-9a6c65b5e507",
+                      "name": "ffff",
+                      "protocol": "UDP",
+                      "lb_algorithm": "LEAST_CONNECTIONS",
+                      "operating_status": "OFFLINE",
+                      "provisioning_status": "ACTIVE",
+                      "admin_state_up": true
+                    }
+                  ],
+                  "totalCount": 7,
+                  "pageNo": 1,
+                  "onePage": true,
+                  "permissions": {
+                    "lbaas-pools.list": true,
+                    "lbaas-pools.retrieve": true,
+                    "lbaas-pools.create": true,
+                    "lbaas-pools.destroy": true,
+                    "lbaas-pools.update": true
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create cluster",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nCreate cluster.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterCreateResponse"
+                },
+                "example": {
+                  "cluster_name": "cluster94260",
+                  "cluster_version": "v1.27.4",
+                  "node_pools": [
+                      {
+                          "name": "cluster94260-nodepool99682",
+                          "flavor_id": "61c79c33-6113-41fd-9d87-594764813c67",
+                          "count": 1,
+                          "autoscale": false,
+                          "max_count": 3,
+                          "is_default": true
+                      }
+                  ],
+                  "operation_id": "1bba5e94-2d3f-4023-9bb9-c7213c0d0bef"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClusterRequestBody"
+              },
+              "example": {
+                "cluster_name": "cluster94260",
+                "cluster_version": "v1.27.4",
+                "master_flavor_id": "a9ec3da2-87b2-4fbe-b3ae-5374a204653d",
+                "master_count": 1,
+                "node_pools": [
+                  {
+                    "name": "cluster94260-nodepool99682",
+                    "flavor_id": "61c79c33-6113-41fd-9d87-594764813c67",
+                    "count": 1,
+                    "autoscale": false,
+                    "max_count": 3,
+                    "is_default": true,
+                    "labels": [],
+                    "taints": []
+                  }
+                ],
+                "ssh_keys": "sss",
+                "image": "ubuntu-22.04-kube-v1.27.4",
+                "networking": "137a00a5-c1cf-44cf-9b5b-2ac5719f41e5",
+                "restriction_api": false,
+                "restriction_ips": null,
+                "addons": {
+                  "dashboard": false,
+                  "metrics": false,
+                  "nginx": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/cluster/{cluster_id}/": {
+      "delete": {
+        "summary": "Delete cluster",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete cluster.\n",
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      },
+      "get": {
+        "summary": "Get cluster detail",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nGet cluster detail.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailCluster"
+                },
+                "example": {
+                  "id": "5833f953-b236-45dc-b78e-9d8a11157fec",
+                  "cluster_name": "cluster25379",
+                  "cluster_version": "v1.28.6",
+                  "status": "active",
+                  "status_reason": null,
+                  "api_address": "217.147.172.152:6443",
+                  "created_at": "2024-03-25T07:58:55.064790Z",
+                  "updated_at": "2024-03-25T08:23:23.016427Z",
+                  "control_nodes": [
+                      {
+                          "id": "3ac8320a-04aa-46bc-a665-379f14b2c5a2",
+                          "name": "cluster25379-control-plane-wvhmv",
+                          "ready": true,
+                          "state": "ACTIVE",
+                          "flavor": "v1.m4",
+                          "version": "v1.28.6",
+                          "node_pool": null,
+                          "control_plane": true
+                      }
+                  ],
+                  "node_pools": [
+                      {
+                          "id": "c361737b-4e32-417f-880f-ea9d26a75750",
+                          "name": "cluster25379-nodepool19901",
+                          "flavor": "v1.m8",
+                          "count": 1,
+                          "autoscale": false,
+                          "max_count": null,
+                          "is_default": false,
+                          "status": "active",
+                          "labels": [],
+                          "taints": [],
+                          "nodes": [
+                              {
+                                  "id": "105eb2d6-07c2-4014-9133-3bfa693292a1",
+                                  "name": "cluster25379-nodepool19901-sz87v",
+                                  "ready": true,
+                                  "state": "ACTIVE",
+                                  "flavor": "v1.m8",
+                                  "version": "v1.28.6",
+                                  "node_pool": "cluster25379-nodepool19901",
+                                  "control_plane": false
+                              }
+                          ]
+                      }
+                  ],
+                  "restriction_api": false,
+                  "restriction_ips": null
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/cluster/{cluster_id}/download_config/": {
+      "get": {
+        "summary": "Download Kubeconfig.",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\n.Check that cluster name available\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/cluster/{cluster_id}/upgrade/": {
+      "patch": {
+        "summary": "Upgrade Kubeconfig.",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud.\n\nCheck that cluster name available\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cluster_version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "cluster_version"
+                  ]
+
+                },
+                "example": {
+                  "cluster_version": "v1.28.6"
+                }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cluster_version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "cluster_version"
+                ]
+              },
+              "example": {
+    "cluster_version": "v1.28.6"
+}
+            }
+          }
+        }
+    }
     }
   }
 }
