@@ -1,0 +1,39 @@
+---
+id: delete-load-balancer
+title: "Delete Load Balancer"
+description: "**Host**: https://core.ocplanet.cloud"
+sidebar_label: "Delete Load Balancer"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VtuO2zYQ/ZWB+pDE8Npp0SejKJBmt8miuRixk6LNBgFNjS12JVIlqfU6hv+9Z0jZsZ3LY18smpeZM4czw7MtolqFYvK+eOFUSQtVK6vZh+LDsCg5aG/aaJwtJsVg8NyFOBhMqIqxDZPxWDvPI6dbHOE40rXryht7Yy+55sikKLSszdJoqo9NkynZRswz5jZkYqDOmn87puvL0Y0thoXn0DobGLC2xU+Pf5aPdjbimAxV29ZGK4E1/icItm3B96ppay4mtqvr3e4ceyFTgXXnTdwgWDFibnlDFasSkFQXK+fNJ5X3v/+wQ/gNY7LE6TIFBGCtihX+jxdK37ItxzAydi3bEDExrhdKhQuJ9eJA43h78v+jKXeFIPF3wrEA6XwNk9+htBAse+wzXXGTifluBNsiblrQIbv+4A18GuEhb8Y/qxpZfXJy6py1t4HpwWvE92R6PXeImLZRPrsHpALFiulO1R0nco1duuTWRLmGoj9Gry0/lSimKSK4kMCz+R9Hj0ePv3B6Y3+gaxu9KzstUzf2T661a5iiSz7Faul01yAdEm5aOn/mh4RhozmMaF6ZkM7gsz+GzDOW9hBxvFFxRFf3bQ36k5Olq2u3NnYFSwlGEPcrhWPA0nqucOvmjmEnmFWFHDa2x7fsbDqhahMNB1K2JK1atTD9hFsu2efkd50n3HUUCCOpHRoM5E6kQHKGDwaUOIcdQOtCgh4i7hF2qFUhrJ0vsxfZUWGwoTUsYLPgPyMmBexdQ5lzoPHk4NBTcMu4Vil+FWnjOloj4zhZRnDslcb2tYnVmU0A/wu7tbJEjbplCkZqkZ5dzYc0fT2T37dzcXR59eJqfkXP5/MpeUbJB1gEDRkpMryGrZfJRAcggsFYXXdlvpSTHD8kfkgHQYVHTgPm5MZe0IOTzJ7QaRbPcxYnwsH4rL/iyWAgExeYupaaRsUGwiRd5pvuLxiE14n9d8bHTtU09eZOgalZLushUgRfCcn0Zkh7TkiGYMiqFUsWDnNqOLs0q86n5ZwDCcErjnB0K6AOmXnuMF0CPXw3ffqIlnAA0uA9UybubbZx5D10C8mCE6cZx77DYBAjDocjLG9cB2ITlJcJfjrhULKN+cTksZxLJZ9MBbmR3EZX8CpEj1IGtiOLfzsLbh9evpo9EqvPpLBOS+nSNTL5CpdKsw0yvsnbz+urZ1T8Y5k+JcMCr8wGvhLO7+jJCfD1NMX0BLWOamMQEYLTJg9hIt8VLT/vJ1WWIBlvUwpyWfO9WSDXD0wfE3vsczZ7TmjExxzOhHF8Kq5reogNjwgNPRsOeU1ppGBqPeaQkPmy+vaWHRx3rpKjMjXaxFFbBUl4rloHYjH8nCliqn85A7Xe3eFpTq2Rla72nU+8p7IW6w0kgKS+XG6Fcb72AxhCu0U2rCq8/ij/fZHnrpGykD+6PaRSRUVqgeRJpnsz1K9Lv3YLxGKlVfJS4kOn6+sK7XrfcwKjJKVliRFdKelT2AVsOgD4BoflFeDw2bSICckNBeItC1cCZV0ZRN10wLvgvXjBYmqmqR8a7EcLTk1tLD1t38REt+ARbMEIckbewf6B7bVQ0la/9SLg/Mk7Ejf/o8jq9UHk+ziGcZMCSGJk2+uc90Wvc7AbMgK/B62D8dfUDqYn53pHhKRkitjbbhcq8FsPhSbTgONFjWF4p7xRC1EO0F7DvU4RfYSSEKGCQmiTfEiKY/KlCDxRbPmhEdydRHKshm6TGuoH4mC/ZDdH5s+FUUYhv7vhN478Ik8rSvzXw/ZeHX3rwEGM5d1yAx92u91/z78SBw==
+sidebar_class_name: "delete api-method"
+info_path: api/openapi-onecloudplanet
+custom_edit_url: null
+proxy: https://cors.pan.dev
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete Load Balancer</h1>
+
+<MethodEndpoint method={"delete"} path={"/backend/api/openstack/lbaas-load-balancers/{load-balancer_id}"}></MethodEndpoint>
+
+
+
+**Host**: https://core.ocplanet.cloud
+
+Delete a specific load balancer identified by its unique ID.
+
+
+<div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"204"} value={"204"}><div></div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"null"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>

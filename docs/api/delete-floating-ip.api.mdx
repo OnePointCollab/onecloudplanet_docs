@@ -1,0 +1,39 @@
+---
+id: delete-floating-ip
+title: "Delete floating IP"
+description: "**Host**: https://core.ocplanet.cloud"
+sidebar_label: "Delete floating IP"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vk2P2zYQ/SsD9bCJ4dhpkZNRFFhkt8miTWLUToo2GwS0NLbYlUiVpNbrGP7vfUNKjuw0ORW9WDQ/Zt48vhnOPgtq47PZ++znyqqgzYZu5j77MM4K9rnTTdDWZLNsNHppfRiNZlSG0PjZdJpbxxObN5UyHCZ5Zdvi1tyaK644MCnyDed6rXNafzY8Jl2wCZjmglY70sFTa/TfLdPN1eTWZOPMsW+s8QxM++yHp8/kk1sTcEyGqmkqnStBNf3LC7R9xg+qbirOZqatqsPhHHqGmWf/jSFMec5bp8MOlIkRfcc7KlkV7Ei1obROf1Jp//sPB9BYMyYLnC4iMYiwUaHE/+lK5XdsiimMTG3DxgdMTHu2dOOn+/7PR90cMvHt7tn56Lp1FYx84zIy8d6jXeQl14nTb2LeZ2HXgADZ9Qvv4FNL5Gkz/hlVy+rlyalznt56pos3iOhyfrO0iJH2QT6HC1KeQsl0r6qWI53arG10q4MQn3XH6I3h5xLFPEYEFxJ4Mv/95Onk6RdOb813dGOCs0Wby9St+Z2r3NZMwUafYrWweVtDABE3ra0780PCsM7ZT2hZah/P4NMfg2i1oR4ijtcqTOj6oalAf3SytlVltyJ2MC9OvLjfKBwDlsZxiXvW9ww7Xm9KyF+bDt+6NfGEqnTQ7EmZgnLVqJXuJux6zS7ljW0d4a6DQJhI1tFoJHciuZU0PRpR5Bx2AK31EboPuEfYoUZ5v7WuSF5kR4nBjrawgM2C/4yYGLCzNSXOgcaRhUNH3q7DVsX4VaCdbWkLxXG0jODYqRzbtzqUZzYB/A/szpUhqtUdk9eSffTiejmm+ZuF/L5diqOr61+vl9f0crmck2NUCw+LoCEhhcIr2HoVTbQAIhi0yau2SJdyovGj8H08CCocNA2Ys1vzhC5OlD2jUxUvk4oj4WB80V3xbDSSiSeYupEsNhAQYZKu0k13FwzCq8j+O+1CqyqaO32vwNQipfUYEsFXQtKdGcodRyRjMGTUhkWF4yQNa9Z607q4nDQQEbzmAEd3AuqozHOH8RLo0bv588e0hgOQBu+JMnFvko2Bd9+uRAUnThOOvsJgEKRU+QGW32wLYiOUVxF+PGGRsrX+xOSwnFIlnYwJuRNtoyo45YNDKgPbwOKf1oDbR1evF4/F6gtJrNNUurK1TL7GpdJiB8XXaft5fnWMin8s06doWOAVycC/hDN8IcX7JXId2cYgwnub6zSEiXRXw4ePVFGAZDxrMch1xQ96Ba0fmR4SO/S5WLwkFOIhhwthHJ+Sq4oeYcNjQkFPhn1aUzkkGEuPPgoyXVZX3pKDYeUqOChdoUwMyipIwgPVWBCL4WeliKnurfTUOHuPVz2WRlZ52Vc+8R7TWqzXaB5E+nK5Jcbp2o9gCOUWatiU6BuQ/n2Sp6oRVcgfbQ+pUEGRWkE80XRnhrp1qdd2hViMlEpeS3yodF1eoVz3NcczUlJKlhjJSyV1CruALfcAvsNheQXYfzYt7YNoQ4F4w8KVQNmWGlHXLfCuuG97sBiLaayHGvtRgmNRm0pN64uYtDx4BBswAs3IO9g9sF0XNVDQ+YM3aGb+v+asaw4CP4QpbOuIPnYi+66teZ91bQ12o4fA77G1wXjQ3ODfbNDeSMcpwhAL+/1KeX7r0ILJNAA4abcwvFdOq5U0Cmiuxn1bIu0QMkD6Eui+id1CbDBmX3Z5Jy1ZelcEaSvYh83PXWx+uoE46JfMbmD+vA9KKOT3MP7KkR/lJUVG/3Tc3jVDXztw7L3SbuH8w+Fw+AeQLB7u
+sidebar_class_name: "delete api-method"
+info_path: api/openapi-onecloudplanet
+custom_edit_url: null
+proxy: https://cors.pan.dev
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete floating IP</h1>
+
+<MethodEndpoint method={"delete"} path={"/backend/api/openstack/floatingips/{floating_ip}"}></MethodEndpoint>
+
+
+
+**Host**: https://core.ocplanet.cloud
+
+Delete a specific floating IP, identified by its unique ID.
+
+
+<div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"204"} value={"204"}><div></div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"null"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"404"} value={"404"}><div></div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"null"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
