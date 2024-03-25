@@ -4,9 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install -g yarn && \
-    yarn  && \
-    yarn build
+RUN npm install -g npm@8.13.2 && \
+    npm install --force && \
+    npm run build
 
 
 #FROM nginx:1.23.4-alpine
@@ -19,4 +19,4 @@ RUN npm install -g yarn && \
 EXPOSE 3004
 
 #CMD ["nginx", "-g", "daemon off;"]
-CMD ["yarn", "serve", "--", "--port", "3004"]
+CMD ["npm", "run", "serve", "--", "--port", "3004"]
