@@ -8,12 +8,8 @@
   "description": "Default server",
   "info": {
     "title": "OpenAPI OneCloudPlanet",
-    "version": "Specification  1.0.5",
-    "description": "\n# Introduction\nWelcome to the API documentation for OneCloudPlanet services. This API is documented in OpenAPI format. Explore the following sections to gain comprehensive insights into the functionalities and capabilities offered by our platform.\n\n **Authentication** tokens are used instead of passwords and are handy when using OneCloudPlanet API from scripts or other software that you write and interacts with OneCloudPlanet.\nYou can  make simple GET, POST, PUT or DELETE HTTP requests by using curl.\nMake sure you include the authorization header as curl parameter:\n- 'Authorization: OpenAPIToken {Token}'\n\n  **Sections:**\n  - **Instances :** Dive into the world of Virtual Private Servers, covering instance creation, management, and configuration.\n\n  - **Networks:** Explore Virtual Private Cloud (VPC) features, including network creation, subnet configuration, and security settings.\n\n  - **Routers:** Manage and optimize routing settings for your infrastructure.\n\n  - **Zones (DNS):** Gain insights into Domain Name System (DNS) functionalities, managing DNS zones and domain settings.\n\n  - **Floating IPs:** Allocate, associate, and manage floating IP addresses for flexible network configurations.\n\n  - **SSH Keys:** Manage Secure Shell (SSH) keys for secure access to instances and services.\n\n  Explore the detailed descriptions, endpoints, features, and examples provided in each section to make the most of our hosting services.\n  Through a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.\n",
-    "x-logo": {
-      "url": "https://storage.fotbo.host/u/Fotbo_logo2.png",
-      "altText": "Fotbo logo"
-    }
+    "version": "1.0.0",
+    "description": "\n# Introduction\nWelcome to the API documentation for OneCloudPlanet services. This API is documented in OpenAPI format. Explore the following sections to gain comprehensive insights into the functionalities and capabilities offered by our platform.\n\n **Authentication** tokens are used instead of passwords and are handy when using OneCloudPlanet API from scripts or other software that you write and interacts with OneCloudPlanet.\nYou can  make simple GET, POST, PUT or DELETE HTTP requests by using curl.\nMake sure you include the authorization header as curl parameter:\n- 'Authorization: OpenAPIToken {Token}'\n\n  **Sections:**\n  - **Instances :** Dive into the world of Virtual Private Servers, covering instance creation, management, and configuration.\n\n  - **Networks:** Explore Virtual Private Cloud (VPC) features, including network creation, subnet configuration, and security settings.\n\n  - **Routers:** Manage and optimize routing settings for your infrastructure.\n\n  - **Zones (DNS):** Gain insights into Domain Name System (DNS) functionalities, managing DNS zones and domain settings.\n\n  - **Floating IPs:** Allocate, associate, and manage floating IP addresses for flexible network configurations.\n\n  - **SSH Keys:** Manage Secure Shell (SSH) keys for secure access to instances and services.\n\n  Explore the detailed descriptions, endpoints, features, and examples provided in each section to make the most of our hosting services.\n  Through a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.\n"
   },
   "tags": [
     {
@@ -14212,14 +14208,14 @@
               }
             },
             "description": ""
-          }
         },
         "security": [
           {
             "apikey header authorization": []
           }
         ]
-      },
+      }
+    },
     "/backend/api/openstack/networks": {
       "get": {
         "summary": "Get Network VPC",
@@ -22397,13 +22393,14 @@
             },
             "description": ""
           }
-        },
-        "security": [
-          {
-            "apikey header authorization": []
-          }
-        ]
+        }
+
       },
+      "security": [
+        {
+          "apikey header authorization": []
+        }
+      ],
         "requestBody": {
           "content": {
             "application/json": {

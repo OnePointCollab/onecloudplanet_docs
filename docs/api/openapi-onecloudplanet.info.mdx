@@ -17,7 +17,7 @@ import Export from "@theme/ApiExplorer/Export";
 
 <h1 className={"openapi__heading"}>OpenAPI OneCloudPlanet</h1>
 
-<ApiLogo logo={{"url":"https://storage.fotbo.host/u/Fotbo_logo2.png","altText":"Fotbo logo"}} darkLogo={undefined}></ApiLogo>
+
 
 
 # Introduction
@@ -31,7 +31,7 @@ Make sure you include the authorization header as curl parameter:
   **Sections:**
   - **Instances :** Dive into the world of Virtual Private Servers, covering instance creation, management, and configuration.
 
-  - **Networks (VPC):** Explore Virtual Private Cloud (VPC) features, including network creation, subnet configuration, and security settings.
+  - **Networks:** Explore Virtual Private Cloud (VPC) features, including network creation, subnet configuration, and security settings.
 
   - **Routers:** Manage and optimize routing settings for your infrastructure.
 
@@ -45,4 +45,8 @@ Make sure you include the authorization header as curl parameter:
   Through a GET request with create_options, data about the service options is obtained before ordering it. You can see what the characteristics may be. These options contain all need data which must be specified when you will use POST/PUT requests.
 
 
-<div style={{"marginBottom":"2rem"}}><h2 id={"authentication"} style={{"marginBottom":"1rem"}}>Authentication</h2><SchemaTabs className={"openapi-tabs__security-schemes"}><TabItem label={"API Key: apikey header authorization"} value={"apikey header authorization"}><div><table><tbody><tr><th>Security Scheme Type:</th><td>apiKey</td></tr><tr><th>Header parameter name:</th><td>AUTHORIZATION</td></tr></tbody></table></div></TabItem></SchemaTabs></div>
+<div style={{"marginBottom":"2rem"}}><h2 id={"authentication"} style={{"marginBottom":"1rem"}}>Authentication</h2><SchemaTabs className={"openapi-tabs__security-schemes"}><TabItem label={"API Key: apikey header authorization"} value={"apikey header authorization"}>
+
+Use 'OpenAPIToken {token}' as the value
+
+<div><table><tbody><tr><th>Security Scheme Type:</th><td>apiKey</td></tr><tr><th>Header parameter name:</th><td>Authorization</td></tr></tbody></table></div></TabItem></SchemaTabs></div>
