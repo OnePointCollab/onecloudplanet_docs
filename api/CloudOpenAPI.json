@@ -22363,65 +22363,6 @@
           }
         ]
       }
-    },
-    "/backend/api/cluster/{cluster_id}/upgrade/": {
-      "patch": {
-        "summary": "Upgrade Kubeconfig.",
-        "tags": [
-          "Kubernetes"
-        ],
-        "description": "**Host**: https://core.ocplanet.cloud.\n\nCheck that cluster name available\n",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "cluster_version": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "cluster_version"
-                  ]
-
-                },
-                "example": {
-                  "cluster_version": "v1.28.6"
-                }
-            },
-            "description": ""
-          }
-        }
-
-      },
-      "security": [
-        {
-          "apikey header authorization": []
-        }
-      ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "cluster_version": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "cluster_version"
-                ]
-              },
-              "example": {
-    "cluster_version": "v1.28.6"
-}
-            }
-          }
-        }
-    }
     }
   }
 }
