@@ -2,6 +2,9 @@
   "openapi": "3.1.0",
   "servers": [
     {
+      "url": "https://core-pl.ocplanet.cloud"
+    },
+    {
       "url": "https://core.ocplanet.cloud"
     }
   ],
@@ -54,6 +57,10 @@
     },
     {
       "name": "Security groups",
+      "description": ""
+    },
+    {
+      "name": "Another",
       "description": ""
     }
   ],
@@ -14198,7 +14205,7 @@
         "tags": [
           "Clients"
         ],
-        "description": "**Host**: https://core.ocplanet.cloud\n\nMark all as read\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAbort specified operation\n",
         "responses": {
           "200": {
             "content": {
@@ -17894,7 +17901,7 @@
         "tags": [
           "Security groups"
         ],
-        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of security groups associated with the user's account.\n",
+        "description": "**Host**: https://core.ocplanet.cloud\n\nSet security group associated with the user's account.\n",
         "responses": {
           "201": {
             "content": {
