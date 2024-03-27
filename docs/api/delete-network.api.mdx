@@ -1,0 +1,41 @@
+---
+id: delete-network
+title: "Delete network"
+description: "**Host**: https://core.ocplanet.cloud"
+sidebar_label: "Delete network"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vk2P2zYQ/SsD9ZDEcOy06MkoCgTZbbJokxixk6LNLgJaGlnsSqRKUuv1Gv7vfUNKXttJe+vFovkx8+ZxZvh2WVBrn80+Z+84bKy79dnNOCvY5063QVuTzbLR6I31YTSaURVC62fTaW4dT2ze1spwmOS17Yprc20uuObApMi3nOtS52SSUdIFm4AZLmi1pauLybXJxplj31rjGf532Q8vfpRPbk3AXhmqtq11rgTF9C8vUHYZ36umrTmbma6u9/tzqJlMec47p8MWUYkRfctbqlgV7Eh1obJOP6i0//PNHtE2jMkCp4uIH8BaFSr8n65UfsummMLI1LZsfMDEtA/KT3f96Isu9pn4dXfsfHTbuRoGjvl63tZnlGX78bc2frXr5jGkRV5xk/j6z8B2Wdi2YEl2/cpbgNNCT9qMf0Y1svry5NQ5mR8905P3CPvl/GppQQTtgnz2T0h5ChXTnao7jpxrU9roVge5naw/Ru8Nv5Io5jEiuBCGkvnvJy8mL75yem2+oysTnC26XKauze9c57ZhCjb6FKuFzbsGWRJxU2ndmR+Sq9A5+wktK+3jGXyGY8hCbWiAiOONChO6vG9r0B+dlLau7UabNSxFGF7crxWOAUvruEIy6DuGHa/XVfAY9PjKzsQTqtZBsydlCspVq1a6n7BlyS4Vgu0c4a6DQJhIBdFoJHcixZISfzSiyDnsAFrnI3QfcI+wQ63yHglYJC+yo8JgSxtYwGbBf0ZMDNjZhhLnQOPIwqEjb8uwUTF+FWhrO9og4zhaRnDsVI7tGx2qM5sA/gd258oQNeqWyWspUXp9uRzT/P1Cfj8uxdHF5W+Xy0t6s1zOyfHfHXtYBA0JKTK8hq230UQHIIJBm7zuinQpJzl+SHwfD4IKh5wGzNm1eU5PTjJ7RqdZvExZHAkH44v+imejkUw8x9SVlLpBAhEm6SLddH/BILyO7H/SLnSqprnTdwpMLVL9j5Ei+EpIujdDueOIZAyGjFqzZOE4pYY1pV53Li6nHIgIhnYs/ofMPHcYL4Gefpq/ekYlHIA0eE+Uifuh+z56991KsuDEacIxdBgMQsBhf4Tlg+1AbITyNsKPJyxKttEPTA7LqVTSyViQW8ltdAWnfHAoZWA7svinNeD26cW7xTOx+loK67SULmwjk+9wqbTYIuObtP28vnpGxT+W6SEaFnhFMvCNcH6prYqAr+YxppeodVQbgwjvba7TECbSXVH5uJ9UUYBkPFkxyLLme71Crh+YPib22Odi8YbQiI85XAjj+FRc1/QUG54RGnoy7NOaypGCsfXoQ0Kmy+rbW3Jw3LkKDkrXaBNHbRUk4RVrLYjF8DFTxFT/oHpqnb3DMx1bI6u8GjqfeI9lLdYbCAFJfbncCuN07QcwhHaLbFhX0AAo/6HIU9eIWchf7ACpUEGRWiF5ouneDPXr0q/tCrEYaZVcSnzodH1doV0PPcczSlJalhjJKyV9CruALfcAvsVheQXYP5oWjSG5oUC8YeFKoGwqjaibDnhXPEgYLMZmGvuhxn604NjUptLThiYmcgaPYAtGkDPyDvYPbK+I+vQ4f+yO1M7/J7J6IRD4PkxhS0ekUXXsep3zOet1DnZDL+D3oHVEKgy6cAzRddA7ohIlAeT0brdSnj866DGZBiVOtBeGd8pptRJBAKU1HuSH6CNkuugP5HcbVUEUErOvJd+JPkvvh6DsBPexyLmNIqcfiINhyWyPzJ/rnYRCfkWKffPIT/JionJ/PmzvRc+/HThorLRb+L7Z7/f/AE4ZBHQ=
+sidebar_class_name: "delete api-method"
+info_path: api/openapi-onecloudplanet
+custom_edit_url: null
+proxy: https://cors.pan.dev
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete network</h1>
+
+<MethodEndpoint method={"delete"} path={"/backend/api/openstack/networks/{network_id}"}></MethodEndpoint>
+
+
+
+**Host**: https://core.ocplanet.cloud
+
+Delete a specific network identified by ID.
+
+
+## Request
+
+<div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"204"} value={"204"}><div></div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"null"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
