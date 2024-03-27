@@ -62,6 +62,10 @@
     {
       "name": "Another",
       "description": ""
+    },
+    {
+      "name": "Bare Metal",
+      "description": ""
     }
   ],
   "x-tagGroups": [
@@ -76,7 +80,8 @@
         "Zones (DNS)",
         "Load balancers",
         "Kubernetes",
-        "Security groups"
+        "Security groups",
+        "Bare Metal"
       ]
     }
   ],
@@ -4543,6 +4548,761 @@
               "objects"
             ]
           }
+        ]
+      },
+      "DiskLayout": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "is_disabled": {
+            "type": "boolean"
+          },
+          "is_stock_template": {
+            "type": "boolean"
+          },
+          "internal_key": {
+            "type": "string"
+          },
+          "is_auto_raid": {
+            "type": "boolean"
+          },
+          "min_disks": {
+            "type": "boolean"
+          },
+          "partition_size_boot": {
+            "type": "integer"
+          },
+          "partition_size_efi": {
+            "type": "integer"
+          },
+          "allow_for_dedicated": {
+            "type": "boolean"
+          },
+          "hw_raid_handling": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "tags",
+          "name",
+          "is_disabled",
+          "is_stock_template",
+          "internal_key",
+          "is_auto_raid",
+          "min_disks",
+          "partition_size_boot",
+          "partition_size_efi",
+          "allow_for_dedicated",
+          "hw_raid_handling"
+        ]
+      },
+      "DiskLayoutResponse": {
+        "type": "objects",
+        "disks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/DiskLayout"
+          }
+        }
+      },
+      "BareMetalPrice": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string",
+            "format": "decimal | floating"
+          },
+          "currency": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "price",
+          "currency"
+        ]
+      },
+      "BareMetalPriceList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/BareMetalPrice"
+        }
+      },
+      "RAM": {
+        "type": "objects",
+        "properties": {
+          "model": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "value_type": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "model": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "model",
+                "size"
+              ]
+            }
+          }
+        },
+        "required": [
+          "model",
+          "value",
+          "count",
+          "value_type",
+          "details"
+        ]
+      },
+      "CPU": {
+                "type": "object",
+                "properties": {
+                    "model": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "integer"
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "value_type": {
+                        "type": "string"
+                    },
+                    "cores": {
+                        "type": "integer"
+                    },
+                    "threads": {
+                        "type": "integer"
+                    },
+                    "mhzTurbo": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "model",
+                    "value",
+                    "count",
+                    "value_type",
+                    "cores",
+                    "threads",
+                    "mhzTurbo"
+                ]
+            },
+      "Storage": {
+              "type": "object",
+              "properties": {
+                  "model": {
+                      "type": "string"
+                  },
+                  "value": {
+                      "type": "integer"
+                  },
+                  "count": {
+                      "type": "integer"
+                  },
+                  "value_type": {
+                      "type": "string"
+                  },
+                  "details": {
+                      "type": "array",
+                      "items": {
+                          "type": "object",
+                          "properties": {
+                              "model": {
+                                  "type": "string"
+                              },
+                              "size": {
+                                  "type": "integer"
+                              }
+                          },
+                          "required": [
+                              "model",
+                              "size"
+                          ]
+                      }
+                  }
+              },
+              "required": [
+                  "model",
+                  "value",
+                  "count",
+                  "value_type",
+                  "details"
+              ]
+          },
+      "BMFloatingIP": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "string"
+          },
+          "ip_attributes": {
+            "type": "object",
+            "properties": {
+              "is_IP_v4": "boolean",
+              "is_IP_v6": "boolean",
+              "is_subnet": "boolean"
+            },
+            "required": [
+              "is_IP_v4",
+              "is_IP_v6",
+              "is_subnet"
+            ]
+          },
+          "primary_ip": "boolean",
+          "subnet_information": {
+            "type": "object",
+            "properties": {
+              "gw": "string",
+              "netmask": "string",
+              "subnet": "string",
+              "type": "string"
+            },
+            "required": [
+              "gw",
+              "netmask",
+              "subnet",
+              "type"
+            ]
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ip",
+          "ip_attributes",
+          "primary_ip",
+          "subnet_information",
+          "updated_at"
+        ]
+      },
+      "FreeServerData": {
+        "type": "object",
+        "properties": {
+          "server_id": {
+              "type": "integer"
+          },
+          "type": {
+              "type": "string"
+          },
+          "price": {
+              "type": "integer"
+          },
+          "ram": {
+              "type": "objects",
+              "properties": {
+                  "model": {
+                      "type": "string"
+                  },
+                  "value": {
+                      "type": "integer"
+                  },
+                  "count": {
+                      "type": "integer"
+                  },
+                  "value_type": {
+                      "type": "string"
+                  },
+                  "details": {
+                      "type": "array",
+                      "items": {
+                          "type": "object",
+                          "properties": {
+                              "model": {
+                                  "type": "string"
+                              },
+                              "size": {
+                                  "type": "integer"
+                              }
+                          },
+                          "required": [
+                              "model",
+                              "size"
+                          ]
+                      }
+                  }
+              },
+              "required": [
+                  "model",
+                  "value",
+                  "count",
+                  "value_type",
+                  "details"
+              ]
+          },
+          "cpu": {
+              "type": "object",
+              "properties": {
+                  "model": {
+                      "type": "string"
+                  },
+                  "value": {
+                      "type": "integer"
+                  },
+                  "count": {
+                      "type": "integer"
+                  },
+                  "value_type": {
+                      "type": "string"
+                  },
+                  "cores": {
+                      "type": "integer"
+                  },
+                  "threads": {
+                      "type": "integer"
+                  },
+                  "mhzTurbo": {
+                      "type": "integer"
+                  }
+              },
+              "required": [
+                  "model",
+                  "value",
+                  "count",
+                  "value_type",
+                  "cores",
+                  "threads",
+                  "mhzTurbo"
+              ]
+          },
+          "storage": {
+              "type": "object",
+              "properties": {
+                  "model": {
+                      "type": "string"
+                  },
+                  "value": {
+                      "type": "integer"
+                  },
+                  "count": {
+                      "type": "integer"
+                  },
+                  "value_type": {
+                      "type": "string"
+                  },
+                  "details": {
+                      "type": "array",
+                      "items": {
+                          "type": "object",
+                          "properties": {
+                              "model": {
+                                  "type": "string"
+                              },
+                              "size": {
+                                  "type": "integer"
+                              }
+                          },
+                          "required": [
+                              "model",
+                              "size"
+                          ]
+                      }
+                  }
+              },
+              "required": [
+                  "model",
+                  "value",
+                  "count",
+                  "value_type",
+                  "details"
+              ]
+          },
+          "state": {
+              "type": "string"
+          }
+        },
+        "required": [
+          "server_id",
+          "type",
+          "price",
+          "ram",
+          "cpu",
+          "storage",
+          "state"
+        ]
+      },
+      "FreeServerDataList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FreeServerData"
+        }
+      },
+      "FreeServerResponse": {
+        "type": "object",
+        "properties": {
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FreeServerDataList"
+            }
+          }
+        },
+        "required": [
+          "servers"
+        ]
+      },
+      "BMServer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "image": {
+            "type": "string"
+          },
+          "create_at": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "primary_ip": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "cpu": {
+            "$ref": "#/components/schemas/CPU"
+          },
+          "floating_ips": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BMFloatingIP"
+            }
+          },
+          "memory": {
+            "$ref": "#/components/schemas/RAM"
+          },
+          "state": {
+            "type": "object",
+            "properties": {
+              "power_status": {
+                "type": "string"
+              },
+              "reinstall_run": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "power_status",
+              "reinstall_run"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "image",
+          "create_at",
+          "name",
+          "primary_ip",
+          "type",
+          "cpu",
+          "floating_ips",
+          "memory",
+          "state",
+          "tags"
+        ]
+      },
+      "BMServerCreateRequestBody": {
+        "type": "object",
+        "properties": {
+          "disk_layout_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "os": {
+            "type": "integer"
+          },
+          "password": {
+            "type": "string"
+          },
+          "ssh_keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "os",
+          "password",
+          "tags"
+        ]
+      },
+      "BMServerForList": {
+        "type": "object",
+        "properties": {
+          "floating_ips": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BMFloatingIP"
+            }
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "os": {
+            "type": "string"
+          },
+          "primary_ip": {
+            "type": "string"
+          },
+          "state": {
+            "type": "object",
+            "properties": {
+              "power_status": {
+                "type": "string"
+              },
+              "reinstall_run": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "power_status",
+              "reinstall_run"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "floating_ips",
+          "id",
+          "name",
+          "os",
+          "primary_ip",
+          "state",
+          "tags",
+          "type"
+        ]
+      },
+      "BMServerList": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BasePagedList"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "objects": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BMServerForList"
+                }
+              }
+            },
+            "required": [
+              "objects"
+            ]
+          }
+        ]
+      },
+      "ReinstallStatus": {
+        "type": "object",
+        "properties": {
+          "completed": {
+            "type": "boolean"
+          },
+          "can_cancel_installation": {
+            "type": "boolean"
+          },
+          "running": {
+            "type": "boolean"
+          },
+          "step": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "completed",
+          "can_cancel_installation",
+          "running",
+          "step"
+        ]
+      },
+      "BMSubentFloatingIP": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "ip": {
+            "type": "string"
+          }
+        }
+      },
+      "BMSubnetFloatingIPs": {
+        "type": "object",
+        "properties": {
+          "floating_ips": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BMSubentFloatingIP"
+            }
+          }
+        },
+        "required": [
+          "floating_ips"
+        ]
+      },
+      "NodePoolRequestBody": {
+        "type": "object",
+        "properties": {
+          "autoscale": {
+            "type": "boolean"
+          },
+          "cluster": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "flavor_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Label"
+            }
+          },
+          "max_count": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "taints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Taint"
+            }
+          }
+        },
+        "required": [
+          "autoscale",
+          "cluster",
+          "count",
+          "flavor_id",
+          "is_default",
+          "labels",
+          "max_count",
+          "name",
+          "taints"
+        ]
+      },
+      "NodePoolCreateResponse": {
+        "type": "object",
+        "properties": {
+          "autoscale": {
+            "type": "boolean"
+          },
+          "cluster": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "flavor": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Label"
+            }
+          },
+          "max_count": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "taints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Taint"
+            }
+          }
+        },
+        "required": [
+          "autoscale",
+          "cluster",
+          "count",
+          "flavor",
+          "is_default",
+          "labels",
+          "max_count",
+          "name",
+          "taints"
         ]
       }
     },
@@ -11862,6 +12622,30 @@
         }
       }
     },
+    "/backend/api/openstack/ports/{port_id}": {
+      "delete": {
+        "summary": "Delete port",
+        "tags": [
+          "Instances"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific port identified by ID.\n",
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
     "/backend/api/openstack/ports/{ports_id}/add_ip": {
       "post": {
         "summary": "Add IP to Port",
@@ -14607,6 +15391,28 @@
             }
           }
         }
+      },
+      "delete": {
+        "summary": "Delete network",
+        "tags": [
+          "Networks"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific network identified by ID.\n",
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
       }
     },
     "/backend/api/openstack/networks/permissions": {
@@ -18396,6 +19202,7 @@
         ]
       }
     },
+
     "/backend/api/openstack/lbaas-load-balancers/create_options": {
       "get": {
         "summary": "Get Load Balancer Options",
@@ -21945,6 +22752,7 @@
         ]
       }
     },
+
     "/backend/api/cluster/check_name/": {
       "post": {
         "summary": "Check that cluster name available.",
@@ -22364,6 +23172,1368 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/node-pool/": {
+      "post": {
+        "summary": "Add node pool",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nAdd node pool.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodePoolCreateResponse"
+                },
+                "example": {
+                  "id": "79eb5d15-943b-4163-a66d-f22950cb22b4",
+                  "name": "cluster94466-2",
+                  "flavor": "v1.m8",
+                  "count": 1,
+                  "autoscale": false,
+                  "max_count": 3,
+                  "is_default": false,
+                  "labels": [
+                      {
+                          "key": "label-1",
+                          "value": "lalallalala"
+                      }
+                  ],
+                  "taints": [
+                      {
+                          "key": "taint-1",
+                          "value": "text",
+                          "effect": "NoSchedule"
+                      }
+                  ],
+                  "cluster": "25ee99d3-d22e-4203-9517-202ad4c912ea"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodePoolRequestBody"
+              },
+              "example": {
+                "name": "cluster94466-2",
+                "flavor_id": "61c79c33-6113-41fd-9d87-594764813c67",
+                "count": 1,
+                "max_count": 3,
+                "labels": [
+                    {
+                        "key": "label-1",
+                        "value": "lalallalala"
+                    }
+                ],
+                "taints": [
+                    {
+                        "effect": "NoSchedule",
+                        "key": "taint-1",
+                        "value": "text"
+                    }
+                ],
+                "cluster": "25ee99d3-d22e-4203-9517-202ad4c912ea",
+                "is_default": false,
+                "autoscale": false
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Scale node pool",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nScale node pool.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "count": {
+                      "type": "integer"
+                    },
+                    "autoscale": {
+                      "type": "boolean"
+                    },
+                    "max_count": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "count",
+                    "autoscale",
+                    "max_count"
+                  ]
+                },
+                "example": {
+                  "id": "79eb5d15-943b-4163-a66d-f22950cb22b4",
+                  "count": 1,
+                  "autoscale": true,
+                  "max_count": 1
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "integer"
+                  },
+                  "autoscale": {
+                    "type": "boolean"
+                  },
+                  "max_count": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id",
+                  "count",
+                  "autoscale",
+                  "max_count"
+                ]
+              },
+              "example": {
+                "count": 1,
+                "autoscale": true,
+                "max_count": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/node-pool/{node_pool_id}": {
+      "delete": {
+        "summary": "Delete node pool",
+        "tags": [
+          "Kubernetes"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific node pool identified by ID.\n",
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+
+    "/backend/api/servers/list_of_disk/": {
+      "get": {
+        "summary": "List of disk layouts",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of disk layouts.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiskLayoutResponse"
+                },
+                "example": {
+                  "disks": [
+                    {
+                      "id": 2,
+                      "tags": [
+                        "preseed",
+                        "kickstart",
+                        "autoinstall"
+                      ],
+                      "name": "Automatic Partitioning",
+                      "is_disabled": false,
+                      "is_stock_template": true,
+                      "internal_key": "auto_raid",
+                      "is_auto_raid": true,
+                      "min_disks": null,
+                      "partition_size_boot": 1024,
+                      "partition_size_efi": 550,
+                      "allow_for_dedicated": true,
+                      "hw_raid_handling": "always_offer"
+                    }
+                  ]
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/prices/": {
+      "get": {
+        "summary": "List of bare metal price",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of bare metal price.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BareMetalPriceList"
+                },
+                "example": [
+                  {
+                    "name": "type 1",
+                    "price": "10.0",
+                    "currency": "USD"
+                  },
+                  {
+                    "name": "type 2",
+                    "price": "15.0",
+                    "currency": "USD"
+                  },
+                  {
+                    "name": "floating IP",
+                    "price": "5.0",
+                    "currency": "USD"
+                  }
+                ]
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/free_servers/": {
+      "get": {
+        "summary": "List of free bare metal servers",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of free bare metal servers.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FreeServerResponse"
+                },
+                "example": [
+                  {
+                      "server_id": 48,
+                      "type": "type 1",
+                      "price": 10,
+                      "ram": {
+                          "model": "multiple",
+                          "value": 16384,
+                          "count": 4,
+                          "value_type": "mb",
+                          "details": [
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 4096
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 4096
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 4096
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 4096
+                              }
+                          ]
+                      },
+                      "cpu": {
+                          "model": "Intel Xeon  E5-4650 0",
+                          "value": 1200,
+                          "count": 2,
+                          "value_type": "MHz",
+                          "cores": 16,
+                          "threads": 64,
+                          "mhzTurbo": 3300
+                      },
+                      "storage": {
+                          "model": "LOGICAL VOLUME",
+                          "value": 572293,
+                          "count": 1,
+                          "value_type": "mib",
+                          "details": [
+                              {
+                                  "model": "LOGICAL VOLUME",
+                                  "size": 572293
+                              }
+                          ]
+                      },
+                      "state": "offline"
+                  },
+                  {
+                      "server_id": 15,
+                      "type": "type 1",
+                      "price": 10,
+                      "ram": {
+                          "model": "multiple",
+                          "value": 131072,
+                          "count": 12,
+                          "value_type": "mb",
+                          "details": [
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 16384
+                              },
+                              {
+                                  "model": "647650-071",
+                                  "size": 8192
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 8192
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 8192
+                              },
+                              {
+                                  "model": "647650-071",
+                                  "size": 8192
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 16384
+                              },
+                              {
+                                  "model": "647650-071",
+                                  "size": 8192
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 16384
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 8192
+                              },
+                              {
+                                  "model": "647650-071",
+                                  "size": 8192
+                              },
+                              {
+                                  "model": "647650-071",
+                                  "size": 8192
+                              },
+                              {
+                                  "model": "NOT AVAILABLE",
+                                  "size": 16384
+                              }
+                          ]
+                      },
+                      "cpu": {
+                          "model": "Intel Xeon  E5-2680 0",
+                          "value": 2400,
+                          "count": 2,
+                          "value_type": "MHz",
+                          "cores": 16,
+                          "threads": 64,
+                          "mhzTurbo": 3500
+                      },
+                      "storage": {
+                          "model": "LOGICAL VOLUME",
+                          "value": 457830,
+                          "count": 1,
+                          "value_type": "mib",
+                          "details": [
+                              {
+                                  "model": "LOGICAL VOLUME",
+                                  "size": 457830
+                              }
+                          ]
+                      },
+                      "state": "offline"
+                  }
+              ]
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/": {
+      "post": {
+        "summary": "Create bare metal servers",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nCreate bare metal servers.\n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BMServerCreateRequestBody"
+              },
+              "example": {
+                "server_id": 48,
+                "tags": ["tag1"],
+                "name": "bmserver.com",
+                "os": 1,
+                "password": "password_12",
+                "ssh_keys": ["118"],
+                "disk_layout_id": 2
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "server": {
+                      "$ref": "#/components/schemas/BMServer"
+                    }
+                  }
+                },
+                "example": {
+                  "type": "object",
+                  "properties": {
+                    "server": {
+                      "$ref": "#/components/schemas/BMServer"
+                    }
+                  },
+                  "required": [
+                    "server"
+                  ]
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      },
+      "get": {
+        "summary": "List of client bare metal servers",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve a list of client bare metal servers.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BMServerList"
+                },
+                "example": {
+                  "count": 1,
+                  "next": null,
+                  "previous": null,
+                  "objects": [
+                    {
+                      "id": 153,
+                      "os": "CentOS 7",
+                      "name": "bmserver.com",
+                      "tags": [
+                        "tag1"
+                      ],
+                      "type": "type 1",
+                      "state": {
+                        "reinstall_run": false,
+                        "power_status": "online"
+                      },
+                      "primary_ip": "217.147.172.253",
+                      "floating_ips": [
+                        {
+                          "ip": "217.147.172.253"
+                        }
+                      ],
+                      "storage": {
+                        "model": "LOGICAL VOLUME",
+                        "value": 572293,
+                        "count": 1,
+                        "value_type": "mib",
+                        "details": [
+                          {
+                            "model": "LOGICAL VOLUME",
+                            "size": 572293
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "totalCount": 1,
+                  "pageNo": 1
+              }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}": {
+      "get": {
+        "summary": "Retrieve client bare metal server",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve client bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BMServer"
+                },
+                "example": {
+                  "id": 153,
+                  "name": "bmserver.com",
+                  "image": "CentOS 7",
+                  "tags": [
+                    "tag1"
+                  ],
+                  "type": "type 1",
+                  "state": {
+                      "reinstall_run": false,
+                      "power_status": "online"
+                  },
+                  "primary_ip": "217.147.172.253",
+                  "memory": {
+                    "model": "multiple",
+                    "value": 16384,
+                    "count": 4,
+                    "value_type": "mb",
+                    "details": [
+                      {
+                        "model": "NOT AVAILABLE",
+                        "size": 4096
+                      },
+                      {
+                        "model": "NOT AVAILABLE",
+                        "size": 4096
+                      },
+                      {
+                        "model": "NOT AVAILABLE",
+                        "size": 4096
+                      },
+                      {
+                        "model": "NOT AVAILABLE",
+                        "size": 4096
+                      }
+                    ]
+                  },
+                  "cpu": {
+                    "model": "Intel Xeon  E5-4650 0",
+                    "value": 1200,
+                    "count": 2,
+                    "value_type": "MHz",
+                    "cores": 16,
+                    "threads": 64,
+                    "mhzTurbo": 3300
+                  },
+                  "storage": {
+                    "model": "LOGICAL VOLUME",
+                    "value": 572293,
+                    "count": 1,
+                    "value_type": "mib",
+                    "details": [
+                      {
+                        "model": "LOGICAL VOLUME",
+                        "size": 572293
+                      }
+                    ]
+                  },
+                  "floating_ips": [
+                      {
+                          "updated_at": "2024-02-19T14:58:41Z",
+                          "ip": "217.147.172.253",
+                          "primary_ip": true,
+                          "ip_attributes": {
+                              "is_IP_v4": true,
+                              "is_IP_v6": false,
+                              "is_subnet": false
+                          },
+                          "subnet_information": {
+                              "subnet": "217.147.172.0",
+                              "netmask": "255.255.255.0",
+                              "gw": "217.147.172.1",
+                              "type": "v4"
+                          }
+                      }
+                  ],
+                  "created_at": "2024-03-26T11:20:17Z"
+              }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Change name or tags of bare metal server",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nChange name or tags of bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BMServer"
+                },
+                "example": {
+                  "id": 153,
+                  "name": "rrrrrrr.com",
+                  "image": "CentOS 7",
+                  "tags": [
+                      "tag1",
+                      "tag2",
+                      "tqg3"
+                  ],
+                  "type": "type 1",
+                  "state": {
+                      "reinstall_run": false,
+                      "power_status": "online"
+                  },
+                  "primary_ip": "217.147.172.253",
+                  "memory": {
+                      "model": "multiple",
+                      "value": 16384,
+                      "count": 4,
+                      "value_type": "mb",
+                      "details": [
+                          {
+                              "model": "NOT AVAILABLE",
+                              "size": 4096
+                          },
+                          {
+                              "model": "NOT AVAILABLE",
+                              "size": 4096
+                          },
+                          {
+                              "model": "NOT AVAILABLE",
+                              "size": 4096
+                          },
+                          {
+                              "model": "NOT AVAILABLE",
+                              "size": 4096
+                          }
+                      ]
+                  },
+                  "cpu": {
+                      "model": "Intel Xeon  E5-4650 0",
+                      "value": 1200,
+                      "count": 2,
+                      "value_type": "MHz",
+                      "cores": 16,
+                      "threads": 64,
+                      "mhzTurbo": 3300
+                  },
+                  "storage": {
+                      "model": "LOGICAL VOLUME",
+                      "value": 572293,
+                      "count": 1,
+                      "value_type": "mib",
+                      "details": [
+                          {
+                              "model": "LOGICAL VOLUME",
+                              "size": 572293
+                          }
+                      ]
+                  },
+                  "floating_ips": [
+                      {
+                          "updated_at": "2024-03-26T14:47:09Z",
+                          "ip": "217.147.172.4",
+                          "primary_ip": false,
+                          "ip_attributes": {
+                              "is_IP_v4": true,
+                              "is_IP_v6": false,
+                              "is_subnet": false
+                          },
+                          "subnet_information": {
+                              "subnet": "217.147.172.0",
+                              "netmask": "255.255.255.0",
+                              "gw": "217.147.172.1",
+                              "type": "v4"
+                          }
+                      },
+                      {
+                          "updated_at": "2024-02-19T14:58:41Z",
+                          "ip": "217.147.172.253",
+                          "primary_ip": true,
+                          "ip_attributes": {
+                              "is_IP_v4": true,
+                              "is_IP_v6": false,
+                              "is_subnet": false
+                          },
+                          "subnet_information": {
+                              "subnet": "217.147.172.0",
+                              "netmask": "255.255.255.0",
+                              "gw": "217.147.172.1",
+                              "type": "v4"
+                          }
+                      }
+                  ],
+                  "created_at": "2024-03-26T11:20:17Z"
+              }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "count",
+                  "autoscale",
+                  "max_count"
+                ]
+              },
+              "example": {
+                "count": 1,
+                "autoscale": true,
+                "max_count": 1
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete bare metal server",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific bare metal server.\n",
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "detail"
+                  ]
+                },
+                "example": {"detail":"Server deleted success."}
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/reinstall_status/": {
+      "get": {
+        "summary": "Retrieve reinstall status of bare metal server.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve reinstall status of bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReinstallStatus"
+                },
+                "example": {
+                  "can_cancel_installation":false,
+                  "completed":true,
+                  "running":false,
+                  "step":3}
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/floating_ips/": {
+      "get": {
+        "summary": "Retrieve floating IPs of bare metal server subnet.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve floating IPs of bare metal server subnet.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BMSubnetFloatingIPs"
+                },
+                "example": {
+                  "floating_ips": [
+                    {
+                      "id": 1027,
+                      "ip": "217.147.172.2"
+                    },
+                    {
+                      "id": 1029,
+                      "ip": "217.147.172.4"
+                    },
+                    {
+                      "id": 1030,
+                      "ip": "217.147.172.5"
+                    },
+                    {
+                      "id": 1031,
+                      "ip": "217.147.172.6"
+                    },
+                    {
+                      "id": 1033,
+                      "ip": "217.147.172.8"
+                    }
+                  ]
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/floating_ip/": {
+      "post": {
+        "summary": "Set floating IP to bare metal server.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ip": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ip"
+                ]
+              },
+              "example": {
+                "ip": "217.147.172.4"
+              }
+            }
+          }
+        },
+        "description": "**Host**: https://core.ocplanet.cloud\n\nSet floating IP to bare metal server.\n",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BMServer"
+                },
+                "example": {
+                  "id": 153,
+                  "name": "bmserver.com",
+                  "image": "CentOS 7",
+                  "tags": [
+                      "tag1"
+                  ],
+                  "type": "type 1",
+                  "state": {
+                      "reinstall_run": false,
+                      "power_status": "online"
+                  },
+                  "primary_ip": "217.147.172.253",
+                  "memory": {
+                      "model": "multiple",
+                      "value": 16384,
+                      "count": 4,
+                      "value_type": "mb",
+                      "details": [
+                          {
+                              "model": "NOT AVAILABLE",
+                              "size": 4096
+                          },
+                          {
+                              "model": "NOT AVAILABLE",
+                              "size": 4096
+                          },
+                          {
+                              "model": "NOT AVAILABLE",
+                              "size": 4096
+                          },
+                          {
+                              "model": "NOT AVAILABLE",
+                              "size": 4096
+                          }
+                      ]
+                  },
+                  "cpu": {
+                      "model": "Intel Xeon  E5-4650 0",
+                      "value": 1200,
+                      "count": 2,
+                      "value_type": "MHz",
+                      "cores": 16,
+                      "threads": 64,
+                      "mhzTurbo": 3300
+                  },
+                  "storage": {
+                      "model": "LOGICAL VOLUME",
+                      "value": 572293,
+                      "count": 1,
+                      "value_type": "mib",
+                      "details": [
+                          {
+                              "model": "LOGICAL VOLUME",
+                              "size": 572293
+                          }
+                      ]
+                  },
+                  "floating_ips": [
+                      {
+                          "updated_at": "2024-03-26T14:31:22Z",
+                          "ip": "217.147.172.2",
+                          "primary_ip": false,
+                          "ip_attributes": {
+                              "is_IP_v4": true,
+                              "is_IP_v6": false,
+                              "is_subnet": false
+                          },
+                          "subnet_information": {
+                              "subnet": "217.147.172.0",
+                              "netmask": "255.255.255.0",
+                              "gw": "217.147.172.1",
+                              "type": "v4"
+                          }
+                      },
+                      {
+                          "updated_at": "2024-02-19T14:58:41Z",
+                          "ip": "217.147.172.253",
+                          "primary_ip": true,
+                          "ip_attributes": {
+                              "is_IP_v4": true,
+                              "is_IP_v6": false,
+                              "is_subnet": false
+                          },
+                          "subnet_information": {
+                              "subnet": "217.147.172.0",
+                              "netmask": "255.255.255.0",
+                              "gw": "217.147.172.1",
+                              "type": "v4"
+                          }
+                      }
+                  ],
+                  "created_at": "2024-03-26T11:20:17Z"
+              }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete floating IP",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nDelete a specific floating IP.\n",
+        "responses": {
+          "204": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ip": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ip"
+                ]
+              },
+              "example": {
+                "ip": "217.147.172.4"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backend/api/servers/{server_id}/stop/": {
+      "get": {
+        "summary": "Stop bare metal server.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nStop bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/start/": {
+      "get": {
+        "summary": "Start bare metal server.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nStart bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/reboot/": {
+      "get": {
+        "summary": "Reboot bare metal server.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nReboot bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/restart/": {
+      "get": {
+        "summary": "Restart bare metal server.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRestart bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/console/": {
+      "get": {
+        "summary": "Retrieve console of bare metal server",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve console of bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    },
+                    "access_url": {
+                      "type": "string",
+                      "format": "url"
+                    }
+                  },
+                  "required": [
+                    "token",
+                    "access_url"
+                  ]
+                },
+                "example": {
+                  "token": "a87efe69da8c75ab39b331afaefa67287de5f9ba",
+                  "access_url": "https://dciten.netengi.com/console/a87efe69da8c75ab39b331afaefa67287de5f9ba"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/logs/": {
+      "get": {
+        "summary": "Retrieve logs of bare metal server.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nRetrieve logs of bare metal server.\n",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "create_at": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                      "id": 20142,
+                      "description": "Updated tags for server bmserver.com",
+                      "created_at": "2024-03-27T08:40:35Z"
+                  },
+                  {
+                      "id": 20141,
+                      "description": "Updated Server bmserver.com",
+                      "created_at": "2024-03-27T08:40:35Z"
+                  }
+                ]
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "apikey header authorization": []
+          }
+        ]
+      }
+    },
+    "/backend/api/servers/{server_id}/reinstall/": {
+      "post": {
+        "summary": "Reinstall bare metal server.",
+        "tags": [
+          "Bare Metal"
+        ],
+        "description": "**Host**: https://core.ocplanet.cloud\n\nReinstall bare metal server.\n",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "example": null
+              }
+            },
+            "description": ""
+          }
+        },
+        "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "disk_layout_id": {
+                      "type": "integer"
+                    },
+                    "os": {
+                      "type": "integer"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "ssh_keys": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "password": "PASwoRd_1",
+                  "os": 1,
+                  "disk_layout_id": 2,
+                  "ssh_keys": [118]
+                }
+              }
+            }
+          },
         "security": [
           {
             "apikey header authorization": []
