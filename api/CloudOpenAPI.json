@@ -16449,7 +16449,7 @@
         ]
       }
     },
-    "/backend/api/openstack/dns/get_floating_ip_ptr": {
+    "/backend/api/openstack/dns/set_floating_ip_ptr": {
       "post": {
         "summary": "POST Floating IP PTR",
         "tags": [
@@ -16459,6 +16459,74 @@
         "responses": {
           "200": {
             "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "address": {
+                      "type": "string",
+                      "format": "IP"
+                    },
+                    "ptrdname": {
+                      "type": "string"
+                    },
+                    "ttl": {
+                      "type": "integer"
+                    },
+                    "action": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "type": "object",
+                      "properties": {
+                        "self": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "self"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "description",
+                    "address",
+                    "ptrdname",
+                    "ttl",
+                    "action",
+                    "status",
+                    "links"
+                  ]
+                },
+                "example": {
+                  "id": "ua-central-1:532f76da-8293-4851-b5e0-de3cdf669ef0",
+                  "description": "text",
+                  "address": "2.59.221.151",
+                  "ptrdname": "text.",
+                  "ttl": 60,
+                  "action": "UPDATE",
+                  "status": "PENDING",
+                  "links": {
+                      "self": "https://pub.ua-central-1.ocplanet.cloud:9001/v2/reverse/floatingips/ua-central-1:532f76da-8293-4851-b5e0-de3cdf669ef0"
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "content": {
               "application/json": {
                 "schema": {
                   "properties": {
@@ -16491,9 +16559,7 @@
                   "ttl": "60"
                 }
               }
-            },
-            "description": ""
-          }
+            }
         },
         "security": [
           {
