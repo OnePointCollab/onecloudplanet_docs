@@ -166,7 +166,7 @@ By using the context menu:
 
 ![](../../img/i-inst-8.png)
 
-- Підтвердіть виконання операції.
+- Confirm the operation.
 
 ## Confirm the operation
 
