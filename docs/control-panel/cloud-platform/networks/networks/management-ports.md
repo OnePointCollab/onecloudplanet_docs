@@ -184,7 +184,7 @@ A page with detailed information about the instance will open.
 
 ![](../../img/i-inst-2.png)
 
-3. Go to the **Мережа** tab.
+3. Go to the **Network** tab.
 
 ![](../../img/i-inst-3.png)
 
