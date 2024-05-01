@@ -34,7 +34,7 @@ A page with detailed information about the router will open, including the netwo
 
 ![](../../img/i-net15.png)
 
-5. In the confirmation window, click the **Видалити** button.
+5. In the confirmation window, click the **Delete** button.
 
 ![](../../img/i-net23.png)
 

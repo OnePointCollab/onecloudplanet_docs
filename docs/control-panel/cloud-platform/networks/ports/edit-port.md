@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="personal-area" label="Personal Area" default>
 
-1. ПGo to the **Ports** subsection.
+1. Go to the **Ports** subsection.
 
 ![](../../img/ports/1.png)
 
