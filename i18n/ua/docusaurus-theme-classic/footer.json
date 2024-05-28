@@ -32,7 +32,7 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
   },
   "copyright": {
-    "message": "Copyright © 2023 OneCloudPlanet. Документація для користувачів",
+    "message": "Copyright © 2024 OneCloudPlanet. Документація для користувачів",
     "description": "The footer copyright"
   }
 }
