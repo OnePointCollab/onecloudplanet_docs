@@ -11,9 +11,9 @@ sidebar_position: 3
 
 2. Create an openrc file.
 
-3. To manage resources available through the OpenStack API, use the OpenStack Terraform provider.
+3. To manage resources available through the OpenStack API, use the [OpenStack Terraform provider](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs).
 
-4. Use the Onecloud provider to manage Kubernetes Clusters.
+4. Use the [Onecloud provider](https://registry.terraform.io/providers/OnePointCollab/ocp/latest/docs) to manage Kubernetes Clusters.
 
 
 
