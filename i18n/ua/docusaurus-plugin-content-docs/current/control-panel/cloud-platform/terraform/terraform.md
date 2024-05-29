@@ -11,9 +11,9 @@ sidebar_position: 3
 
 2. Створити openrc файл.
 
-3. Управління ресурсами, доступними через OpenStack API, використовуйте OpenStack Terraform provider.
+3. Управління ресурсами, доступними через OpenStack API, використовуйте [OpenStack Terraform provider](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs).
 
-4. Використовуйте Onecloud provider для управління Kubernetes Clusters.
+4. Використовуйте [Onecloud provider](https://registry.terraform.io/providers/OnePointCollab/ocp/latest/docs) для управління Kubernetes Clusters.
 
 
 
