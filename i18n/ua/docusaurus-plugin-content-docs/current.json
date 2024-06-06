@@ -82,5 +82,9 @@
   "sidebar.tutorialSidebar.category.Cloud compute": {
     "message": "Хмарні обчислення",
     "description": "The label for category Personal Area in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Server": {
+    "message": "Сервер",
+    "description": "The label for category Cloud platform in sidebar tutorialSidebar"
   }
 }
