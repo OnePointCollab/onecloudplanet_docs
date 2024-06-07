@@ -4,101 +4,89 @@ sidebar_position: 3
 
 # Безпека
 
-To keep your account secure, you can:
+Щоб захистити свій обліковий запис, ви можете:
 
-- [change password](#change-password) to the account;
-- set up [two-step authentication](#).
+- [змінити пароль](#змінити-пароль) до облікового запису;
+- налаштувати [двохетапну аутентифікацію](#).
 
-## Change Password
+## Змінити пароль
 
-If you have forgotten your account password, [restore it](./control-panel/personal-area/restoring-access).
+Якщо ви забули пароль до свого облікового запису, [відновіть його](./restoring-access#відновлення-паролю).
 
-1. In the control panel, open the drop-down list in the upper right corner and select **Account Settings**.
+1. У контрольній панелі відкрийте випадаючий список у верхньому правому куті та виберіть **Налаштування облікового запису**.
 
-![](./img/security/i-sec-1.svg)
+![](./img/security/i-sec-1.png)
 
-2. Go to section **Security**.
+2. Перейдіть до розділу **Безпека**.
 
-![](./img/security/i-sec-2.svg)
+![](./img/security/i-sec-2.png)
 
-3. In the modal window that appears, enter the current password.
+3. Натисніть **Змінити пароль**
 
-![](./img/security/i-sec-3.svg)
+![](./img/security/i-sec-4.png)
 
-4. Click **Change Password**
+4. Введіть старий пароль, новий пароль та ще раз введіть новий пароль.
 
-![](./img/security/i-sec-4.svg)
+![](./img/security/i-sec-3.png)
 
-5. Enter the old password, the new password and enter the new password again.
+5. Натисніть **Зберегти**
 
-![](./img/security/i-sec-5.svg)
+![](./img/security/i-sec-6.png)
 
-6. Click **Save**
+## Двоетапна аутентифікація
 
-![](./img/security/i-sec-6.svg)
+За допомогою двохетапної аутентифікації вам потрібно ввести пароль і одноразовий код підтвердження для входу в обліковий запис. Двоетапна аутентифікація підключається окремо в особистих налаштуваннях облікового запису.
 
-## 2-Step Verification
+Ви можете підключити спосіб отримання одноразового коду підтвердження в додатку Google Authenticator.
 
-With two-step authentication, you need to enter a password and a one-time verification code to enter your account. Two-step authentication is connected separately in the personal settings of the account.
+Тільки власник облікового запису може вимкнути двоетапну аутентифікацію в контрольній панелі та повторно увімкнути її.
 
-You can connect a way to get a one-time verification code in the Google Authenticator app.
+Якщо ви втратите доступ до пристрою з додатком аутентифікатора, ви можете звернутися до технічної підтримки для відновлення доступу до вашого облікового запису.
 
-Only the Account Owner can disable 2-Step Verification in the control panel and re-enable it.
+1. У контрольній панелі відкрийте випадаючий список у верхньому правому куті та виберіть **Налаштування облікового запису**.
 
-If you lose access to the device with the authenticator app, you can contact [tech support](#) to restore access to your account.
+![](./img/security/i-sec-1.png)
 
-1. In the control panel, open the drop-down list in the upper right corner and select **Account Settings**.
-
-![](./img/security/i-sec-1.svg)
-
-2. Go to section **Security**.
+2. Перейдіть до розділу **Безпека**.
 
 ![](./img/security/i-sec-2.svg)
 
-3. In the modal window that appears, enter the current password.
-
-![](./img/security/i-sec-3.svg)
-
-4. Click **Enable Google Authenticator**
+3. Натисніть **Увімкнути Google Authenticator**
 
 ![](./img/security/i-sec-7.svg)
 
-5. You will have the choice of connecting via a **QR code** or the ability to enter **SECRET KEY** yourself in the Google Authenticator application.
+4. У вас буде вибір підключення через **QR-код** або можливість самостійно ввести **SECRET KEY** у додатку Google Authenticator.
 
 ![](./img/security/i-sec-8.svg)
 
-6. Enter the received code in the field **Code**
+5. Введіть отриманий код у поле **Код**
 
 ![](./img/security/i-sec-9.svg)
 
-> :bulb: If **QR code** is not readable or **SECRET KEY** is not correct, press **Regenerate Key** to update. In the modal window, confirm that you agree with the code refresh and click the **Yes** button.
+> :bulb: Якщо **QR-код** не зчитується або **SECRET KEY** неправильний, натисніть **Оновити ключ** для оновлення. У модальному вікні підтвердіть, що ви згодні з оновленням коду, та натисніть кнопку **Так**.
 
-7. Click **Enable Google Authenticator**
+6. Натисніть **Увімкнути Google Authenticator**
 
-## Disable 2-step verification if you have access to the control panel
+## Вимкнути двоетапну аутентифікацію, якщо у вас є доступ до контрольної панелі
 
-Only the **Account Owner** can disable 2-Step Verification in the control panel.
+Тільки **власник облікового запису** може вимкнути двоетапну аутентифікацію в контрольній панелі.
 
-1. In the control panel, open the drop-down list in the upper right corner and select **Account Settings**.
+1. У контрольній панелі відкрийте випадаючий список у верхньому правому куті та виберіть **Налаштування облікового запису**.
 
-![](./img/security/i-sec-1.svg)
+![](./img/security/i-sec-1.png)
 
-2. Go to section **Security**.
+2. Перейдіть до розділу **Безпека**.
 
-![](./img/security/i-sec-2.svg)
+![](./img/security/i-sec-2.png)
 
-3. In the modal window that appears, enter the current password.
-
-![](./img/security/i-sec-3.svg)
-
-4. Click **Disable Google Authenticator**
+3. Натисніть **Вимкнути Google Authenticator**
 
 ![](./img/security/i-sec-10.svg)
 
-> :bulb: If you have lost access to the Google Authenticator app, click **Regenerate Key**, confirm that you agree with the code refresh and click the **Yes** button.
+> :bulb: Якщо ви втратили доступ до додатку Google Authenticator, натисніть **Оновити ключ**, підтвердіть, що ви згодні з оновленням коду, та натисніть кнопку **Так**.
 
-## Disable 2-Step Verification if there is no access to the control panel
+## Вимкнути двоетапну аутентифікацію, якщо немає доступу до контрольної панелі
 
-If you are not the Account Owner, contact the Account Owner - they should [remove you from the user list](#) and [add a new user](#) with the correct details.
+Якщо ви не є власником облікового запису, зв’яжіться з власником облікового запису - він повинен [видалити вас зі списку користувачів](#) і [додати нового користувача](#) з правильними даними.
 
-If you are an Account Owner, please contact [tech support](#).
+Якщо ви є власником облікового запису, будь ласка, зв’яжіться з [технічною підтримкою](#).

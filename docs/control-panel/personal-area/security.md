@@ -11,7 +11,7 @@ To keep your account secure, you can:
 
 ## Change Password
 
-If you have forgotten your account password, [restore it](./control-panel/personal-area/restoring-access).
+If you have forgotten your account password, [restore it](./restoring-access).
 
 1. In the control panel, open the drop-down list in the upper right corner and select **Account Settings**.
 
@@ -21,19 +21,15 @@ If you have forgotten your account password, [restore it](./control-panel/person
 
 ![](./img/security/i-sec-2.svg)
 
-3. In the modal window that appears, enter the current password.
-
-![](./img/security/i-sec-3.svg)
-
-4. Click **Change Password**
+3. Click **Change Password**
 
 ![](./img/security/i-sec-4.svg)
 
-5. Enter the old password, the new password and enter the new password again.
+4. Enter the old password, the new password and enter the new password again.
 
 ![](./img/security/i-sec-5.svg)
 
-6. Click **Save**
+5. Click **Save**
 
 ![](./img/security/i-sec-6.svg)
 
@@ -55,25 +51,21 @@ If you lose access to the device with the authenticator app, you can contact [te
 
 ![](./img/security/i-sec-2.svg)
 
-3. In the modal window that appears, enter the current password.
-
-![](./img/security/i-sec-3.svg)
-
-4. Click **Enable Google Authenticator**
+3. Click **Enable Google Authenticator**
 
 ![](./img/security/i-sec-7.svg)
 
-5. You will have the choice of connecting via a **QR code** or the ability to enter **SECRET KEY** yourself in the Google Authenticator application.
+4. You will have the choice of connecting via a **QR code** or the ability to enter **SECRET KEY** yourself in the Google Authenticator application.
 
 ![](./img/security/i-sec-8.svg)
 
-6. Enter the received code in the field **Code**
+5. Enter the received code in the field **Code**
 
 ![](./img/security/i-sec-9.svg)
 
 > :bulb: If **QR code** is not readable or **SECRET KEY** is not correct, press **Regenerate Key** to update. In the modal window, confirm that you agree with the code refresh and click the **Yes** button.
 
-7. Click **Enable Google Authenticator**
+6. Click **Enable Google Authenticator**
 
 ## Disable 2-step verification if you have access to the control panel
 
@@ -87,11 +79,7 @@ Only the **Account Owner** can disable 2-Step Verification in the control panel.
 
 ![](./img/security/i-sec-2.svg)
 
-3. In the modal window that appears, enter the current password.
-
-![](./img/security/i-sec-3.svg)
-
-4. Click **Disable Google Authenticator**
+3. Click **Disable Google Authenticator**
 
 ![](./img/security/i-sec-10.svg)
 
