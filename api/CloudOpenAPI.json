@@ -2476,9 +2476,6 @@
           "admin_state_up": {
             "type": "boolean"
           },
-          "description": {
-            "type": "string"
-          },
           "id": {
             "type": "string"
           },
@@ -5313,13 +5310,13 @@
         "name": "Authorization",
         "description": "Use 'OpenAPIToken {token}' as the value"
       }
+    },
+    "security": {
+      "apikey header authorization": []
     }
   },
-  "security": {
-    "apikey header authorization": []
-  },
   "paths": {
-    "/backend/api/openstack/instances": {
+    "/backend/api/openstack/instances?page_size=10&page=1&tags=ssss,sadsds": {
       "get": {
         "summary": "Get Instance list",
         "tags": [
@@ -5840,6 +5837,14 @@
           },
           {
             "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tags",
             "in": "query",
             "required": false,
             "schema": {
@@ -15203,7 +15208,6 @@
                 },
                 "example": {
                   "admin_state_up": true,
-                  "description": "",
                   "name": "network95065",
                   "region": "ua-central-1"
                 }
